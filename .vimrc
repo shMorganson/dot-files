@@ -99,6 +99,10 @@ set number
 " Have yank copy to clipboard as well.
 set clipboard=unnamedplus,unnamed,autoselect
 
+" Indentation settings.
+set listchars=tab:\|\
+set list
+
 "---------------------------------------------------------
 " Shortcut keys
 nnoremap <leader>t :bo term<CR>
@@ -195,8 +199,8 @@ Plug 'elzr/vim-json'
 " Mini Map for files.
 Plug 'wfxr/minimap.vim'
 
-" Install the indentation plugin.
-Plug 'Yggdroot/indentLine'
+" Indentation guides
+Plug 'thaerkh/vim-indentguides'
 
 " Airline plugin.
 Plug 'vim-airline/vim-airline'
@@ -219,6 +223,9 @@ Plug 'ryanoasis/vim-devicons'
 
 " Nord Theme
 Plug 'arcticicestudio/nord-vim'
+
+"plist Highlighting
+Plug 'darfink/vim-plist'
 
 " Initialize plugin system
 call plug#end()
@@ -299,11 +306,7 @@ let g:ale_fixers = {
 \}
 
 "-----------------------------------------------------
-" Configuring the theme.
-if (has("termguicolors"))
-  set termguicolors
-endif
-
+" VIM theme settings.
 set background=dark
 colorscheme nord
 let g:lightline = { 'colorscheme': 'ayu' }
