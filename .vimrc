@@ -129,9 +129,10 @@ set termwinsize=15x0
     \ quit | endif
 
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * silent NERDTreeMirror
+" autocmd BufWinEnter * silent NERDTreeMirror
 
 let NERDTreeHighlightCursorline = 1
+autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -160,13 +161,9 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 
 "------------------------------------------------------------
 " Start plug.vim
-" Specify a directory for plugins
-" - Avoid using standard Vim directory names like 'plugin'
 
 let g:plug_window = 'vertical'
 call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -241,10 +238,8 @@ let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar' ]
 let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree' ]
-let g:minimap_highlight_range = 20
-
-" Minimap Highlight Settings
-let g:minimap_highlight = 'DiffAdd'
+let g:minimap_highlight_range = 27
+let g:minimap_highlight = 'DiffText'
 
 "-----------------------------------------------------
 " Indent plugin settings.
@@ -307,7 +302,13 @@ let g:ale_fixers = {
 
 "-----------------------------------------------------
 " VIM theme settings.
+" set termguicolors
+
 set background=dark
 colorscheme nord
-let g:lightline = { 'colorscheme': 'ayu' }
+
+"-----------------------------------------------------
+" Airline settings.
 let g:airline_theme = "nord"
+let g:airline_extensions = ['airline-ale']
+let g:airline#extensions#ale#enabled = 1
