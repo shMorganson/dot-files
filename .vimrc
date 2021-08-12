@@ -141,66 +141,29 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 let g:plug_window = 'vertical'
 call plug#begin('~/.vim/plugged')
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-default branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Markdown plugin.
 Plug 'tpope/vim-markdown'
-
-" Json plugin
 Plug 'elzr/vim-json'
-
-" Mini Map for files.
 Plug 'wfxr/minimap.vim'
-
-" Indentation guides
 Plug 'thaerkh/vim-indentguides'
-
-" Airline plugin.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Fugitive Git Plugin
 Plug 'tpope/vim-fugitive'
-
-" Undotree Plugin
 Plug 'mbbill/undotree'
-
-" Vim Ale for Lint
 Plug 'dense-analysis/ale'
-
-" Prettier
 Plug 'prettier/vim-prettier'
-
-" Devicons for NerdTree
 Plug 'ryanoasis/vim-devicons'
-
-" Nord Theme
 Plug 'arcticicestudio/nord-vim'
-
-"plist Highlighting
 Plug 'darfink/vim-plist'
+Plug 'cocopon/inspecthi.vim'
 
-" Initialize plugin system
 call plug#end()
 
 "------------------------------------------------------------
@@ -222,6 +185,7 @@ call plug#end()
 let NERDTreeHighlightCursorline = 1
 autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
 autocmd VimEnter,Colorscheme * :hi NERDTreeOpenable  guifg=#A3BE8C   ctermfg=2
+autocmd VimEnter,Colorscheme * :hi NERDTreeUp guifg=#BF616A ctermfg=1
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -243,9 +207,20 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:NERDTreeHighlightFoldersFullName = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
+" Change the default folder/directory glyph/icon
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+
+
 " Adding the custom source to unite
 let g:webdevicons_enable_unite = 1
 
+" Adding to vim-airline's statusline
+let g:webdevicons_enable_airline_statusline = 1
+" Adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+
+let g:WebDevIconsOS = 'Darwin'
 set encoding=UTF-8
 
 "-----------------------------------------------------
