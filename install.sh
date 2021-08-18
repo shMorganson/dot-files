@@ -76,3 +76,7 @@ else
     /bin/echo "Moving files to where they need to be." >> $LOGFILE
     cp /Users/$LOGGEDINUSER/dot-files/.zshrc /Users/$LOGGEDINUSER
 fi
+
+
+# wanted to test some more changes.
+# new things here!
