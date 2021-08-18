@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Created By: Justin Sidick
-# Created Date: 08/12/21
-# Purpose: Place files and folders where they belong to get things up and running again.
 
 # Variables
 LOGGEDINUSER="$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')"
