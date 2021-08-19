@@ -10,7 +10,7 @@ BREWLOC=/opt/homebrew/bin/brew
 SETUPDIR=/Users/$LOGGEDINUSER/dot-files/Setup/
 
 # Making the log file.
-touch /var/log/dotfileinstall.log
+touch $HOMEFOLDER/Library/Logs/dotfileinstall.log
 
 # Making sure you have what you need before we move along.
 /bin/echo "We are making sure we have what we need to setup everyting." >> $LOGFILE
