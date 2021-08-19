@@ -103,14 +103,41 @@ set number
 set listchars=tab:\|\
 set list
 
-"---------------------------------------------------------
-" Shortcut keys
-nnoremap <leader>t :bo term<CR>
-
 "----------------------------------------------------------
 " Terminal Settings
 " Open terminal below all splits
-cabbrev bterm bo term
+let g:term_buf = 0
+let g:term_win = 0
+function! TermToggle(height)
+    if win_gotoid(g:term_win)
+        hide
+    else
+        botright new
+        exec "resize " . a:height
+        try
+            exec "buffer " . g:term_buf
+        catch
+            call termopen($SHELL, {"detach": 0})
+            let g:term_buf = bufnr("")
+            set nonumber
+            set norelativenumber
+            set signcolumn=no
+        endtry
+        startinsert!
+        let g:term_win = win_getid()
+    endif
+endfunction
+
+" Toggle terminal on/off (neovim)
+nnoremap <leader>t :call TermToggle(12)<CR>
+inoremap <A-t> <Esc>:call TermToggle(12)<CR>
+tnoremap <A-t> <C-\><C-n>:call TermToggle(12)<CR>
+
+" Terminal go back to normal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap :q! <C-\><C-n>:q!<CR>
+
+let running = jobwait([&channel], 0)[0] == -1
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -163,6 +190,7 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'prettier/vim-prettier'
 Plug 'ryanoasis/vim-devicons'
 Plug 'darfink/vim-plist'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Initialize plugin system
 call plug#end()
@@ -252,13 +280,20 @@ nnoremap <leader>n :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>f :NvimTreeFindFile<CR>
 
+" COC Settings
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 "-----------------------------------------------------
 " Minimap Settings
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
-let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar' ]
-let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree' ]
+let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar', 'nvimtree' ]
+let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'nvimtree', ]
 let g:minimap_highlight_range = 20
 let g:minimap_git_colors = 1
 let g:minimap_diffadd_color = 'DiffAdd'
