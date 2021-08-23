@@ -19,5 +19,10 @@ Dot files needed for setting up my Mac environment..
 **MacOS**
 ``` bash
 xcode-select —install --agree-to-license```
+````R
+**MacOS**
+``` bash
+xcode-select —install --agree-to-license
+```
 
 Run the install.sh from the repository on the Mac as an admin to setup the enviornemt.
