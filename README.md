@@ -18,10 +18,6 @@ Dot files needed for setting up my Mac environment..
 
 **MacOS**
 ``` bash
-xcode-select —install --agree-to-license```
-````R
-**MacOS**
-``` bash
 xcode-select —install --agree-to-license
 ```
 
