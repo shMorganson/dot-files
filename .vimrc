@@ -137,19 +137,21 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 
 "------------------------------------------------------------
 " Start plug.vim
-
-let g:plug_window = 'vertical'
+set nocompatible
+let g:plug_window = 'vertical new'
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'tpope/vim-markdown'
+Plug 'godlygeek/tabular' |
+            \ Plug 'plasticboy/vim-markdown'
 Plug 'elzr/vim-json'
 Plug 'wfxr/minimap.vim'
 Plug 'thaerkh/vim-indentguides'
@@ -158,11 +160,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'dense-analysis/ale'
-Plug 'prettier/vim-prettier'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'darfink/vim-plist'
 Plug 'cocopon/inspecthi.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
@@ -172,7 +177,7 @@ call plug#end()
 " autocmd VimEnter * NERDTree | wincmd p
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-\autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Exit Vim if NERDTree is the only window left.
@@ -186,6 +191,9 @@ let NERDTreeHighlightCursorline = 1
 autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
 autocmd VimEnter,Colorscheme * :hi NERDTreeOpenable  guifg=#A3BE8C   ctermfg=2
 autocmd VimEnter,Colorscheme * :hi NERDTreeUp guifg=#BF616A ctermfg=1
+autocmd VimEnter,Colorscheme * :hi NERDTreeCWD guifg=#92B3B3 ctermfg=14
+"autocmd VimEnter,Colorscheme * :hi NERDTreeFlags guifg=#FFFFFF ctermfg=7
+"autocmd VimEnter,Colorscheme * :hi NERDTreeDir guifg=#AF8EAC ctermfg=5
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -200,8 +208,8 @@ let g:webdevicons_enable = 1
 " Adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 1
 let g:DevIconsEnableFoldersOpenClose = 1
-let g:NERDTreeDirArrowExpandable = ' '
-let g:NERDTreeDirArrowCollapsible = ' '
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:NERDTreeHighlightFoldersFullName = 1
@@ -223,15 +231,63 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:WebDevIconsOS = 'Darwin'
 set encoding=UTF-8
 
+" NERDTree Git Status Plugin Settings
+" ----------------------------------------------------
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+let g:NERDTreeGitStatusConcealBrackets = 1
+
+" COC Settings
+" ----------------------------------------------------
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" COC-YANK Settings
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
 "-----------------------------------------------------
 " Minimap Settings
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
-let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar' ]
-let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree' ]
-let g:minimap_highlight_range = 27
-let g:minimap_highlight = 'DiffText'
+let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar']
+let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'undotree']
+let g:minimap_highlight_range = 20
+let g:minimap_git_colors = 1
+let g:minimap_diffadd_color = 'DiffAdd'
+let g:minimap_diffremove_color = 'DiffDelete'
+let g:minimap_diff_color = 'DiffChange'
+let g:minimap_highlight_search = 1
+let g:minimap_search_color = 'Search'
+let g:minimap_search_color_priority = 120
+let g:minimap_cursor_color_priority = 110
+let g:minimap_git_color_priority = 100
+let g:minimap_highlight = 'DiffAdd'
+let g:minimap_base_highlight = 'Normal'
+
+"----------------------------------------------------
+" Markdown Settings
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 "-----------------------------------------------------
 " Indent plugin settings.
@@ -294,8 +350,9 @@ let g:ale_fixers = {
 
 "-----------------------------------------------------
 " VIM theme settings.
-" set termguicolors
 
+
+set t_Co=256
 set background=dark
 colorscheme nord
 
@@ -304,3 +361,6 @@ colorscheme nord
 let g:airline_theme = "nord"
 let g:airline_extensions = ['airline-ale']
 let g:airline#extensions#ale#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#branch#enabled = 1
