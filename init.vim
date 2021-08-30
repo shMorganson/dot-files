@@ -1,3 +1,7 @@
+"Calling Lua code/modules/plugins
+"-----------------------------------------------------
+" :lua require('lua/plugins')
+
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -164,10 +168,8 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 
-let g:plug_window = 'vertical'
+let g:plug_window = 'vertical new'
 call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
 
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -178,7 +180,6 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'tpope/vim-markdown'
 Plug 'elzr/vim-json'
 Plug 'wfxr/minimap.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -186,20 +187,23 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'dense-analysis/ale'
-Plug 'shaunsingh/nord.nvim'
 Plug 'prettier/vim-prettier'
-Plug 'ryanoasis/vim-devicons'
 Plug 'darfink/vim-plist'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'shaunsingh/nord.nvim'
+Plug 'godlygeek/tabular' |
+            \ Plug 'plasticboy/vim-markdown'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Initialize plugin system
 call plug#end()
 
-"----------------------------------------------------
 "Dev Icons
+"----------------------------------------------------
 set encoding=UTF-8
 
 " NVimTree Settings
+"-----------------------------------------------------
 let g:nvim_tree_auto_open = 1
 let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_hide_dotfiles = 1
@@ -207,7 +211,7 @@ let g:nvim_tree_git_hl = 1
 let g:nvim_tree_highlight_opened_files = 0
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
 let g:nvim_tree_tab_open = 0 "0 by default, will open the tree when entering a new tab and the tree was previously open
-let g:nvim_tree_auto_resize = 0 "1 by default, will resize the tree to its saved width when opening a file
+let g:nvim_tree_auto_resize = 1 "1 by default, will resize the tree to its saved width when opening a file
 let g:nvim_tree_disable_netrw = 1 "1 by default, disables netrw
 let g:nvim_tree_hijack_netrw = 1 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
@@ -236,7 +240,7 @@ let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
     \ 'files': 1,
-    \ 'folder_arrows': 0,
+    \ 'folder_arrows': 1,
     \ }
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
@@ -276,19 +280,35 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
+let g:nvim_tree_width = 30
+
 nnoremap <leader>n :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>f :NvimTreeFindFile<CR>
 
 " COC Settings
+"-----------------------------------------------------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" COC-YANK Settings
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+" Markdown Settings
 "-----------------------------------------------------
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 " Minimap Settings
+"-----------------------------------------------------
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
@@ -307,18 +327,35 @@ let g:minimap_git_color_priority = 100
 let g:minimap_highlight = 'Title'
 let g:minimap_base_highlight = 'Normal'
 
+
+" Treesitter.nvim Settings
 "-----------------------------------------------------
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+  enable = { "bash", "yaml", "vim", "lua", "json" },              -- false will disable the whole extension
+    disable = { },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
 " Indent plugin settings.
-"let g:indentLine_setColors = 0
+"-----------------------------------------------------
 let g:indentLine_enabled = 1
 let g:indentLine_defaultGroup = 'error'
 
-"-----------------------------------------------------
 " Fugitive Git settings.
+"-----------------------------------------------------
 cabbrev bgit bo Git
 
-"-----------------------------------------------------
 " Undotree Settings
+"-----------------------------------------------------
 if !exists('g:undotree_WindowLayout')
     let g:undotree_WindowLayout = 3
 endif
@@ -345,8 +382,8 @@ endif
 
 cabbrev utree UndotreeToggle
 
-"-----------------------------------------------------
 " ALE Settings.
+"-----------------------------------------------------
 let g:ale_linters = {
 \   'markdown': ['markdownlint'],
 \}
@@ -366,8 +403,8 @@ let g:ale_fixers = {
 \   '*':          ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
-"-----------------------------------------------------
 " Indent Line Settings
+"-----------------------------------------------------
 lua << EOF
 require("indent_blankline").setup {
     char = "|",
@@ -375,18 +412,8 @@ require("indent_blankline").setup {
 }
 EOF
 
-"-----------------------------------------------------
-" VIM theme settings.
-set termguicolors
-lua << EOF
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-require('nord').set()
-EOF
-
 " Lualine Settings
+"-----------------------------------------------------
 lua << EOF
 require'lualine'.setup {
   options = {
@@ -416,3 +443,16 @@ require'lualine'.setup {
   extensions = {}
 }
 EOF
+
+" VIM theme settings.
+"-----------------------------------------------------
+set termguicolors
+lua << EOF
+vim.g.nord_contrast = true
+vim.g.nord_borders = false
+vim.g.nord_disable_background = false
+vim.g.nord_italic = false
+require('nord').set()
+EOF
+
+colorscheme nord
