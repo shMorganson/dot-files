@@ -1,4 +1,4 @@
-# VIM 
+# VIM
 # Swap
 [._]*.s[a-v][a-z]
 !*.svg  # comment out if you don't need vector files
@@ -49,3 +49,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Brewfile
+Brewfile.lock.json
