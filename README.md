@@ -11,14 +11,12 @@ Dot files needed for setting up my Mac environment..
 #### Required Dependencies
 
 * Xcode Command line tools.
-* Vim
-* nodejs
-* SFMono Nerd Font
-* Vim-Plug
 
 **MacOS**
 ``` bash
 xcode-select —install --agree-to-license
 ```
 
-Run the **install.sh** from the repository on the Mac as an admin to setup the enviornemt.
+Run the **install.sh** from the repository on the Mac as an admin to setup the enviornemt. The install will setup everything and will call the Brewfile to setup other settings.
+
+The **BrewFile** needs to be in the **dot-files** repo so that it can be used to install everything.
