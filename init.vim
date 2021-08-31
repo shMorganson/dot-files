@@ -1,11 +1,5 @@
-"Calling Lua code/modules/plugins
-"-----------------------------------------------------
-" :lua require('lua/plugins')
-
-
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
+" NVIM Setting
+" ----------------------------------------------------------
 if has('filetype')
   filetype indent plugin on
 endif
@@ -15,24 +9,6 @@ if has('syntax')
   syntax on
 endif
 
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
 set hidden
 
 " Better command-line completion
@@ -44,14 +20,6 @@ set showcmd
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
-
-"------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -69,7 +37,8 @@ set autoindent
 " coming from other editors would expect.
 set nostartofline
 
-" Display the cursor position on the last line of the screen or in the status
+" Display the cursor
+" osition on the last line of the screen or in the status
 " line of a window
 set ruler
 
@@ -143,13 +112,8 @@ tnoremap :q! <C-\><C-n>:q!<CR>
 
 let running = jobwait([&channel], 0)[0] == -1
 
-"------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 4 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
+" Indentation options
+" -----------------------------------------------------------
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -165,8 +129,6 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 
 "------------------------------------------------------------
 " Start plug.vim
-" Specify a directory for plugins
-" - Avoid using standard Vim directory names like 'plugin'
 
 let g:plug_window = 'vertical new'
 call plug#begin('~/.vim/plugged')
@@ -209,20 +171,20 @@ let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_hide_dotfiles = 1
 let g:nvim_tree_git_hl = 1
 let g:nvim_tree_highlight_opened_files = 0
-let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-let g:nvim_tree_tab_open = 0 "0 by default, will open the tree when entering a new tab and the tree was previously open
-let g:nvim_tree_auto_resize = 1 "1 by default, will resize the tree to its saved width when opening a file
-let g:nvim_tree_disable_netrw = 1 "1 by default, disables netrw
-let g:nvim_tree_hijack_netrw = 1 "1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
-let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
-let g:nvim_tree_group_empty = 0 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_lsp_diagnostics = 0 "0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
-let g:nvim_tree_disable_window_picker = 0 "0 by default, will disable the window picker.
-let g:nvim_tree_hijack_cursor = 1 "1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
-let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-let g:nvim_tree_update_cwd = 0 "0 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
-let g:nvim_tree_respect_buf_cwd = 0 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+let g:nvim_tree_root_folder_modifier = ':~'
+let g:nvim_tree_tab_open = 0
+let g:nvim_tree_auto_resize = 1
+let g:nvim_tree_disable_netrw = 1
+let g:nvim_tree_hijack_netrw = 1
+let g:nvim_tree_add_trailing = 1
+let g:nvim_tree_group_empty = 0
+let g:nvim_tree_lsp_diagnostics = 0
+let g:nvim_tree_disable_window_picker = 0
+let g:nvim_tree_hijack_cursor = 1
+let g:nvim_tree_icon_padding = ' '
+let g:nvim_tree_symlink_arrow = ' >> '
+let g:nvim_tree_update_cwd = 0
+let g:nvim_tree_respect_buf_cwd = 0
 let g:nvim_tree_window_picker_exclude = {
     \   'filetype': [
     \     'packer',
@@ -232,24 +194,14 @@ let g:nvim_tree_window_picker_exclude = {
     \     'terminal'
     \   ]
     \ }
-" Dictionary of buffer option names mapped to a list of option values that
-" indicates to the window picker that the buffer's window should not be
-" selectable.
-" let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
+" let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 }
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
     \ 'files': 1,
     \ 'folder_arrows': 1,
     \ }
-"If 0, do not show the icons for one of 'git' 'folder' and 'files'
-"1 by default, notice that if 'files' is 1, it will only display
-"if nvim-web-devicons is installed and on your runtimepath.
-"if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
-"but this will not work when you set indent_markers (because of UI conflict)
 
-" default will show icon by default if no icon is provided
-" default shows no icon by default
 let g:nvim_tree_icons = {
     \ 'default': '',
     \ 'symlink': '',
@@ -314,7 +266,7 @@ let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar', 'nvimtree' ]
 let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'nvimtree', ]
-let g:minimap_highlight_range = 20
+let g:minimap_highlight_range = 10
 let g:minimap_git_colors = 1
 let g:minimap_diffadd_color = 'DiffAdd'
 let g:minimap_diffremove_color = 'DiffDelete'
@@ -332,15 +284,11 @@ let g:minimap_base_highlight = 'Normal'
 "-----------------------------------------------------
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",
   highlight = {
-  enable = { "bash", "yaml", "vim", "lua", "json" },              -- false will disable the whole extension
-    disable = { },  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+  enable = { "bash", "yaml", "vim", "lua", "json" },
+    disable = { },
+        additional_vim_regex_highlighting = false,
   },
 }
 EOF
