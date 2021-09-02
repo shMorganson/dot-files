@@ -5,6 +5,7 @@ require('plugins')
 require('nord').set()
 require('devicons.lua')
 require('lualine.lua')
+require('tools.terminal')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -65,6 +66,12 @@ map('', '<leader>n', '<cmd>NvimTreeToggle<CR>')
 map('', '<leader>r', '<cmd>NvimTreeRefresh<CR>')
 map('', '<leader>f', '<cmd>NvimTreeFindFile<CR>')
 
+-- Terminal mapping
+map('n', '<leader>t', ":lua require 'terminal'.terminal_toggle(15)<CR>", { noremap = true })
+
+cmd 'let running = jobwait([&channel], 0)[0] == -1'
+
+
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
 ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
@@ -115,6 +122,8 @@ g.minimap_base_highlight = 'Normal'
 g.vim_markdown_conceal = 0
 g.vim_markdown_conceal_code_blocks = 0
 
--- Fugitive Settings
+-- COC Settings 
+cmd 'source ~/.config/nvim/coc.vim'
 
-
+-- Undotree Settings
+cmd 'source ~/.config/nvim/undotree.vim'

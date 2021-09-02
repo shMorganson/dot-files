@@ -14,7 +14,6 @@ return require('packer').startup(function()
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'Shougo/deoplete.nvim'                 -- Used for autocomplete
   use 'neovim/nvim-lspconfig'                -- Used for configuring the nvim LSP.
   use {
     'kyazdani42/nvim-tree.lua',              -- Nvim tree
@@ -24,7 +23,8 @@ return require('packer').startup(function()
   'ojroques/nvim-lspfuzzy',
     requires = {
       {'junegunn/fzf'},
-      {'junegunn/fzf.vim'},  -- to enable preview (optional)
+      {'junegunn/fzf.vim'},                  -- to enable preview (optional)
     },
   }
+  use {'neoclide/coc.nvim', branch = 'release'}
 end)
