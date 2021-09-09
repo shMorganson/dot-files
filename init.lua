@@ -5,7 +5,6 @@ require('plugins')
 require('nord').set()
 require('devicons.lua')
 require('lualine.lua')
-require('tools.terminal')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -23,7 +22,7 @@ end
 g.nord_contrast = true          -- Nord theme settings
 g.nord_borders = false          -- Nord theme settings
 g.nord_disable_background = false  -- Nord theme settings
-g.nord_italic = false           -- Nord theme settings
+g.nord_italic = true           -- Nord theme settings
 opt.completeopt = "menuone,noselect"
 opt.expandtab = true                -- Use spaces instead of tabs
 opt.hidden = true                   -- Enable background buffers
@@ -66,16 +65,25 @@ map('', '<leader>n', '<cmd>NvimTreeToggle<CR>')
 map('', '<leader>r', '<cmd>NvimTreeRefresh<CR>')
 map('', '<leader>f', '<cmd>NvimTreeFindFile<CR>')
 
--- Terminal mapping
-map('n', '<leader>t', ":lua require 'terminal'.terminal_toggle(15)<CR>", { noremap = true })
+-- Terminal Settings
+map('t', '<Esc>', '<C-\\><C-n>')
+map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')
+
+function _G.split_term()
+   vim.api.nvim_command('split')
+   vim.api.nvim_command('resize 25')
+   vim.api.nvim_command('terminal')
+end
+
+map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})
 
 cmd 'let running = jobwait([&channel], 0)[0] == -1'
-
 
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
 ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
 
+-- LSP Config Settings
 local lsp = require 'lspconfig'
 local lspfuzzy = require 'lspfuzzy'
 
@@ -83,6 +91,8 @@ local lspfuzzy = require 'lspfuzzy'
 lsp.ccls.setup {}
 lsp.pylsp.setup {}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
+lsp.bashls.setup{}
+
 
 map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 map('n', '<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
@@ -122,8 +132,11 @@ g.minimap_base_highlight = 'Normal'
 g.vim_markdown_conceal = 0
 g.vim_markdown_conceal_code_blocks = 0
 
--- COC Settings 
-cmd 'source ~/.config/nvim/coc.vim'
+-- COC Settings
+cmd 'source ~/.config/nvim/vim/coc.vim'
 
 -- Undotree Settings
-cmd 'source ~/.config/nvim/undotree.vim'
+cmd 'source ~/.config/nvim/vim/undotree.vim'
+
+-- ALE Settings
+cmd 'source ~/.config/nvim/vim/ale.vim'

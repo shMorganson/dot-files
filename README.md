@@ -19,4 +19,4 @@ xcode-select —install --agree-to-license
 
 Run the **install.sh** from the repository on the Mac as an admin to setup the enviornemt. The install will setup everything and will call the Brewfile to setup other settings.
 
-The **BrewFile** needs to be in the **dot-files** repo so that it can be used to install everything.
+The **Brewfile** needs to be in the **dot-files** repo so that it can be used to install everything.
