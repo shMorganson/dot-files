@@ -19,6 +19,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Options
+cmd 'colorscheme nord'
 g.nord_contrast = true          -- Nord theme settings
 g.nord_borders = false          -- Nord theme settings
 g.nord_disable_background = false  -- Nord theme settings
@@ -40,7 +41,7 @@ opt.smartindent = true              -- Insert indents automatically
 opt.splitbelow = true               -- Put new windows below current
 opt.splitright = true               -- Put new windows right of current
 opt.tabstop = 2                     -- Number of spaces tabs count for
-opt.termguicolors = true            -- True color support
+--opt.termguicolors = true            -- True color support
 opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
 opt.wrap = false                    -- Disable line wrap
 opt.mouse = 'a'                     -- Enables mouse support

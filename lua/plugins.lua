@@ -10,7 +10,6 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'                   -- Fugitive for Git
   use 'mbbill/undotree'                      -- Undo Tree for visual undo history
   use 'dense-analysis/ale'                   -- ALE for linting
-  use 'shaunsingh/nord.nvim'                 -- Nord theme for nvim
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -27,4 +26,6 @@ return require('packer').startup(function()
     },
   }
   use {'neoclide/coc.nvim', branch = 'release'}
+  use 'shaunsingh/nord.nvim'
+  use 'darfink/vim-plist'
 end)

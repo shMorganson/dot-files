@@ -1,6 +1,6 @@
 vim.cmd [[packadd nvim-tree.lua]]
 
-vim.o.termguicolors = true
+--vim.o.termguicolors = true
 
 local g = vim.g
 
