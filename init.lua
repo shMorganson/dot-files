@@ -5,6 +5,7 @@ require('plugins')
 require('nord').set()
 require('devicons.lua')
 require('lualine.lua')
+require('indentline.lua')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -19,7 +20,6 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Options
-cmd 'colorscheme nord'
 g.nord_contrast = true          -- Nord theme settings
 g.nord_borders = false          -- Nord theme settings
 g.nord_disable_background = false  -- Nord theme settings
@@ -41,7 +41,7 @@ opt.smartindent = true              -- Insert indents automatically
 opt.splitbelow = true               -- Put new windows below current
 opt.splitright = true               -- Put new windows right of current
 opt.tabstop = 2                     -- Number of spaces tabs count for
---opt.termguicolors = true            -- True color support
+opt.termguicolors = true            -- True color support
 opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
 opt.wrap = false                    -- Disable line wrap
 opt.mouse = 'a'                     -- Enables mouse support
@@ -71,9 +71,9 @@ map('t', '<Esc>', '<C-\\><C-n>')
 map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')
 
 function _G.split_term()
-   vim.api.nvim_command('split')
-   vim.api.nvim_command('resize 25')
-   vim.api.nvim_command('terminal')
+  vim.api.nvim_command('split')
+  vim.api.nvim_command('resize 25')
+  vim.api.nvim_command('terminal')
 end
 
 map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})
@@ -110,28 +110,12 @@ cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabl
 cmd "syntax enable"
 cmd "syntax on"
 
--- MiniMap Settings
-g.minimap_width = 10
-g.minimap_auto_start = 1
-g.minimap_auto_start_win_enter = 1
-g.minimap_block_filetypes = {'fugitive', 'nerdtree', 'tagbar', 'nvimtree'}
-g.minimap_block_buftypes = {'nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'nvimtree'}
-g.minimap_highlight_range = 10
-g.minimap_git_colors = 1
-g.minimap_diffadd_color = 'DiffAdd'
-g.minimap_diffremove_color = 'DiffDelete'
-g.minimap_diff_color = 'DiffChange'
-g.minimap_highlight_search = 1
-g.minimap_search_color = 'Search'
-g.minimap_search_color_priority = 120
-g.minimap_cursor_color_priority = 110
-g.minimap_git_color_priority = 100
-g.minimap_highlight = 'Title'
-g.minimap_base_highlight = 'Normal'
-
 -- Markdown Settins
 g.vim_markdown_conceal = 0
 g.vim_markdown_conceal_code_blocks = 0
+
+-- MiniMap Settings
+cmd 'source ~/.config/nvim/vim/minimap.vim'
 
 -- COC Settings
 cmd 'source ~/.config/nvim/vim/coc.vim'
