@@ -52,3 +52,6 @@ Temporary Items
 
 # Brewfile
 Brewfile.lock.json
+
+# Temp files
+default.profraw
