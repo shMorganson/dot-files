@@ -6,7 +6,7 @@ brew "node"
 brew "nvim"
 brew "code-minimap"
 brew "terraform"
-brew "screenfetch"
+brew "neofetch"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
