@@ -20,7 +20,7 @@ Dot files needed for setting up my Mac environment..
 xcode-select —install --agree-to-license
 ```
 
-**Installing Oh My ZSH**
+**Installing [Oh My ZSH](https://ohmyz.sh)**
 ``` bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
