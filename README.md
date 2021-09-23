@@ -11,12 +11,34 @@ Dot files needed for setting up my Mac environment..
 #### Required Dependencies
 
 * Xcode Command line tools.
+* brew
+* packer.nvim
+* nvim
 
-**MacOS**
+**Installing Command Line Tools**
 ``` bash
 xcode-select —install --agree-to-license
 ```
 
-Run the **install.sh** from the repository on the Mac as an admin to setup the enviornemt. The install will setup everything and will call the Brewfile to setup other settings.
+**Installing Oh My ZSH**
+``` bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-The **Brewfile** needs to be in the **dot-files** repo so that it can be used to install everything.
+**Installing Brew**
+``` bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### Calling the Brewfile
+You need to call the Brewfile in ~/dot-files to install the app and tools from brew.
+
+``` bash
+brew bundle -file ~/dot-files/Brewfile
+```
+
+**Installing packer.nvim**
+``` bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
