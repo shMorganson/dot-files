@@ -16,7 +16,8 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'                -- Used for configuring the nvim LSP.
   use {
     'kyazdani42/nvim-tree.lua',              -- Nvim tree
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
   }
   use {
   'ojroques/nvim-lspfuzzy',
