@@ -1,4 +1,3 @@
-
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
@@ -11,78 +10,25 @@ if has('syntax')
   syntax on
 endif
 
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
+" Must have Options
+" ------------------------------------------------------------
 set hidden
-
-" Better command-line completion
-set wildmenu
-
-" Show partial commands in the last line of the screen
-set showcmd
-
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
-set hlsearch
-
-"------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
+set wildmenu "Better command-line completion
+set showcmd "Show partial commands in the last line of the screen
+set hlsearch "Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
+set ignorecase "Use case insensitive search, except when using capital letters
 set smartcase
-
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
-
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
+set backspace=indent,eol,start "Allow backspacing over autoindent, line breaks and start of insert action
 set autoindent
-
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-set nostartofline
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
+set nostartofline "Stop certain movements from always going to the first character of a line.
 set ruler
+set laststatus=2 "Always display the status line, even if only one window is displayed
+set confirm "Asking if you wish to save changed files.
+set visualbell "Use visual bell instead of beeping when doing something wrong
+set t_vb= "Reset the terminal code for the visual bell.
+set conceallevel=2
+set relativenumber
 
-" Always display the status line, even if only one window is displayed
-set laststatus=2
-
-" Instead of failing a command because of unsaved changes, instead raise a
-" dialogue asking if you wish to save changed files.
-set confirm
-
-" Use visual bell instead of beeping when doing something wrong
-set visualbell
-
-" And reset the terminal code for the visual bell. If visualbell is set, and
-" this line is also included, vim will neither flash nor beep. If visualbell
-" is unset, this does nothing.
-set t_vb=
 
 " Enable use of the mouse for all modes
 if has('mouse')
@@ -96,31 +42,23 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
-" Have yank copy to clipboard as well.
-set clipboard=unnamedplus,unnamed,autoselect
+" Copy to the clipboard at yank.
+vmap <leader>c "*y
 
 " Indentation settings.
 set listchars=tab:\|\
 set list
 
-"---------------------------------------------------------
-" Shortcut keys
-nnoremap <leader>t :bo term<CR>
-
 "----------------------------------------------------------
 " Terminal Settings
-" Open terminal below all splits
+nnoremap <leader>t :bo term<CR>
 cabbrev bterm bo term
 
 " Set the window size of the terminal.
 set termwinsize=15x0
 
 "------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 4 spaces instead of tabs.
+" Indentation options
 " Do not change 'tabstop' from its default value of 8 with this setup.
 set shiftwidth=4
 set softtabstop=4
@@ -163,30 +101,21 @@ Plug 'dense-analysis/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'darfink/vim-plist'
-Plug 'cocopon/inspecthi.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'mhartington/oceanic-next'
 
 call plug#end()
 
+vmap <leader>c "*y
+
 "------------------------------------------------------------
 " NERDTree Settings
-" Start NERDTree and put the cursor back in the other window.
-" autocmd VimEnter * NERDTree | wincmd p
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-" Exit Vim if NERDTree is the only window left.
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
-
-" Open the existing NERDTree on each new tab.
-" autocmd BufWinEnter * silent NERDTreeMirror
-
+" NERDTree UI Changes
 let NERDTreeHighlightCursorline = 1
 autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
 autocmd VimEnter,Colorscheme * :hi NERDTreeOpenable  guifg=#A3BE8C   ctermfg=2
@@ -195,8 +124,8 @@ autocmd VimEnter,Colorscheme * :hi NERDTreeCWD guifg=#92B3B3 ctermfg=14
 "autocmd VimEnter,Colorscheme * :hi NERDTreeFlags guifg=#FFFFFF ctermfg=7
 "autocmd VimEnter,Colorscheme * :hi NERDTreeDir guifg=#AF8EAC ctermfg=5
 
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+" NERDTree Shortcuts
+noremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
@@ -225,10 +154,8 @@ let g:webdevicons_enable_unite = 1
 
 " Adding to vim-airline's statusline
 let g:webdevicons_enable_airline_statusline = 1
-" Adding to vim-airline's tabline
-let g:webdevicons_enable_airline_tabline = 1
+let g:airline_powerline_fonts = 1
 
-let g:WebDevIconsOS = 'Darwin'
 set encoding=UTF-8
 
 " NERDTree Git Status Plugin Settings
@@ -271,7 +198,7 @@ let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar']
 let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'undotree']
-let g:minimap_highlight_range = 20
+let g:minimap_highlight_range = 30
 let g:minimap_git_colors = 1
 let g:minimap_diffadd_color = 'DiffAdd'
 let g:minimap_diffremove_color = 'DiffDelete'
@@ -281,7 +208,7 @@ let g:minimap_search_color = 'Search'
 let g:minimap_search_color_priority = 120
 let g:minimap_cursor_color_priority = 110
 let g:minimap_git_color_priority = 100
-let g:minimap_highlight = 'DiffAdd'
+let g:minimap_highlight = 'StatusLine'
 let g:minimap_base_highlight = 'Normal'
 
 "----------------------------------------------------
@@ -298,6 +225,7 @@ let g:indentLine_defaultGroup = 'error'
 "-----------------------------------------------------
 " Fugitive Git settings.
 cabbrev bgit bo Git
+nnoremap <leader>g :bo Git<CR>
 
 "-----------------------------------------------------
 " Undotree Settings
@@ -359,8 +287,11 @@ colorscheme nord
 "-----------------------------------------------------
 " Airline settings.
 let g:airline_theme = "nord"
-let g:airline_extensions = ['airline-ale']
 let g:airline#extensions#ale#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#branch#enabled = 1
+let airline#extensions#ale#error_symbol = 'E:'
+let airline#extensions#ale#warning_symbol = 'W:'
+let airline#extensions#ale#show_line_numbers = 1
+let airline#extensions#ale#open_lnum_symbol = '(L'
+let airline#extensions#ale#close_lnum_symbol = ')'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
