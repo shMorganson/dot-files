@@ -4,8 +4,11 @@ require('Nvim-Tree.lua')
 require('plugins')
 require('nord').set()
 require('devicons.lua')
-require('lualine.lua')
 require('indentline.lua')
+require('tools.terminal')
+require('mappings')
+require('lualine.lua')
+require('options')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -19,65 +22,11 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Options
+-- Nord Theme Options
 g.nord_contrast = true          -- Nord theme settings
 g.nord_borders = false          -- Nord theme settings
 g.nord_disable_background = false  -- Nord theme settings
 g.nord_italic = true           -- Nord theme settings
-opt.completeopt = "menuone,noselect"
-opt.expandtab = true                -- Use spaces instead of tabs
-opt.hidden = true                   -- Enable background buffers
-opt.ignorecase = true               -- Ignore case
-opt.joinspaces = false              -- No double spaces with join
-opt.list = true                     -- Show some invisible characters
-opt.number = true                   -- Show line numbers
-opt.relativenumber = true           -- Relative line numbers
-opt.scrolloff = 4                   -- Lines of context
-opt.shiftround = true               -- Round indent
-opt.shiftwidth = 2                  -- Size of an indent
-opt.sidescrolloff = 8               -- Columns of context
-opt.smartcase = true                -- Do not ignore case with capitals
-opt.smartindent = true              -- Insert indents automatically
-opt.splitbelow = true               -- Put new windows below current
-opt.splitright = true               -- Put new windows right of current
-opt.tabstop = 2                     -- Number of spaces tabs count for
-opt.termguicolors = true            -- True color support
-opt.wrap = false                    -- Disable line wrap
-opt.mouse = 'a'                     -- Enables mouse support
-opt.confirm = true                  -- Confirm before closing unsaved file
-opt.cmdheight = 2                   -- Set the command heght to 2 lines
-opt.showcmd = true
-
--- Mappings
-map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select and operator modes
-map('i', '<C-u>', '<C-g>u<C-u>')  -- Make <C-u> undo-friendly
-map('i', '<C-w>', '<C-g>u<C-w>')  -- Make <C-w> undo-friendly
-
--- <Tab> to navigate the completion menu
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-
-map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
-map('n', '<leader>o', 'm`o<Esc>``')  -- Insert a newline in normal mode
-
--- Nvimtree mapping
-map('', '<leader>n', '<cmd>NvimTreeToggle<CR>')
-map('', '<leader>r', '<cmd>NvimTreeRefresh<CR>')
-map('', '<leader>f', '<cmd>NvimTreeFindFile<CR>')
-
--- Terminal Settings
-map('t', '<Esc>', '<C-\\><C-n>')
-map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')
-
-function _G.split_term()
-  vim.api.nvim_command('split')
-  vim.api.nvim_command('resize 25')
-  vim.api.nvim_command('terminal')
-end
-
-map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})
-
-cmd 'let running = jobwait([&channel], 0)[0] == -1'
 
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
@@ -92,17 +41,6 @@ lsp.ccls.setup {}
 lsp.pylsp.setup {}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
 lsp.bashls.setup{}
-
-
-map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-map('n', '<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-map('n', '<space>d', '<cmd>lua vim.lsp.buf.definition()<CR>')
-map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-map('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>')
-map('n', '<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>')
-map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
-map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 
 -------------------- COMMANDS ------------------------------
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode}

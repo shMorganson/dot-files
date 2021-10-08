@@ -1,28 +1,20 @@
-local M = {}
+local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 
-local terminal_buffer_nr = nil
-local terminal_win_nr = nil
-
-M.terminal_toggle = function(height)
-  if terminal_win_nr ~= nil and vim.fn.win_gotoid(terminal_win_nr) then
-    if pcall(vim.cmd, 'hide') then
-      return
-    end
-  end
-
-  vim.cmd 'botright new'
-  vim.cmd('resize ' .. height)
-
-  if terminal_buffer_nr == nil or not pcall(vim.cmd, 'buffer ' .. terminal_buffer_nr) then
-    vim.fn.termopen(vim.env.SHELL, { detach = 0 })
-    terminal_buffer_nr = vim.fn.bufnr()
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-    vim.wo.signcolumn = 'no'
-  end
-  vim.cmd 'startinsert!'
-
-  terminal_win_nr = vim.fn.win_getid()
+local function map(mode, lhs, rhs, opts)
+  local options = {noremap = true}
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-return M
+function _G.split_term()
+  vim.api.nvim_command('split')
+  vim.api.nvim_command('resize 25')
+  vim.api.nvim_command('terminal')
+end
+
+function _G.vertsplit_term()
+  vim.api.nvim_command('vsplit')
+  vim.api.nvim_command('terminal')
+end
+
+cmd 'let running = jobwait([&channel], 0)[0] == -1'
