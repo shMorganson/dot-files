@@ -17,10 +17,6 @@ brew "neofetch"
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "iterm2"
-cask "bartender"
-cask "coteditor"
-cask "pppc-utility"
-cask "google-chrome"
 
 # 'mas install'
 # mas "1Password", id: 443987910
