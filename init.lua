@@ -9,6 +9,7 @@ require('tools.terminal')
 require('mappings')
 require('lualine.lua')
 require('options')
+require('nvimcmp.lua')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -55,7 +56,7 @@ g.vim_markdown_conceal_code_blocks = 0
 cmd 'source ~/.config/nvim/vim/minimap.vim'
 
 -- COC Settings
-cmd 'source ~/.config/nvim/vim/coc.vim'
+-- cmd 'source ~/.config/nvim/vim/coc.vim'
 
 -- Undotree Settings
 cmd 'source ~/.config/nvim/vim/undotree.vim'
