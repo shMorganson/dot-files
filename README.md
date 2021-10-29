@@ -53,4 +53,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 * Copy files
 * Need to copy files.
 * Setup Packer
-* Setup Coc
+* Setup nvimcmp

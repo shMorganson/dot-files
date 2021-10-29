@@ -2,13 +2,14 @@
 tap "epk/epk"
 
 # 'brew tap' with custom Git URL
-tap "scriptingosx/DownloadFullInstaller", "https://github.com/scriptingosx/DownloadFullInstaller.git"
+# tap "scriptingosx/DownloadFullInstaller", "https://github.com/scriptingosx/DownloadFullInstaller.git"
 
 # set arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
+# cask_args appdir: "~/Applications", require_sha: true
 
 # 'brew install'
 brew "node"
+brew "jsonnet"
 brew "nvim"
 brew "code-minimap"
 brew "terraform"
