@@ -4,11 +4,10 @@ vim.cmd [[packadd nvim-tree.lua]]
 
 local g = vim.g
 
-g.nvim_tree_hide_dotfiles = 1
 g.nvim_tree_refresh_wait = 1000
 g.nvim_tree_git_hl = 1
 g.nvim_tree_root_folder_modifier = ':~'
-g.nvim_tree_disable_window_picker = 1
+g.nvim_tree_disable_window_picker = 0
 g.nvim_tree_icon_padding = ' '
 g.nvim_tree_symlink_arrow = ' >> '
 g.nvim_tree_respect_buf_cwd = 1
@@ -74,6 +73,10 @@ require'nvim-tree'.setup {
   system_open = {
     cmd  = nil,
     args = {}
+  },
+    filters = {
+    dotfiles = true,
+    custom = {}
   },
   view = {
     width = 30,

@@ -1,9 +1,11 @@
 vim.cmd [[packadd lualine.nvim]]
 
+local colors = require("onenord.colors")
+
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'onenord',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = { 'NvimTree', 'minimap' }
@@ -27,7 +29,7 @@ require'lualine'.setup {
     lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
-  },
+ },
   tabline = {},
   extensions = {}
 }

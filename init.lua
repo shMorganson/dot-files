@@ -1,14 +1,14 @@
 -- Load all plugins
 require('lspconfig.lua')
 require('Nvim-Tree.lua')
-require('plugins')
-require('nord').set()
+require('core.plugins')
+--require('nord').set()
 require('devicons.lua')
 require('indentline.lua')
 require('tools.terminal')
-require('mappings')
+require('core.mappings')
 require('lualine.lua')
-require('options')
+require('core.options')
 require('nvimcmp.lua')
 
 -- Helpers
@@ -23,11 +23,8 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Nord Theme Options
-g.nord_contrast = true          -- Nord theme settings
-g.nord_borders = false          -- Nord theme settings
-g.nord_disable_background = false  -- Nord theme settings
-g.nord_italic = true           -- Nord theme settings
+-- Colorsheme for nvim
+cmd [[colorscheme onenord]]
 
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
@@ -55,11 +52,11 @@ g.vim_markdown_conceal_code_blocks = 0
 -- MiniMap Settings
 cmd 'source ~/.config/nvim/vim/minimap.vim'
 
--- COC Settings
--- cmd 'source ~/.config/nvim/vim/coc.vim'
-
 -- Undotree Settings
 cmd 'source ~/.config/nvim/vim/undotree.vim'
 
 -- ALE Settings
 cmd 'source ~/.config/nvim/vim/ale.vim'
+
+-- jsonnet Settings
+cmd 'source ~/.config/nvim/vim/jsonnet.vim'
