@@ -45,16 +45,8 @@ cmp.setup({
     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
-    --["<Tab>"] = function(fallback)
-    --    if cmp.visible() then
-    --      cmp.select_next_item()
-    --    elseif require("luasnip").expand_or_jumpable() then
-    --      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-    --    else
-    --      fallback()
-    --    end
-    --end,
   },
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.

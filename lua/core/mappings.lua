@@ -37,3 +37,8 @@ map('t', '<Esc>', '<C-\\><C-n>')  -- Exit Terminal
 map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')  -- Exit Terminal
 map("n", "<C-v>", ":call v:lua.vertsplit_term()<CR>", {noremap = true})  -- Vertical Terminal
 map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})  -- Horizontal Terminal
+
+-- Renamer
+map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })

@@ -10,6 +10,8 @@ require('core.mappings')
 require('lualine.lua')
 require('core.options')
 require('nvimcmp.lua')
+require('lspinstaller.lua')
+require('renamer.lua')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -31,14 +33,14 @@ local ts = require 'nvim-treesitter.configs'
 ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
 
 -- LSP Config Settings
-local lsp = require 'lspconfig'
-local lspfuzzy = require 'lspfuzzy'
+--local lsp = require 'lspconfig'
+--local lspfuzzy = require 'lspfuzzy'
 
 -- We use the default settings for ccls and pylsp: the option table can stay empty
-lsp.ccls.setup {}
-lsp.pylsp.setup {}
-lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
-lsp.bashls.setup{}
+--lsp.ccls.setup {}
+--lsp.pylsp.setup {}
+--lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
+--lsp.bashls.setup{}
 
 -------------------- COMMANDS ------------------------------
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode}
@@ -48,9 +50,6 @@ cmd "syntax on"
 -- Markdown Settins
 g.vim_markdown_conceal = 0
 g.vim_markdown_conceal_code_blocks = 0
-
--- MiniMap Settings
-cmd 'source ~/.config/nvim/vim/minimap.vim'
 
 -- Undotree Settings
 cmd 'source ~/.config/nvim/vim/undotree.vim'

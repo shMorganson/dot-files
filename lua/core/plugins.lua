@@ -1,7 +1,6 @@
 ------------------- PACKER ----------------------------------
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'               -- Packer can manage itself
-  use 'wfxr/minimap.vim'                     -- Minimap
   use 'lukas-reineke/indent-blankline.nvim'  -- Indent Line
   use {
   'nvim-lualine/lualine.nvim',
@@ -13,7 +12,10 @@ return require('packer').startup(function()
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'neovim/nvim-lspconfig'                -- Used for configuring the nvim LSP.
+  use {                                      -- Used for configuring the nvim LSP.
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer'
+    }
   use {
     'kyazdani42/nvim-tree.lua',              -- Nvim tree
     requires = 'kyazdani42/nvim-web-devicons',
@@ -39,4 +41,10 @@ return require('packer').startup(function()
   use 'rmehri01/onenord.nvim'                -- Onenord theme
   use 'darfink/vim-plist'                    -- plist syntax support plugin
   use 'google/vim-jsonnet'                   -- jsonnet syntax highlighting
+    use {
+      'filipdutescu/renamer.nvim',
+      branch = 'master',
+      requires = { {'nvim-lua/plenary.nvim'}
+      }
+    }
 end)

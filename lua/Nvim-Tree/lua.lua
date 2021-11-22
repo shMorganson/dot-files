@@ -14,37 +14,38 @@ g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_create_in_closed_folder = 0
 
 g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1
+  git = 1,
+  folders = 1,
+  files = 1,
+  folder_arrows = 0
 }
 
 g.nvim_tree_icons = {
-     default = "",
-     symlink = "",
-     git = {
-       unstaged = "✗",
-       staged = "✓",
-       unmerged = "",
-       renamed = "➜",
-       untracked = "★",
-       deleted = "",
-       ignored = "◌"
-     },
-     folder = {
-       arrow_open = "",
-       arrow_closed = "",
-       default = "",
-       open = "",
-       empty = "",
-       empty_open = "",
-       symlink = "",
-       symlink_open = "",
-     },
-
+  default = "",
+  symlink = "",
+    git = {
+      unstaged = "✗",
+      staged = "✓",
+      unmerged = "",
+      renamed = "➜",
+      untracked = "★",
+      deleted = "",
+      ignored = "◌"
+    },
+    folder = {
+      arrow_open = "",
+      arrow_closed = "",
+      default = "",
+      open = "",
+      empty = "",
+      empty_open = "",
+      symlink = "",
+      symlink_open = "",
+    },
 }
+
 local get_lua_cb = function(cb_name)
-    return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
+  return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
 end
 
 require'nvim-tree'.setup {
@@ -52,7 +53,7 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
+  auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = true,
