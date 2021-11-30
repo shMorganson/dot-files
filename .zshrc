@@ -1,3 +1,8 @@
+
+
+
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 #
 # Initialization code that may require console input (password prompts, [y/n]
@@ -116,9 +121,16 @@ fi
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Set Default Editor
-export EDITOR="nvim"
+export EDITOR="cot"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Terminal Colors
 export TERM="xterm-256color"
+
+# LazyGit Aliases
+echo "alias lg='lazygit'" >> ~/.zshrc
+
+
+
+
