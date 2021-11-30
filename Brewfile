@@ -11,13 +11,12 @@ tap "epk/epk"
 brew "node"
 brew "jsonnet"
 brew "nvim"
-brew "code-minimap"
 brew "terraform"
 brew "neofetch"
+brew "lazygit"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
-cask "iterm2"
 
 # 'mas install'
 # mas "1Password", id: 443987910
