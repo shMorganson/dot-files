@@ -62,7 +62,6 @@ Plug 'elzr/vim-json'
 Plug 'thaerkh/vim-indentguides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
@@ -201,11 +200,6 @@ let g:indentLine_enabled = 1
 let g:indentLine_defaultGroup = 'error'
 let g:indentguides_spacechar = '┆'
 let g:indentguides_tabchar = '|'
-
-
-" FUGITIVE GIT SETTINGS
-cabbrev bgit bo Git
-nnoremap <leader>g :bo Git<CR>
 
 
 " ALE SETTINGS
