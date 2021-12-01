@@ -1,9 +1,3 @@
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-if has('filetype')
-  filetype indent plugin on
-endif
 " OPTIONS
 set hidden                          " Enable background buffers
 set wildmenu                        " Better command-line completion
@@ -35,6 +29,10 @@ set tabstop=4
 " Enable syntax highlighting
 if has('syntax')
   syntax on
+endif
+
+if has('filetype')
+  filetype indent plugin on
 endif
 
 
@@ -72,16 +70,30 @@ Plug 'darfink/vim-plist'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/vim-jsonnet'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
 
 " TERMINAL SETTINGS
-nnoremap <leader>t :bo term<CR>
-cabbrev bterm bo term
+nnoremap <leader>t :call Horizontal_Terminal()<CR>
+nnoremap <leader>v :call Vertical_Terminal()<CR>
+
+" Setting up horizontal terminal
+function! Horizontal_Terminal()
+  set termwinsize=15x0
+  cabbrev bterm bo term
+  :bo term
+endfunction
+
+function! Vertical_Terminal()
+   set termwinsize=0x0
+   :vert term
+endfunction
 
 " Set the window size of the terminal.
-set termwinsize=15x0
+"set termwinsize=15x0
 
 
 " YAML SYNTAX SETTINGS
@@ -92,6 +104,14 @@ au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" NERDTree Options
+let NERDTreeChDirMode = 1
+let NERDTreeHijackNetrw = 1
+let NERDTreeChDirMode = 3
+let NERDTreeWinPos = 'left'
+let NERDTreeWinSize = 30
+let NERDTreeWinSizeMax = 35
 
 " NERDTree UI Changes
 let NERDTreeHighlightCursorline = 1
@@ -179,6 +199,8 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:indentguides_ignorelist = [ ]
 let g:indentLine_enabled = 1
 let g:indentLine_defaultGroup = 'error'
+let g:indentguides_spacechar = '┆'
+let g:indentguides_tabchar = '|'
 
 
 " FUGITIVE GIT SETTINGS
