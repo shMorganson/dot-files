@@ -236,5 +236,5 @@ let airline#extensions#ale#warning_symbol = 'W:'
 let airline#extensions#ale#show_line_numbers = 1
 let airline#extensions#ale#open_lnum_symbol = '(L'
 let airline#extensions#ale#close_lnum_symbol = ')'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = ' '
+let g:airline_right_sep = ' '
