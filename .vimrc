@@ -4,76 +4,46 @@
 if has('filetype')
   filetype indent plugin on
 endif
+" OPTIONS
+set hidden                          " Enable background buffers
+set wildmenu                        " Better command-line completion
+set showcmd                         " Show partial commands in the last line of the screen
+set hlsearch                        " Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
+set ignorecase                      " Use case insensitive search, except when using capital letters
+set smartcase                       " Do not ignore case with capitals
+set backspace=indent,eol,start      " Allow backspacing over autoindent, line breaks and start of insert action
+set autoindent                      " Inserts indents automatically
+set nostartofline                   " Stop certain movements from always going to the first character of a line.
+set ruler
+set laststatus=2                    " Always display the status line, even if only one window is displayed
+set confirm                         " Asking if you wish to save changed files.
+set visualbell                      " Use visual bell instead of beeping when doing something wrong
+set t_vb=                           " Reset the terminal code for the visual bell.
+set conceallevel=2
+set relativenumber
+set cmdheight=2                     " Set the command window height to 2 lines
+set number                          " Display line numbers on the left
+set listchars=tab:\|\               " Set the indentation settings
+set list                            " Also sets indentation settings
+set mouse=a                         " Enables mouse support
+set shiftwidth=4                    " Do not change 'tabstop' from its default value of 8 with this setup.
+set softtabstop=4
+set expandtab
+set shiftwidth=4                    " Indentation settings for using hard tabs for indent. Display tabs as four characters wide.
+set tabstop=4
 
 " Enable syntax highlighting
 if has('syntax')
   syntax on
 endif
 
-" Must have Options
-" ------------------------------------------------------------
-set hidden
-set wildmenu "Better command-line completion
-set showcmd "Show partial commands in the last line of the screen
-set hlsearch "Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
-set ignorecase "Use case insensitive search, except when using capital letters
-set smartcase
-set backspace=indent,eol,start "Allow backspacing over autoindent, line breaks and start of insert action
-set autoindent
-set nostartofline "Stop certain movements from always going to the first character of a line.
-set ruler
-set laststatus=2 "Always display the status line, even if only one window is displayed
-set confirm "Asking if you wish to save changed files.
-set visualbell "Use visual bell instead of beeping when doing something wrong
-set t_vb= "Reset the terminal code for the visual bell.
-set conceallevel=2
-set relativenumber
 
-
-" Enable use of the mouse for all modes
-if has('mouse')
-  set mouse=a
-endif
-
-" Set the command window height to 2 lines, to avoid many cases of having to
-" press <Enter> to continue"
-set cmdheight=2
-
-" Display line numbers on the left
-set number
-
+" MAPPINGS
 " Copy to the clipboard at yank.
 vmap <leader>c "*y
 
-" Indentation settings.
-set listchars=tab:\|\
-set list
 
-"----------------------------------------------------------
-" Terminal Settings
-nnoremap <leader>t :bo term<CR>
-cabbrev bterm bo term
-
-" Set the window size of the terminal.
-set termwinsize=15x0
-
-"------------------------------------------------------------
-" Indentation options
-" Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" four characters wide.
-set shiftwidth=4
-set tabstop=4
-
-"------------------------------------------------------------
-" YAML Syntax
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
-
-"------------------------------------------------------------
+" PLUGIN MANAGER
 " Start plug.vim
 set nocompatible
 let g:plug_window = 'vertical new'
@@ -91,26 +61,34 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'godlygeek/tabular' |
             \ Plug 'plasticboy/vim-markdown'
 Plug 'elzr/vim-json'
-Plug 'wfxr/minimap.vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'mbbill/undotree'
 Plug 'dense-analysis/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'darfink/vim-plist'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'google/vim-jsonnet'
 
 call plug#end()
 
-vmap <leader>c "*y
 
-"------------------------------------------------------------
-" NERDTree Settings
+" TERMINAL SETTINGS
+nnoremap <leader>t :bo term<CR>
+cabbrev bterm bo term
 
+" Set the window size of the terminal.
+set termwinsize=15x0
+
+
+" YAML SYNTAX SETTINGS
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+
+
+" NERDTREE SETTINGS
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
@@ -129,8 +107,8 @@ noremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-"----------------------------------------------------
-" Dev Icons
+
+" DEV ICON SETTINGS
 " Loading the plugin
 let g:webdevicons_enable = 1
 
@@ -148,7 +126,6 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
 let g:DevIconsDefaultFolderOpenSymbol = ''
 
-
 " Adding the custom source to unite
 let g:webdevicons_enable_unite = 1
 
@@ -158,8 +135,8 @@ let g:airline_powerline_fonts = 1
 
 set encoding=UTF-8
 
-" NERDTree Git Status Plugin Settings
-" ----------------------------------------------------
+
+" NERDTREE GIT STATUS PLUGIN SETTINGS
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
@@ -175,8 +152,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 let g:NERDTreeGitStatusConcealBrackets = 1
 
-" COC Settings
-" ----------------------------------------------------
+
+" COC SETTINGS
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -188,75 +165,28 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+
 " COC-YANK Settings
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
-"-----------------------------------------------------
-" Minimap Settings
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
-let g:minimap_block_filetypes = ['fugitive', 'nerdtree', 'tagbar']
-let g:minimap_block_buftypes = ['nofile', 'nowrite', 'quickfix', 'terminal', 'prompt', 'nerdtree', 'undotree']
-let g:minimap_highlight_range = 30
-let g:minimap_git_colors = 1
-let g:minimap_diffadd_color = 'DiffAdd'
-let g:minimap_diffremove_color = 'DiffDelete'
-let g:minimap_diff_color = 'DiffChange'
-let g:minimap_highlight_search = 1
-let g:minimap_search_color = 'Search'
-let g:minimap_search_color_priority = 120
-let g:minimap_cursor_color_priority = 110
-let g:minimap_git_color_priority = 100
-let g:minimap_highlight = 'StatusLine'
-let g:minimap_base_highlight = 'Normal'
 
-"----------------------------------------------------
-" Markdown Settings
+" MARKDOWN SETTINGS
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-"-----------------------------------------------------
-" Indent plugin settings.
-"let g:indentLine_setColors = 0
+
+" VIM INDENT GUIDES SETTINGS
+let g:indentguides_ignorelist = [ ]
 let g:indentLine_enabled = 1
 let g:indentLine_defaultGroup = 'error'
 
-"-----------------------------------------------------
-" Fugitive Git settings.
+
+" FUGITIVE GIT SETTINGS
 cabbrev bgit bo Git
 nnoremap <leader>g :bo Git<CR>
 
-"-----------------------------------------------------
-" Undotree Settings
-if !exists('g:undotree_WindowLayout')
-    let g:undotree_WindowLayout = 3
-endif
 
-" e.g. using 'd' instead of 'days' to save some space.
-if !exists('g:undotree_ShortIndicators')
-    let g:undotree_ShortIndicators = 0
-endif
-
-" undotree window width
-if !exists('g:undotree_SplitWidth')
-    if g:undotree_ShortIndicators == 1
-        let g:undotree_SplitWidth = 18
-    else
-        let g:undotree_SplitWidth = 24
-    endif
-endif
-
-" if set, let undotree window get focus after being opened, otherwise
-" focus will stay in current window.
-if !exists('g:undotree_SetFocusWhenToggle')
-    let g:undotree_SetFocusWhenToggle = 1
-endif
-
-cabbrev utree UndotreeToggle
-
-"-----------------------------------------------------
-" ALE Settings.
+" ALE SETTINGS
 let g:ale_linters = {
 \   'markdown': ['markdownlint'],
 \}
@@ -276,16 +206,13 @@ let g:ale_fixers = {
 \   '*':          ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
-"-----------------------------------------------------
-" VIM theme settings.
 
-
+" VIM THEME SETTINGS
 set t_Co=256
 set background=dark
 colorscheme nord
 
-"-----------------------------------------------------
-" Airline settings.
+" AIRLINE SETTINGS
 let g:airline_theme = "nord"
 let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = 'E:'
@@ -293,5 +220,5 @@ let airline#extensions#ale#warning_symbol = 'W:'
 let airline#extensions#ale#show_line_numbers = 1
 let airline#extensions#ale#open_lnum_symbol = '(L'
 let airline#extensions#ale#close_lnum_symbol = ')'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
