@@ -71,6 +71,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/vim-jsonnet'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
