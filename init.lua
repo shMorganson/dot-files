@@ -2,7 +2,6 @@
 require('lspconfig.lua')
 require('Nvim-Tree.lua')
 require('core.plugins')
---require('nord').set()
 require('devicons.lua')
 require('indentline.lua')
 require('tools.terminal')
@@ -31,16 +30,6 @@ cmd [[colorscheme onenord]]
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
 ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
-
--- LSP Config Settings
---local lsp = require 'lspconfig'
---local lspfuzzy = require 'lspfuzzy'
-
--- We use the default settings for ccls and pylsp: the option table can stay empty
---lsp.ccls.setup {}
---lsp.pylsp.setup {}
---lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
---lsp.bashls.setup{}
 
 -------------------- COMMANDS ------------------------------
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode}
