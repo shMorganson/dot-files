@@ -53,4 +53,8 @@ return require('packer').startup(function()
 	    "catppuccin/nvim",
 	    as = "catppuccin"
   })
+  use {                                      -- Telescope plugin
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+  }
 end)

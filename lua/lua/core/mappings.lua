@@ -35,12 +35,14 @@ map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = t
 -- Dashboard Mappings
 map('n', '<leader>ss', '<cmd>SessionSave<CR>')
 map('n', '<leader>l', '<cmd>SessionLoad<CR>')
-map('n', '<leader>ff', '<cmd>Files<CR>')
-map('n', '<leader>fh', '<cmd>History<CR>')
 map('n', '<leader>en', '<cmd>DashboardNewFile<CR>')
 map('n', '<leader>u', '<cmd>PackerUpdate<CR>')
 map('n', '<leader>ev', '<cmd>edit $MYVIMRC<CR>')
 map('n', '<leader>q', '<cmd>exit<CR>')
 
---nmap <Leader>ss :<C-u>SessionSave<CR>
---nmap <Leader>sl :<C-u>SessionLoad<CR>
+-- Telescope
+map('n', '<leader>fb', '<cmd>Telescope marks<CR>')
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>fh', '<cmd>Telescope oldfiles<CR>')
+map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>')
+map('n', '<leader>bl', '<cmd>Telescope buffers<CR>')
