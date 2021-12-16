@@ -11,6 +11,7 @@ require('core.options')
 require('nvimcmp.lua')
 require('lspinstaller.lua')
 require('renamer.lua')
+require('dashboard.lua')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
@@ -23,9 +24,6 @@ local function map(mode, lhs, rhs, opts)
   if opts then options = vim.tbl_extend('force', options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
--- Colorsheme for nvim
-cmd [[colorscheme onenord]]
 
 -- TreeSitter Settings
 local ts = require 'nvim-treesitter.configs'
