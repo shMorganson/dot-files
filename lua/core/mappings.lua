@@ -21,17 +21,6 @@ map('', '<leader>n', '<cmd>NvimTreeToggle<CR>')  -- Toggle nvimTree
 map('', '<leader>r', '<cmd>NvimTreeRefresh<CR>')  -- Refresh nvimTree
 map('', '<leader>f', '<cmd>NvimTreeFindFile<CR>') -- Find File
 
--- LSP Mappings
-map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-map('n', '<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-map('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-map('n', '<space>d', '<cmd>lua vim.lsp.buf.definition()<CR>')
-map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-map('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>')
-map('n', '<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>')
-map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
-map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-
 -- Terminal Mappings
 map('t', '<Esc>', '<C-\\><C-n>')  -- Exit Terminal
 map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')  -- Exit Terminal
@@ -42,3 +31,18 @@ map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})  -- Horizont
 map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+
+-- Dashboard Mappings
+map('n', '<leader>ss', '<cmd>SessionSave<CR>')
+map('n', '<leader>l', '<cmd>SessionLoad<CR>')
+map('n', '<leader>en', '<cmd>DashboardNewFile<CR>')
+map('n', '<leader>u', '<cmd>PackerUpdate<CR>')
+map('n', '<leader>ev', '<cmd>edit $MYVIMRC<CR>')
+map('n', '<leader>q', '<cmd>exit<CR>')
+
+-- Telescope
+map('n', '<leader>fb', '<cmd>Telescope marks<CR>')
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>fh', '<cmd>Telescope oldfiles<CR>')
+map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>')
+map('n', '<leader>bl', '<cmd>Telescope buffers<CR>')
