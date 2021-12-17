@@ -1,6 +1,7 @@
 ------------------- PACKER ----------------------------------
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'               -- Packer can manage itself
+  use 'glepnir/dashboard-nvim'
   use 'lukas-reineke/indent-blankline.nvim'  -- Indent Line
   use {
   'nvim-lualine/lualine.nvim',
@@ -47,4 +48,13 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'}
       }
     }
+  use 'rose-pine/neovim'                     -- Rose Pine Theme
+  use({                                      -- Catppuccin Theme
+	    "catppuccin/nvim",
+	    as = "catppuccin"
+  })
+  use {                                      -- Telescope plugin
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+  }
 end)
