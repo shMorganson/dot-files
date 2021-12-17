@@ -31,44 +31,44 @@ local catppuccin = require("catppuccin")
 
 -- Configure the theme
 catppuccin.setup({
-		transparent_background = false,
-		term_colors = true,
-		styles = {
-			comments = "italic",
-			functions = "NONE",
-			keywords = "NONE",
-			strings = "NONE",
-			variables = "NONE",
-		},
-		integrations = {
-			treesitter = true,
-			native_lsp = {
-				enabled = true,
-				virtual_text = {
-					errors = "italic",
-					hints = "italic",
-					warnings = "italic",
-					information = "italic",
-				},
-				underlines = {
-					errors = "underline",
-					hints = "underline",
-					warnings = "underline",
-					information = "underline",
-				},
-			},
-			gitsigns = true,
-			nvimtree = {
-				enbled = true,
-				show_root = true,
-			},
-			indent_blankline = {
-				enabled = true,
-				colored_indent_levels = false,
-			},
-			dashboard = true,
-			markdown = false,
-		},
+    transparent_background = false,
+    term_colors = true,
+    styles = {
+      comments = "italic",
+      functions = "NONE",
+      keywords = "NONE",
+      strings = "NONE",
+      variables = "NONE",
+    },
+    integrations = {
+      treesitter = true,
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = "italic",
+          hints = "italic",
+          warnings = "italic",
+          information = "italic",
+        },
+        underlines = {
+          errors = "underline",
+          hints = "underline",
+          warnings = "underline",
+          information = "underline",
+        },
+      },
+      gitsigns = true,
+      nvimtree = {
+        enbled = true,
+        show_root = true,
+      },
+      indent_blankline = {
+        enabled = true,
+        colored_indent_levels = false,
+      },
+      dashboard = true,
+      markdown = false,
+    },
 })
 
 -- OneNord Settings
