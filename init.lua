@@ -12,6 +12,7 @@ require('nvimcmp.lua')
 require('lspinstaller.lua')
 require('renamer.lua')
 require('dashboard.lua')
+require('telescope.lua')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
