@@ -98,4 +98,5 @@ return require('packer').startup(function()
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
 end)
