@@ -89,7 +89,6 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'}
       }
     }
-  use 'rose-pine/neovim'                     -- Rose Pine Theme
   use({                                      -- Catppuccin Theme
 	    "catppuccin/nvim",
 	    as = "catppuccin"
