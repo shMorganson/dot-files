@@ -35,6 +35,10 @@ map('n', '<leader>u', '<cmd>PackerUpdate<CR>')
 map('n', '<leader>ev', '<cmd>edit $MYVIMRC<CR>')
 map('n', '<leader>q', '<cmd>exit<CR>')
 
+-- Fugitive Mappings
+map('n', '<leader>g', '<cmd>Git<CR>')
+map('n', '<leader>gp', '<cmd>Git push<CR>')
+
 -- Telescope
 map('n', '<leader>fb', '<cmd>Telescope marks<CR>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
