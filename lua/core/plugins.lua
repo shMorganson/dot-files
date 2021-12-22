@@ -2,7 +2,7 @@
 local fn = vim.fn
 
 -- Automatically install Packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer..nvim"
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
     "git",
@@ -89,13 +89,21 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'}
       }
     }
-  use({                                      -- Catppuccin Theme
-	    "catppuccin/nvim",
-	    as = "catppuccin"
-  })
   use {                                      -- Telescope plugin
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
+
+  use({
+	"catppuccin/nvim",
+	as = "catppuccin"
+  })
+  --use 'goolord/alpha-nvim'
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)

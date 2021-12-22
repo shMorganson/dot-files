@@ -5,21 +5,21 @@ local colors = require("onenord.colors")
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'onenord',
+    theme = 'catppuccin',
     component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ' '},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = { 'NvimTree' }
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { right = '' }, right_padding = 0 },
+      { 'mode', separator = { left = '' }, right_padding = 2 },
     },
     lualine_b = {'branch'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {
-     { 'location', separator = { left = ' ' }, left_padding = 0 },
+     { 'location', separator = { right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
