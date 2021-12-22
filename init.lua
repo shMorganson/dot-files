@@ -32,8 +32,5 @@ g.vim_markdown_conceal_code_blocks = 0
 -- Undotree Settings
 cmd 'source ~/.config/nvim/vim/undotree.vim'
 
--- ALE Settings
-cmd 'source ~/.config/nvim/vim/ale.vim'
-
 -- jsonnet Settings
 cmd 'source ~/.config/nvim/vim/jsonnet.vim'
