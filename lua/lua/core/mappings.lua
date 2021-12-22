@@ -27,11 +27,6 @@ map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')  -- Exit Terminal
 map("n", "<C-v>", ":call v:lua.vertsplit_term()<CR>", {noremap = true})  -- Vertical Terminal
 map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})  -- Horizontal Terminal
 
--- Renamer
-map('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-map('n', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-map('v', '<leader>rn', '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
-
 -- Dashboard Mappings
 map('n', '<leader>ss', '<cmd>SessionSave<CR>')
 map('n', '<leader>l', '<cmd>SessionLoad<CR>')
@@ -46,3 +41,6 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fh', '<cmd>Telescope oldfiles<CR>')
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>')
 map('n', '<leader>bl', '<cmd>Telescope buffers<CR>')
+
+-- Undotree
+map('n', '<leader>ut', '<cmd>UndotreeToggle<CR>')

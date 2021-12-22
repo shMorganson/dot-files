@@ -1,7 +1,5 @@
 vim.cmd [[packadd nvim-tree.lua]]
 
---vim.o.termguicolors = true
-
 local g = vim.g
 
 g.nvim_tree_refresh_wait = 1000
@@ -53,10 +51,14 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
+  auto_close          = false,
   open_on_tab         = false,
-  hijack_cursor       = false,
+  hijack_cursor       = true,
   update_cwd          = true,
+  update_to_buf_dir   = {
+    enable = true,
+    auto_open = true,
+  },
   diagnostics = {
     enable = true,
     icons = {
@@ -69,26 +71,37 @@ require'nvim-tree'.setup {
   update_focused_file = {
     enable      = true,
     update_cwd  = true,
-    ignore_list = {"terminal"}
+    ignore_list = {}
   },
   system_open = {
     cmd  = nil,
     args = {}
   },
-    filters = {
+  filters = {
     dotfiles = true,
     custom = {}
   },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 500,
+ },
   view = {
     width = 30,
+    height = 30,
+    hide_root_folder = false,
     side = 'left',
-    auto_resize = true,
+    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
-    }
+    },
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes"
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true
   }
 }
-
--- Custom highlight colors.
--- g.highlight ExecFile gui=bold guibg=blue
