@@ -6,4 +6,14 @@ require "nvim-web-devicons".set_icon {
           color = "#B48EAD",
           name = "sh"
       },
+      brewfile = {
+        icon = "",
+        color = "#874423",
+        name = "brewfile"
+      },
+      git = {
+        icon = "",
+        color = "#F2F2F2",
+        name = "git",
+      },
 }

@@ -2,7 +2,7 @@ vim.cmd [[packadd dashboard-nvim]]
 
 local g = vim.g
 
-g.dashboard_default_executive ='fzf'
+g.dashboard_default_executive ='Telescope'
 g.dashboard_custom_section = {
     a = {description = {"  Find File                 leader f f"}, command = "Telescope find_files"},
     b = {description = {"  Recents                   leader f h"}, command = "Telescope oldfiles"},
@@ -22,4 +22,8 @@ g.dashboard_custom_header = {
  ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
  ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+}
+
+g.dashboard_custom_footer = {
+    'NEOVIM 0.6.0',
 }
