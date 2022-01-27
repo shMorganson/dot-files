@@ -14,6 +14,8 @@ brew "nvim"
 brew "terraform"
 brew "neofetch"
 brew "lazygit"
+brew "tree"
+brew "code-minimap"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
