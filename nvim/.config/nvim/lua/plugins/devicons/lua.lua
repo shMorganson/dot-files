@@ -1,0 +1,24 @@
+local devicons_status_ok, nvim_web_devicons = pcall(require, "nvim-web-devicons")
+if not devicons_status_ok then
+  print("nvim-web-devicons is broken or not installed.")
+  return
+end
+
+
+require "nvim-web-devicons".set_icon {
+      sh = {
+          icon = "",
+          color = "#B48EAD",
+          name = "sh"
+      },
+      brewfile = {
+        icon = "",
+        color = "#874423",
+        name = "brewfile"
+      },
+      git = {
+        icon = "",
+        color = "#F2F2F2",
+        name = "git",
+      },
+}

@@ -1,0 +1,26 @@
+local M = {
+  ["rosewater"] = "#f5e0dc",
+  ["flamingo"] = "#f2cdcd",
+  ["mauve"] = "#ddb6f2",
+  ["pink"] = "#f5c2e7",
+  ["maroon"] = "#e8a2af",
+  ["red"] = "#f28fad",
+  ["peach"] = "#f8bd96",
+  ["yellow"] = "#fae3b0",
+  ["green"] = "#abe9b3",
+  ["teal"] = "#b5e8e0",
+  ["blue"] = "#96cdfb",
+  ["sky"] = "#89dceb",
+  ["lavender"] = "#c9cbff",
+  ["black_0"] = "#161320",
+  ["black_1"] = "#1a1826",
+  ["black_2"] = "#1e1e2e",
+  ["black_3"] = "#302d41",
+  ["black_4"] = "#575268",
+  ["grey_0"] = "#6e6c7e",
+  ["grey_1"] = "#988ba2",
+  ["grey_2"] = "#c3bac6",
+  ["white"] = "#d9eoee",
+  }
+
+return M

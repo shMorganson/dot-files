@@ -16,6 +16,7 @@ brew "neofetch"
 brew "lazygit"
 brew "tree"
 brew "code-minimap"
+brew "stow"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
