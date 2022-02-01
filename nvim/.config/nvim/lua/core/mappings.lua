@@ -40,7 +40,7 @@ map('n', '<leader>fp', '<cmd>Telescope projects<CR>')
 map('n', '<leader>fb', '<cmd>Telescope file_browser<CR>',{ noremap = true })  -- File Browser in Telescope
 
 -- Nvim Tree Mappings
-map('n', '<leader>ft', '<cmd>NvimTreeOpen<CR>', {noremap = true})
+map('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', {noremap = true})
 
 -- Undotree
 map('n', '<leader>ut', '<cmd>UndotreeToggle<CR>')
