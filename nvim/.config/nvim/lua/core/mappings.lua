@@ -47,3 +47,6 @@ map('n', '<leader>ut', '<cmd>UndotreeToggle<CR>')
 
 -- LazyGit Mappings
 map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
+
+-- symbols-outline Mappings
+map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})

@@ -89,7 +89,7 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
     requires = {
-      'kyazdani42/nvim-web-devicons', 
+      'kyazdani42/nvim-web-devicons',
     },
   }
   use 'goolord/alpha-nvim'
@@ -98,6 +98,7 @@ return require('packer').startup(function()
   as = "catppuccin"
   })
   use 'wfxr/minimap.vim'                     -- Minimap for neovim
+  use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

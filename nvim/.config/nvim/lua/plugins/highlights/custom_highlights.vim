@@ -22,5 +22,6 @@ highlight TelescopeNormal guifg=#FAE3B0 guibg=#302D41
 
 " NvimTree Highlights
 highlight NvimTreeFolderIcon guifg=#FAE3B0
+" highlight NvimTreeIndentMarker guifg=#C3BAC6
 " highlight NvimTreeFolderName gui=bold guifg=#83a598
 " highlight NvimTreeOpenedFolderName gui=bold guifg=#b8bb26
