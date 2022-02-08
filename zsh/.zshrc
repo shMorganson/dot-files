@@ -7,6 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 # Plugins
 # source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
