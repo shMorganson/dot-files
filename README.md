@@ -11,18 +11,13 @@ Dot files needed for setting up my Mac environment..
 #### Required Dependencies
 
 * Xcode Command line tools.
-* brew
-* packer.nvim
+* Brew
+* stow
 * nvim
 
 **Installing Command Line Tools**
 ``` bash
 xcode-select —install --agree-to-license
-```
-
-**Installing [Oh My ZSH](https://ohmyz.sh)**
-``` bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 **Installing [Brew](https://brew.sh)**
@@ -36,21 +31,9 @@ You need to call the Brewfile in ~/dot-files to install the app and tools from b
 brew bundle -file ~/dot-files/Brewfile
 ```
 
-**Installing [packer.nvim](https://github.com/wbthomason/packer.nvim)**
+#### Using Stow
+Use stow to put the config files where they belong. 
+Example code for Neovim:
 ``` bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+stow nvim
 ```
-
-### Setup iTerm
-* Import the Nord colors.
-**Prefernces > Profiles > Colors > Color Presets > Import**
-
-* Import from **~/dot-files/Terminal-Themes/Nord.itermcolors**.
-
-* Import the iTerm Profile.
-
-* Copy files
-* Need to copy files.
-* Setup Packer
-* Setup nvimcmp
