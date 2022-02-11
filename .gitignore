@@ -55,3 +55,6 @@ Brewfile.lock.json
 
 # Temp files
 default.profraw
+
+# Directories to ignore
+~/.config/nvim/plugin/
