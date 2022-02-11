@@ -47,7 +47,7 @@ catppuccin.setup({
 
 -- Setting the theme
 vim.o.background = "dark"
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme sonokai]]
 
 -- Calling custom highlights
 vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'

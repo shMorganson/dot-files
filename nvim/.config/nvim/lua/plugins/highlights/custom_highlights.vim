@@ -1,24 +1,25 @@
 " Telescope Highlights
 " Prompt
-highlight TelescopePromptTitle guifg=#302D41 guibg=#F28FAD
-highlight TelescopePromptPrefix guifg=#F28FAD
-highlight TelescopePrompt guibg=#575268
-highlight TelescopePromptBorder guifg=#83a598 guibg=#575268
-highlight TelescopePromptCounter guifg=#C3BAC6
-highlight TelescopePromptNormal guibg=#575268
+highlight TelescopePromptTitle guifg=#363944 guibg=#ff6077
+highlight TelescopePromptPrefix guifg=#ff6077
+highlight TelescopePrompt guibg=#414550
+highlight TelescopePromptBorder guifg=#83a598 guibg=#414550
+highlight TelescopePromptCounter guifg=#7f8490
+highlight TelescopePromptNormal guibg=#414550
 
 " Results
-highlight TelescopeResultsTitle guifg=#302D41 guibg=#ABE9B3
-highlight TelescopeResultsBorder guifg=#8ec07c guibg=#302d41
+highlight TelescopeResultsTitle guifg=#363944 guibg=#9ed072
+highlight TelescopeResultsBorder guifg=#8ec07c guibg=#363944
 
 " Preview
-highlight TelescopePreviewTitle guifg=#302D41 guibg=#ABE9B3
-highlight TelescopePreviewBorder guifg=#8ec07c guibg=#1A1826
-highlight TelescopePreviewNormal guifg=#FAE3B0 guibg=#1A1826 
+highlight TelescopePreviewTitle guifg=#363944 guibg=#9ed072
+highlight TelescopePreviewBorder guifg=#8ec07c guibg=#181819
+highlight TelescopePreviewNormal guifg=#FAE3B0 guibg=#181819 
 
 " Other
-highlight TelescopeSelection gui=bold guifg=#FAE3B0 guibg=#575268
-highlight TelescopeNormal guifg=#FAE3B0 guibg=#302D41
+highlight TelescopeSelection gui=bold guifg=#e2e2e3 guibg=#33353f
+highlight TelescopeNormal guifg=#7f8490 guibg=#363944
+highlight TelescopeSelectionCaret guifg=#ff6077
 
 " NvimTree Highlights
 highlight NvimTreeFolderIcon guifg=#FAE3B0
