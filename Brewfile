@@ -17,6 +17,8 @@ brew "lazygit"
 brew "tree"
 brew "code-minimap"
 brew "stow"
+brew "utm"
+brew "htop"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"

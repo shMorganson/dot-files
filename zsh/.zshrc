@@ -35,6 +35,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # Alias List
 alias lg='lazygit'
+alias ht='sudo htop'
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
