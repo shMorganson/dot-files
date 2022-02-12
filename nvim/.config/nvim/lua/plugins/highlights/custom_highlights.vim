@@ -17,12 +17,12 @@ highlight TelescopePreviewBorder guifg=#8ec07c guibg=#181819
 highlight TelescopePreviewNormal guifg=#FAE3B0 guibg=#181819 
 
 " Other
-highlight TelescopeSelection gui=bold guifg=#e2e2e3 guibg=#33353f
-highlight TelescopeNormal guifg=#7f8490 guibg=#363944
+highlight TelescopeSelection gui=bold guifg=#ff6077 guibg=#33353f
+highlight TelescopeNormal guifg=#e2e2e3 guibg=#363944
 highlight TelescopeSelectionCaret guifg=#ff6077
 
 " NvimTree Highlights
-highlight NvimTreeFolderIcon guifg=#FAE3B0
+highlight NvimTreeFolderIcon guifg=#e7c664
 " highlight NvimTreeIndentMarker guifg=#C3BAC6
 " highlight NvimTreeFolderName gui=bold guifg=#83a598
 " highlight NvimTreeOpenedFolderName gui=bold guifg=#b8bb26

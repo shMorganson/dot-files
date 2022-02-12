@@ -50,7 +50,8 @@ require('telescope').setup{
     },
     file_browser = {
       --theme = "gruvbox",
-      dir_icon = ""
+      dir_icon = "",
+      dir_icon_hl = "Yellow"
     }
     -- extension_name = {
     --   extension_config_key = value,
