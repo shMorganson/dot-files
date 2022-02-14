@@ -32,6 +32,7 @@ export EDITOR="nvim"
 export TERMINAL="iterm"
 export BROWSER="safari"
 export PATH="/opt/homebrew/bin:$PATH"
+export TERM=xterm
 
 # Alias List
 alias lg='lazygit'

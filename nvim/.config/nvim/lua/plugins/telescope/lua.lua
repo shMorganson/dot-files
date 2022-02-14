@@ -51,8 +51,8 @@ require('telescope').setup{
     file_browser = {
       --theme = "gruvbox",
       dir_icon = "",
-      dir_icon_hl = "Yellow"
-    }
+      dir_icon_hl = "NvimTreeFolderIcon",
+    },
     -- extension_name = {
     --   extension_config_key = value,
     -- }
