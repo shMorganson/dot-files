@@ -12,9 +12,9 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 # source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # zsh-autocomplete Settings
-# zstyle ':autocomplete:*' default-context ''
-# zstyle ':autocomplete:*' min-input 3
-# zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:*' default-context ''
+zstyle ':autocomplete:*' min-input 3
+zstyle ':autocomplete:*' insert-unambiguous yes
 
 # FZF
 # TODO update for mac
@@ -43,3 +43,7 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /opt/homebrew/bin/terraform terraform

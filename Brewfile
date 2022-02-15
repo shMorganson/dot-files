@@ -22,6 +22,7 @@ brew "htop"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"
+cask "homebrew/cask/docker"
 
 # 'mas install'
 # mas "1Password", id: 443987910
