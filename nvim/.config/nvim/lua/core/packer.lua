@@ -48,7 +48,6 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim
-  use 'mbbill/undotree'                      -- Undo Tree for visual undo history
   use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use 'plasticboy/vim-markdown'              -- Markdown plugin
@@ -84,7 +83,7 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
-  use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
+  -- use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
   use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme(lua)
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
@@ -101,6 +100,7 @@ return require('packer').startup(function()
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
   use 'sainnhe/sonokai'                      -- Sonokai theme
   use 'shaunsingh/nord.nvim'                 -- Nord theme
+  use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

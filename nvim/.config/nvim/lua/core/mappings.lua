@@ -8,6 +8,7 @@ end
 map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select and operator modes
 map('i', '<C-u>', '<C-g>u<C-u>')  -- Make <C-u> undo-friendly
 map('i', '<C-w>', '<C-g>u<C-w>')  -- Make <C-w> undo-friendly
+map('n', '<leader>t', '<cmd>tabnew<CR>', {noremap =true})  -- Open a new tab
 
 map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
 map('n', '<leader>o', 'm`o<Esc>``')  -- Insert a newline in normal mode
@@ -27,7 +28,9 @@ map('n', '<leader>ip', '<cmd>e: ~/.config/nvim/lua/core/packer.lua<CR>')
 
 -- Fugitive Mappings
 map('n', '<leader>g', '<cmd>Git<CR>', {noremap = true})
-map('n', '<leader>gp', '<cmd>Git push<CR>')
+map('n', '<leader>gp', '<cmd>Git push<CR>', {noremap = true})
+map('n', '<leader>gl', '<cmd>Git log<CR>', {noremap = true})
+map('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', {noremap = true})
 
 -- Telescope
 map('n', '<leader>fm', '<cmd>Telescope marks<CR>')
@@ -42,11 +45,9 @@ map('n', '<leader>fb', '<cmd>Telescope file_browser<CR>',{ noremap = true })  --
 -- Nvim Tree Mappings
 map('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', {noremap = true})
 
--- Undotree
-map('n', '<leader>ut', '<cmd>UndotreeToggle<CR>')
-
+-- Turned off while I use Figitive
 -- LazyGit Mappings
-map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
+-- map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
 
 -- symbols-outline Mappings
 map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
