@@ -18,6 +18,7 @@ local colors = {
   magenta  = '#BF616A',
   blue     = '#81A1C1',
   red      = '#BF616A',
+  aqua     = '#8FBCBB',
 }
 
 local conditions = {
@@ -127,14 +128,14 @@ ins_left(
 
 ins_left {
   'branch',
-  icon = '',
+  icon = '',
   color = { fg = colors.violet, gui = 'bold' },
 }
 
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.aqua, gui = 'bold' },
 }
 
 ins_left {
@@ -148,7 +149,7 @@ ins_right {
   'o:encoding', -- option component same as &encoding in viml
   fmt = string.lower, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
-  color = { fg = colors.green},
+  color = { fg = colors.yellow},
 }
 
 ins_right {
