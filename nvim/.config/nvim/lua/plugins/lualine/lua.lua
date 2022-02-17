@@ -7,7 +7,7 @@ end
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#3B4252',
+  bg       = '#2E3440',
   fg       = '#ECEFF4',
   yellow   = '#EBCB8B',
   cyan     = '#88C0D0',
@@ -19,7 +19,9 @@ local colors = {
   blue     = '#81A1C1',
   red      = '#BF616A',
   aqua     = '#8FBCBB',
+  grey     = '#D8DEE9',
 }
+
 
 local conditions = {
   buffer_not_empty = function()
@@ -43,7 +45,7 @@ local config = {
     section_separators = '',
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
+      -- right section. Both are highlighte by c theme .  So we
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
@@ -179,40 +181,3 @@ ins_right {
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
-
--- Old Config
---require'lualine'.setup {
---  options = {
---    icons_enabled = true,
---    theme = 'nord',
---    component_separators = { left = '', right = ''},
---    section_separators = { left = '', right = ''},
---    disabled_filetypes = { 'NvimTree' }
---  },
---  sections = {
---    lualine_a = {
---      { 'mode', separator = { left = '' }, right_padding = 0 },
---    },
---    lualine_b = {'branch'},
---    lualine_c = {'filename'},
---    lualine_x = {'encoding', 'fileformat', 'filetype'},
---    lualine_y = {'progress'},
---    lualine_z = {
---     { 'location', separator = { right = '' }, left_padding = 0 },
---    },
---  },
---  inactive_sections = {
---    lualine_a = {},
---    lualine_b = {},
---    lualine_c = {'filename'},
---    lualine_x = {'location'},
---    lualine_y = {},
---    lualine_z = {}
--- },
---  tabline = {},
---  extensions = {}
---}
-
--- Color table for highlights
--- stylua: ignore
-

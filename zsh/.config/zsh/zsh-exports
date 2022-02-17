@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Environment variables set everywhere
+HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTSIZE=1000000
+SAVEHIST=1000000
+export PATH="$HOME/.local/bin":$PATH
+export PATH=$HOME/.fnm:$PATH
+
+export COLORTERM=truecolor
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="safari"
+export PATH="/opt/homebrew/bin:$PATH"
+export TERM=xterm

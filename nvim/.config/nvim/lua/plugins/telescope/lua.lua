@@ -12,7 +12,7 @@ require('telescope').setup{
     prompt_prefix = " ",
     sorting_strategy = "ascending",
     dynamic_preview_title = true,
-    selection_caret = " ",
+    selection_caret = " ",
     mappings = {
       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)

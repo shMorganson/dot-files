@@ -8,7 +8,7 @@ end
 
 function _G.split_term()
   vim.api.nvim_command('split')
-  vim.api.nvim_command('resize 25')
+  vim.api.nvim_command('resize 15')
   vim.api.nvim_command('terminal')
 end
 

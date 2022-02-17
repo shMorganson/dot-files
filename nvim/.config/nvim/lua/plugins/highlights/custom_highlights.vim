@@ -18,7 +18,7 @@ highlight TelescopePreviewBorder guifg=#8ec07c guibg=#3B4252
 highlight TelescopePreviewNormal guifg=#FAE3B0 guibg=#3B4252 
 
 " Other
-highlight TelescopeSelection gui=bold guifg=#8FBCBB guibg=#2E3440
+highlight TelescopeSelection gui=bold guifg=#8FBCBB guibg=#3B4252
 highlight TelescopeNormal guifg=#ECEFF4 guibg=#363944
 highlight TelescopeSelectionCaret guifg=#8FBCBB
 
