@@ -11,7 +11,7 @@ require('nord').set()
 
 -- Setting the theme
 --vim.o.background = "dark"
---vim.cmd[[colorscheme nord]]
+--vim.cmd[[colorscheme spaceduck]]
 
 -- Calling custom highlights
 vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'

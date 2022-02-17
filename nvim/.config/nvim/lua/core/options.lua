@@ -23,4 +23,4 @@ opt.mouse = 'a'  -- Enables mouse support
 opt.confirm = true  -- Confirm before closing unsaved file
 opt.cmdheight = 2  -- Set the command heght to 2 lines
 opt.showcmd = true
-
+opt.shell = "zsh"

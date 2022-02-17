@@ -101,6 +101,7 @@ return require('packer').startup(function()
   use 'sainnhe/sonokai'                      -- Sonokai theme
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
+  use 'pineapplegiant/spaceduck'             -- Spaceduck Theme
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

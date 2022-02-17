@@ -18,6 +18,7 @@ map('t', '<Esc>', '<C-\\><C-n>')  -- Exit Terminal
 map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')  -- Exit Terminal
 map("n", "<C-v>", ":call v:lua.vertsplit_term()<CR>", {noremap = true})  -- Vertical Terminal
 map("n", "<C-t>", ":call v:lua.split_term()<CR>", {noremap = true})  -- Horizontal Terminal
+map("n", "<C-n>", ":call v:lua.new_tab_term()<CR>", {noremap = true}) -- New Tab Terminal
 
 -- Alpha Mappings
 map('n', '<leader>en', '<cmd>:ene <BAR> startinsert <CR>')

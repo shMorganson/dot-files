@@ -17,4 +17,9 @@ function _G.vertsplit_term()
   vim.api.nvim_command('terminal')
 end
 
+function _G.new_tab_term()
+  vim.api.nvim_command('tabnew')
+  vim.api.nvim_command('terminal')
+end
+
 cmd 'let running = jobwait([&channel], 0)[0] == -1'
