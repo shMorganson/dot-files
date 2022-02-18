@@ -102,6 +102,7 @@ return require('packer').startup(function()
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
   use 'pineapplegiant/spaceduck'             -- Spaceduck Theme
+  use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
