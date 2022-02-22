@@ -103,6 +103,7 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
   use 'pineapplegiant/spaceduck'             -- Spaceduck Theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
+  use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -10,4 +10,14 @@ vim.cmd [[
     autocmd!
     autocmd TermClose * NvimTreeRefresh
   augroup end
+
+  augroup _dosini
+  autocmd! 
+  autocmd BufRead,BufNewFile *.conf setf dosini
+  augroup end
+
+  augroup _awsdosini
+  autocmd!
+  autocmd BufRead,BufNewFile config setf dosini
+  augroup end
 ]]
