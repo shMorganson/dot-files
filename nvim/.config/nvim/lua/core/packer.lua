@@ -92,18 +92,13 @@ return require('packer').startup(function()
     },
   }
   use 'goolord/alpha-nvim'
-  use({                                      -- Catppuccin theme
-  "catppuccin/nvim",
-  as = "catppuccin"
-  })
   use 'wfxr/minimap.vim'                     -- Minimap for neovim
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
-  use 'sainnhe/sonokai'                      -- Sonokai theme
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
-  use 'pineapplegiant/spaceduck'             -- Spaceduck Theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
+  use 'seblj/nvim-tabline'                   -- Tab management.
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

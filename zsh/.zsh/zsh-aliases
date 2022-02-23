@@ -13,7 +13,13 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# confirm before overwriting something
+# Confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+# numo AWS
+alias awswhoami='okta aws sts get-caller-identity'
+alias tfinit='_tf_init && okta terraform init -backend=true -backend-config=backend-${AWS_PROFILE}.config -var-file=vars-${AWS_PROFILE}.tfvars'
+alias tfapply='okta terraform apply -var-file=vars-${AWS_PROFILE}.tfvars ${@} ' 
+alias tfplan='okta terraform plan -var-file=vars-${AWS_PROFILE}.tfvars ${@} '

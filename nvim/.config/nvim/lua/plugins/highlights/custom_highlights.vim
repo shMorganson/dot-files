@@ -28,3 +28,5 @@ highlight NvimTreeFolderIcon guifg=#EBCB8B
 " highlight NvimTreeFolderName gui=bold guifg=#83a598
 " highlight NvimTreeOpenedFolderName gui=bold guifg=#b8bb26
 
+" Tabline Highlighting
+highlight TabLineSeparatorActive guibg=#B48EAD

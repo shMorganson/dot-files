@@ -32,3 +32,37 @@ unset initscript
 
 alias plugpull="find ${ZDOTDIR:-$HOME}/.zsh/plugins -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull"
 
+# numo AWS
+function awsprofile() {
+  export AWS_PROFILE="${1}"
+}
+ 
+function okta() {
+  [[ -z "${AWS_PROFILE}" ]] \
+    && echo "AWS profile is not set! (run \`export AWS_PROFILE=my-project-name\`)" >&2 \
+    && return 1
+  aws-okta exec ${AWS_PROFILE} -- "${@}"
+}
+ 
+function _tf_init () {
+  # return 0 if subsequent commands should proceed
+  TFSTATE=".terraform/terraform.tfstate"
+  if [[ ! -e "${TFSTATE}" ]]
+  then
+    return 0
+  fi
+  if [[ "$(jq -r '.backend.type' < ${TFSTATE})" == "s3" ]]
+  then
+    awswhoami >/dev/null
+    if [[ "$?" != "0" ]]
+    then
+      echo "Not going to remove existing state without working AWS credentials"
+      return 1
+    fi
+    rm -f ${TFSTATE} >/dev/null 2>&1 || /bin/true
+    return 0
+  else
+    echo "Terraform state is not remote! Move or delete ${TFSTATE} manually" >&2
+  fi
+  return 1
+}
