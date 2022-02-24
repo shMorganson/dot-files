@@ -83,7 +83,7 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
-  -- use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
+  use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
   use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme(lua)
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
@@ -95,7 +95,6 @@ return require('packer').startup(function()
   use 'wfxr/minimap.vim'                     -- Minimap for neovim
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
   use 'shaunsingh/nord.nvim'                 -- Nord theme
-  use 'tpope/vim-fugitive'                   -- Vim fugitive is a Git plugin
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
   use 'seblj/nvim-tabline'                   -- Tab management.

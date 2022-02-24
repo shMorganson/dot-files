@@ -11,7 +11,6 @@ tap "epk/epk"
 brew "node"
 brew "jsonnet"
 brew "nvim"
-brew "terraform"
 brew "neofetch"
 brew "lazygit"
 brew "tree"
@@ -19,6 +18,13 @@ brew "code-minimap"
 brew "stow"
 brew "utm"
 brew "htop"
+
+# numo Intalls
+tap "hashicorp/tap"
+
+brew "awscli"
+brew "aws-okta"
+brew "hashicorp/tap/terraform"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"

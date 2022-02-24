@@ -27,12 +27,6 @@ map('n', '<leader>ev', '<cmd>edit ~/.config/nvim/lua/core/init.lua<CR>')
 map('n', '<leader>q', '<cmd>exit<CR>')
 map('n', '<leader>ip', '<cmd>e: ~/.config/nvim/lua/core/packer.lua<CR>')
 
--- Fugitive Mappings
-map('n', '<leader>g', '<cmd>Git<CR>', {noremap = true})
-map('n', '<leader>gp', '<cmd>Git push<CR>', {noremap = true})
-map('n', '<leader>gl', '<cmd>Git log<CR>', {noremap = true})
-map('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', {noremap = true})
-
 -- Telescope
 map('n', '<leader>fm', '<cmd>Telescope marks<CR>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
@@ -46,9 +40,8 @@ map('n', '<leader>fb', '<cmd>Telescope file_browser<CR>',{ noremap = true })  --
 -- Nvim Tree Mappings
 map('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', {noremap = true})
 
--- Turned off while I use Figitive
 -- LazyGit Mappings
--- map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
+map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
 
 -- symbols-outline Mappings
 map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
