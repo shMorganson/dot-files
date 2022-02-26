@@ -18,6 +18,7 @@ _darcs
 \.git
 \.gitignore
 
+
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
 
@@ -26,3 +27,5 @@ _darcs
 ^/COPYING
 
 ~/.zsh/plugins/
+
+.DS_Store

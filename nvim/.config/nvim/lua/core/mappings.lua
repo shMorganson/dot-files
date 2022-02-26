@@ -8,8 +8,8 @@ end
 map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select and operator modes
 map('i', '<C-u>', '<C-g>u<C-u>')  -- Make <C-u> undo-friendly
 map('i', '<C-w>', '<C-g>u<C-w>')  -- Make <C-w> undo-friendly
-map('n', '<leader>t', '<cmd>tabnew<CR>', {noremap =true})  -- Open a new tab
-
+map('n', '<leader>t', '<cmd>tabnew<CR>', {noremap = true})  -- Open a new tab
+map('n', '<leader>sc', '<cmd>setlocal spell spelllang=en_us<CR>', {noremap = true})  -- Turn on spell check for the buffer.
 map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
 map('n', '<leader>o', 'm`o<Esc>``')  -- Insert a newline in normal mode
 

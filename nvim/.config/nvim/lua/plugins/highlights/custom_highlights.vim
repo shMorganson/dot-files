@@ -30,3 +30,11 @@ highlight NvimTreeFolderIcon guifg=#EBCB8B
 
 " Tabline Highlighting
 highlight TabLineSeparatorActive guibg=#BF616A
+
+" vimwiki Highlighting
+highlight VimwikiHeader2 gui=bold guifg=#81A1C1
+highlight VimwikiHeader3 gui=bold guifg=#88C0D0
+highlight VimwikiHeader4 gui=bold guifg=#8FBCBB
+highlight VimwikiHeader4 gui=bold guifg=#B48EAD
+highlight VimwikiHeader5 gui=bold guifg=#D08770
+highlight VimwikiHeader6 gui=bold guifg=#5E81AC

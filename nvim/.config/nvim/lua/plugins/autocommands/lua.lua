@@ -11,13 +11,20 @@ vim.cmd [[
     autocmd TermClose * NvimTreeRefresh
   augroup end
 
-  augroup _dosini
-  autocmd! 
-  autocmd BufRead,BufNewFile *.conf setf dosini
+  augroup _awsdosini
+    autocmd!
+    autocmd BufRead,BufNewFile config setf dosini
   augroup end
 
-  augroup _awsdosini
-  autocmd!
-  autocmd BufRead,BufNewFile config setf dosini
+  augroup _spellchecking
+    autocmd!
+    autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
   augroup end
 ]]
+
+--augroup _dosini
+--  autocmd! 
+--  autocmd BufRead,BufNewFile *.conf setf dosini
+--  augroup end
+
+

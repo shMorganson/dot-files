@@ -24,3 +24,6 @@ cmd 'source ~/.config/nvim/vim/undotree.vim'
 
 -- jsonnet Settings
 cmd 'source ~/.config/nvim/vim/jsonnet.vim'
+
+-- vimwiki Settings
+cmd 'source ~/.config/nvim/vim/vimwiki.vim'

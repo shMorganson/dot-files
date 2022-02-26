@@ -1,4 +1,4 @@
-------------------- PACKER ----------------------------------
+--------------------- PACKER ----------------------------------
 local fn = vim.fn
 
 -- Automatically install Packer
@@ -50,7 +50,7 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim
   use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
-  use 'plasticboy/vim-markdown'              -- Markdown plugin
+  --use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {                                      -- Used for configuring the nvim LSP.
     'neovim/nvim-lspconfig',
@@ -98,6 +98,8 @@ return require('packer').startup(function()
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
   use 'seblj/nvim-tabline'                   -- Tab management.
+  use 'vimwiki/vimwiki'                      -- Wiki note management system.
+  use 'rmehri01/onenord.nvim'
 
 -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

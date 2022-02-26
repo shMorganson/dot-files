@@ -66,3 +66,8 @@ function _tf_init () {
   fi
   return 1
 }
+
+function numowork() {
+  cd ~/Git\ Projects/
+  nvim
+}

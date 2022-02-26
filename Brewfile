@@ -25,6 +25,7 @@ tap "hashicorp/tap"
 brew "awscli"
 brew "aws-okta"
 brew "hashicorp/tap/terraform"
+brew "direnv"
 
 # 'brew install --cask'
 cask "font-sf-mono-nerd-font"

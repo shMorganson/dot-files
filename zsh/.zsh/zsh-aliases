@@ -18,7 +18,12 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
+# Neovim shortcuts.
+alias neoconfig="nvim ~/dot-files/nvim/.config/nvim/init.lua"
+alias neopacker="nvim ~/dot-files/nvim/.config/nvim/lua/core/packer.lua"
+
 # numo AWS
+alias work='numowork'
 alias awswhoami='okta aws sts get-caller-identity'
 alias tfinit='_tf_init && okta terraform init -backend=true -backend-config=backend-${AWS_PROFILE}.config -var-file=vars-${AWS_PROFILE}.tfvars'
 alias tfapply='okta terraform apply -var-file=vars-${AWS_PROFILE}.tfvars ${@} ' 

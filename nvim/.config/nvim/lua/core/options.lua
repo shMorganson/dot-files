@@ -24,3 +24,6 @@ opt.confirm = true  -- Confirm before closing unsaved file
 opt.cmdheight = 2  -- Set the command heght to 2 lines
 opt.showcmd = true
 opt.shell = "zsh"
+opt.conceallevel = 0  -- Set the conceal level to 2.
+--opt.noncompatible = true
+--opt.filetype.plugin = true
