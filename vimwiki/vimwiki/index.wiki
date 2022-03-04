@@ -1,9 +1,0 @@
-= vimwiki Notes =
-
-== Daily Notes ==
-  * [[Task]] -- things to be done _yesterday_!!!
-  * [[Quick Notes]] -- jot things down quick
-
-== Project Notes ==
-  * [[Atlassian Migration Plan]] -- notes and resources for the cloud migration
-
