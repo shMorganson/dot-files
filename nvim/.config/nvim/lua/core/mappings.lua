@@ -45,3 +45,8 @@ map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
 
 -- symbols-outline Mappings
 map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
+
+-- Markup Preview Mappings
+map('n', '<leader>mp', '<cmd>MarkdownPreview<CR>', {noremap = true})
+map('n', '<leader>qp', '<cmd>MarkdownPreviewStop<CR>', {noremap = true})
+

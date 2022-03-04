@@ -11,7 +11,6 @@ local g = vim.g
 g.nvim_tree_refresh_wait = 300
 g.nvim_tree_git_hl = 1
 g.nvim_tree_root_folder_modifier = ':~'
-g.nvim_tree_disable_window_picker = 0
 g.nvim_tree_icon_padding = '  '
 g.nvim_tree_symlink_arrow = ' >> '
 g.nvim_tree_respect_buf_cwd = 1
@@ -109,5 +108,17 @@ require'nvim-tree'.setup {
   trash = {
     cmd = "trash",
     require_confirm = true
+  },
+  open_file = {
+    quit_on_open = false,
+    resize_window = false,
+    window_picker = {
+      enable = true,
+      chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+      exclude = {
+      filetype = { "notify", "packer", "fugitive", "fugitiveblame", },
+      buftype  = { "nofile", "terminal", "help", },
+      }
+    }
   }
 }

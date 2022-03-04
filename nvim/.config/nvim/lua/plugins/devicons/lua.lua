@@ -18,7 +18,7 @@ require "nvim-web-devicons".set_icon {
       },
       git = {
         icon = "",
-        color = "#F2F2F2",
+        color = "#5E81AC",
         name = "git",
       },
 }

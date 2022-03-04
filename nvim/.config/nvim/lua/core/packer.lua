@@ -48,7 +48,7 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim
-  use 'dense-analysis/ale'                   -- ALE for linting
+  --use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   --use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -74,7 +74,7 @@ return require('packer').startup(function()
       {'junegunn/fzf.vim'},                  -- to enable preview (optional)
     },
   }
-  use 'darfink/vim-plist'                    -- plist syntax support plugin
+  -- use 'darfink/vim-plist'                    -- plist syntax support plugin
   use 'google/vim-jsonnet'                   -- jsonnet syntax highlighting
   use {                                      -- Telescope plugin
     'nvim-telescope/telescope.nvim',
@@ -100,8 +100,9 @@ return require('packer').startup(function()
   use 'seblj/nvim-tabline'                   -- Tab management.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use 'rmehri01/onenord.nvim'
+  use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
--- Automatically set up your configuration after cloning packer.nvim
+  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

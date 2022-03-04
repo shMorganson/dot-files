@@ -27,3 +27,6 @@ cmd 'source ~/.config/nvim/vim/jsonnet.vim'
 
 -- vimwiki Settings
 cmd 'source ~/.config/nvim/vim/vimwiki.vim'
+
+-- Markdown Preview Settings
+cmd 'source ~/.config/nvim/vim/markdownpreview.vim'

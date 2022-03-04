@@ -38,7 +38,7 @@ dashboard.section.buttons.val = {
   dashboard.button("<leader> e n", "   New File", ":ene <BAR> startinsert <CR>"),
   dashboard.button("<leader> f p", "   Find Project", ":Telescope projects <CR>"),
   dashboard.button("<leader> f h", "   Recently Files", ":Telescope oldfiles <CR>"),
-  dashboard.button("<leader> f t", "   Find Text", ":Telescope live_grep <CR>"),
+  dashboard.button("<leader> w w", "   Notes", ":VimwikiIndex <CR>"),
   dashboard.button("<leader>   u", "   Update Plugins", ":PackerUpdate <CR>"),
   dashboard.button("<leader> i p", "   Add/Remove Plugins", ":e ~/.config/nvim/lua/core/packer.lua<CR>"),
   dashboard.button("<leader> e v", "   Configuration", ":e ~/.config/nvim/lua/core/init.lua <CR>"),

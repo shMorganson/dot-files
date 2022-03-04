@@ -8,6 +8,8 @@ end
 local opt = vim.opt
 
 -- Options
+opt.list = true
+opt.termguicolors = true
 opt.listchars = {
   space = "⋅",
 }
@@ -18,7 +20,16 @@ vim.cmd [[highlight IndentBlanklineSpaceChar guifg=#545972 gui=nocombine]]
 -- Configuration for Indent_Blankline
 require("indent_blankline").setup {
   space_char_blankline = " ",
+  char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+  },
   show_current_context = true,
+  show_current_context_start = false,
   show_end_of_line = false,
   indent_blankline_use_treesitter = true,
   buftype_exclude = {"terminal", "nofile"},
@@ -27,7 +38,8 @@ require("indent_blankline").setup {
     'packer',
     'nvim-lsp-installer',
     'NvimTree',
-    'dashboard'
+    'dashboard',
+    'vimwiki'
   },
   indent_blankline_bufname_exclude = {'nvim-lsp-installer'},
   indent_blankline_context_patterns = {
