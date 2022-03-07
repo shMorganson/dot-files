@@ -1,7 +1,7 @@
 " Markdown Preview Settings
 
 " let g:mkdp_browser = 'Google Chrome'
-" let g:mkdp_command_for_global = 1
+let g:mkdp_command_for_global = 1
 
 let g:mkdp_preview_options = {
     \ 'mkit': {},

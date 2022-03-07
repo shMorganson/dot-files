@@ -50,7 +50,6 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim
   --use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
-  --use 'plasticboy/vim-markdown'              -- Markdown plugin
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {                                      -- Used for configuring the nvim LSP.
     'neovim/nvim-lspconfig',
@@ -74,7 +73,6 @@ return require('packer').startup(function()
       {'junegunn/fzf.vim'},                  -- to enable preview (optional)
     },
   }
-  -- use 'darfink/vim-plist'                    -- plist syntax support plugin
   use 'google/vim-jsonnet'                   -- jsonnet syntax highlighting
   use {                                      -- Telescope plugin
     'nvim-telescope/telescope.nvim',
@@ -84,7 +82,6 @@ return require('packer').startup(function()
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
   use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
-  use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme(lua)
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
     requires = {
@@ -99,7 +96,6 @@ return require('packer').startup(function()
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
   use 'seblj/nvim-tabline'                   -- Tab management.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
-  use 'rmehri01/onenord.nvim'
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Automatically set up your configuration after cloning packer.nvim
