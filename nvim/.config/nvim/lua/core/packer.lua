@@ -45,6 +45,7 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'  -- Indent Line
   use {
     'nvim-lualine/lualine.nvim',
+
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim

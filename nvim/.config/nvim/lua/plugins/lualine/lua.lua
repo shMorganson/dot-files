@@ -40,7 +40,7 @@ local config = {
   options = {
     -- Disable sections and component separators
     component_separators = '',
-    section_separators = '',
+    setion_separators = '',
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighte by c theme .  So we
@@ -99,7 +99,7 @@ ins_left {
       v = colors.violet,
       [''] = colors.blue,
       V = colors.blue,
-      c = colors.magenta,
+      c = colors.orange,
       no = colors.yellow,
       s = colors.orange,
       S = colors.orange,
