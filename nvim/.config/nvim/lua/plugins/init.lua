@@ -1,7 +1,7 @@
 -- Loading the plugins
+require('plugins.indentline.lua')
 require('plugins.highlights.init')
 require('plugins.devicons.lua')
-require('plugins.indentline.lua')
 require('plugins.lualine.lua')
 require('plugins.nvimcmp.lua')
 require('plugins.telescope.lua')

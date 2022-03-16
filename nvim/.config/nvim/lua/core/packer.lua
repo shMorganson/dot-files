@@ -98,7 +98,7 @@ return require('packer').startup(function()
   use 'seblj/nvim-tabline'                   -- Tab management.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
+  use 'mvpopuk/inspired-github.vim' 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

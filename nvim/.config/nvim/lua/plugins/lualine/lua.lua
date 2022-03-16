@@ -4,178 +4,124 @@ if not lualine_status_ok then
   return
 end
 
--- Color table for highlights
--- stylua: ignore
+-- -- Inspired Github Colors
 local colors = {
-  bg       = '#2E3440',
-  fg       = '#E5E9F0',
-  yellow   = '#EBCB8B',
-  cyan     = '#88C0D0',
-  darkblue = '#5E81AC',
-  green    = '#A3BE8C',
-  orange   = '#D08770',
-  violet   = '#B48EAD',
-  magenta  = '#B48EAD',
-  blue     = '#81A1C1',
-  red      = '#BF616A',
+  red = '#ca1243',
+  grey = '#f5f5f5',
+  light_grey = '#979BAC',
+  black = '#383a42',
+  white = '#ffffff',
+  transparent = '#ffffff',
+  light_green = '#83a598',
+  orange = '#fe8019',
+  green = '#8ec07c',
+  yellow = '#f8eec7',
+  cyan = '#489FC1',
 }
 
-
-local conditions = {
-  buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-  end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > 80
-  end,
-  check_git_workspace = function()
-    local filepath = vim.fn.expand('%:p:h')
-    local gitdir = vim.fn.finddir('.git', filepath .. ';')
-    return gitdir and #gitdir > 0 and #gitdir < #filepath
-  end,
-}
-
--- Config
-local config = {
-  options = {
-    -- Disable sections and component separators
-    component_separators = '',
-    setion_separators = '',
-    theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighte by c theme .  So we
-      -- are just setting default looks o statusline
-      normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
-    },
-    disabled_filetypes = { 'NvimTree' },
+local inspired_github = {
+  normal = {
+    a = { fg = colors.white, bg = colors.red },
+    b = { fg = colors.black,  bg = colors.grey },
+    c = { fg = colors.light_grey, bg = colors.white },
+    z = { fg = colors.white, bg = colors.black },
   },
-  sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    -- These will be filled later
+  insert = { a = { fg = colors.black, bg = colors.yellow } },
+  visual = { a = { fg = colors.white, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.green } },
+}
+
+local empty = require('lualine.component'):extend()
+function empty:draw(default_highlight)
+  self.status = ''
+  self.applied_separator = ''
+  self:apply_highlights(default_highlight)
+  self:apply_section_separators()
+  return self.status
+end
+
+-- Put proper separators and gaps between cmponents in sections
+local function process_sections(sections)
+  for name, section in pairs(sections) do
+    local left = name:sub(9, 10) < 'x'
+    for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
+      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.transparent } })
+    end
+    for id, comp in ipairs(section) do
+      if type(comp) ~= 'table' then
+        comp = { comp }
+        section[id] = comp
+      end
+      comp.separator = left and { right = '' } or { left = '' }
+    -- if you're using iTerm with a text line height more than 100, use the separators below instead
+      -- comp.separator = left and { right = '' } or { left = '' }
+    end
+  end
+  return sections
+end
+
+local function search_result()
+  if vim.v.hlsearch == 0 then
+    return ''
+  end
+  local last_search = vim.fn.getreg('/')
+  if not last_search or last_search == '' then
+    return ''
+  end
+  local searchcount = vim.fn.searchcount { maxcount = 9999 }
+  return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
+end
+
+local function modified()
+  if vim.bo.modified then
+    return '+'
+  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
+    return '-'
+  end
+  return ''
+end
+
+require('lualine').setup {
+  options = {
+    theme = inspired_github,
+    component_separators = '',
+    section_separators = { left = '', right = '' },
+    -- if you're using iTerm with a text line height more than 100, use the separators below instead
+    -- section_separators = { left = '', right = ''},
+  },
+  -- process_sections
+  sections = process_sections {
+    lualine_a = { 'mode' },
+    lualine_b = {
+      'branch',  
+      { 'filename', file_status = false, path = 3 },
+      {
+        'diagnostics',
+        source = { 'intelephense' },
+        sections = { 'error' },
+        diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
+      },
+      {
+        'diagnostics',
+        source = { 'intelephense' },
+        sections = { 'warn' },
+        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+      },
+      {
+        'diagnostics',
+        source = { 'intelephense' },
+        sections = { 'hint' },
+        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+      },
+      { modified, color = { bg = colors.yellow } },
+    },
     lualine_c = {},
     lualine_x = {},
+    lualine_y = { search_result, 'filetype' },
+    lualine_z = { '%l:%c', '%p%%/%L' },
   },
   inactive_sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    lualine_c = {},
+    lualine_c = { '%f %y %m' },
     lualine_x = {},
   },
 }
-
--- Inserts a component in lualine_c at left section
-local function ins_left(component)
-  table.insert(config.sections.lualine_c, component)
-end
-
--- Inserts a component in lualine_x ot right section
-local function ins_right(component)
-  table.insert(config.sections.lualine_x, component)
-end
-
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.green }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
-
-ins_left {
-  -- mode component
-  function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.blue,
-      i = colors.green,
-      v = colors.violet,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.orange,
-      no = colors.yellow,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.yellow,
-      ce = colors.yellow,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.yellow,
-      t = colors.yellow,
-    }
-      vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
-      return ''
-  end,
-  color = 'LualineMode',
-  padding = { right = 0 },
-}
-
-ins_left(
-  {'mode', color='LualineMode' }
-)
-
-ins_left {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.aqua, gui = 'bold' },
-}
-
-ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-}
-
--- Add components to right sections
-ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  fmt = string.lower, -- I'm not sure why it's upper case either ;)
-  cond = conditions.hide_in_width,
-  color = { fg = colors.yellow},
-}
-
-ins_right {
-  'fileformat',
-  fmt = string.upper,
-  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.fg, gui = 'bold' },
-}
-
-ins_right {
-  'filetype'
-}
-
-ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-ins_right {
-  'location'
-}
-
-ins_right {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.green },
-  padding = { left = 1 },
-}
-
--- Now don't forget to initialize lualine
-lualine.setup(config)

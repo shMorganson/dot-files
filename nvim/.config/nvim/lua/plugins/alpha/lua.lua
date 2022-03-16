@@ -46,8 +46,8 @@ dashboard.section.buttons.val = {
 }
 
 dashboard.section.footer.val = footer()
-dashboard.section.footer.opts.hl = "Character"
-dashboard.section.header.opts.hl = "DapStopped"
+dashboard.section.footer.opts.hl = "DevIconBash"
+dashboard.section.header.opts.hl = "DevIconCp"
 --dashboard.section.buttons.opts.hl = "GruvboxGreen"
 
 dashboard.opts.opts.noautocmd = true
