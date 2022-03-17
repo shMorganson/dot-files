@@ -46,7 +46,7 @@ dashboard.section.buttons.val = {
 }
 
 dashboard.section.footer.val = footer()
-dashboard.section.footer.opts.hl = "DevIconBash"
+dashboard.section.footer.opts.hl = "DevIconR"
 dashboard.section.header.opts.hl = "DevIconCp"
 --dashboard.section.buttons.opts.hl = "GruvboxGreen"
 

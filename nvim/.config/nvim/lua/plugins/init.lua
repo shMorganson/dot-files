@@ -1,5 +1,4 @@
 -- Loading the plugins
-require('plugins.indentline.lua')
 require('plugins.highlights.init')
 require('plugins.devicons.lua')
 require('plugins.lualine.lua')
@@ -14,4 +13,5 @@ require('plugins.project.lua')
 require('plugins.nvimtree.lua')
 require('plugins.alpha.lua')
 require('plugins.symbols-outlines.lua')
-require('plugins.tabline.lua')
+require('plugins.indentline.lua')
+require('plugins.bufferline.lua')

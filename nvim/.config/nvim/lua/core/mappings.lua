@@ -50,3 +50,7 @@ map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
 map('n', '<leader>mp', '<cmd>MarkdownPreview<CR>', {noremap = true})
 map('n', '<leader>qp', '<cmd>MarkdownPreviewStop<CR>', {noremap = true})
 
+-- Buffline Mappings
+map('n', 'b[', '<cmd>BufferLineCycleNext<CR>', {noremap = true})
+map('n', 'b]', '<cmd>BufferLineCyclePrev<CR>', {noremap = true})
+map('n', 'qq', '<cmd>bdelete<CR>', {noremap = true})

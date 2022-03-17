@@ -7,12 +7,20 @@ end
 -- Variables
 local opt = vim.opt
 
+-- Highlighting
+-- vim.cmd [[highlight IndentBlanklineSpaceChar guifg=#F5F5F5i gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#A3BE8C gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent3 guifg=#EBCB8B gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent4 guifg=#D08770 gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#B48EAD gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#BF616A gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#85889B gui=nocombine]]
+
 -- Options
 opt.list = true
-opt.termguicolors = true
-opt.listchars = {
-  space = "⋅",
-}
+-- opt.listchars = {
+--   space = "⋅",
+-- }
 
 -- Configuration for Indent_Blankline
 require("indent_blankline").setup {
@@ -21,7 +29,7 @@ require("indent_blankline").setup {
   show_current_context_start = false,
   show_end_of_line = false,
   indent_blankline_use_treesitter = true,
-  buftype_exclude = {"terminal", "nofile"},
+  buftype_exclude = {"terminal", "nofile", 'vimwiki'},
   filetype_exclude = {
     'help',
     'packer',
@@ -30,7 +38,7 @@ require("indent_blankline").setup {
     'dashboard',
     'vimwiki'
   },
-  indent_blankline_bufname_exclude = {'nvim-lsp-installer'},
+  indent_blankline_bufname_exclude = {'nvim-lsp-installer', 'vimwiki'},
   indent_blankline_context_patterns = {
     "class",
     "return",

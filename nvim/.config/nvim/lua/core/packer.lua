@@ -95,10 +95,11 @@ return require('packer').startup(function()
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
-  use 'seblj/nvim-tabline'                   -- Tab management.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-  use 'mvpopuk/inspired-github.vim' 
+  use 'mvpopuk/inspired-github.vim'          -- Inspired GitHub Theme
+  use 'akinsho/bufferline.nvim'              -- Bufferline
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
