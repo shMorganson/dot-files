@@ -14,7 +14,6 @@ local opt = vim.opt
 -- vim.cmd [[highlight IndentBlanklineIndent4 guifg=#D08770 gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#B48EAD gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#BF616A gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineContextChar guifg=#85889B gui=nocombine]]
 
 -- Options
 opt.list = true

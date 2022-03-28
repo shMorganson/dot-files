@@ -19,7 +19,7 @@ export AWS_PROFILE=mvc-1-app-2
 
 # FZF Theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
-  --color=fg:#3e3e3e,bg:#f5f5f5,hl:#0e73a4 
-  --color=fg+:#3e3e3e,bg+:#f5f5f5,hl+:#0e73a4
-  --color=info:#f6bb63,prompt:#ca1243,pointer:#85889b
-  --color=marker:#33aa34,spinner:#ffa29f,header:#ca1243'
+  --color=fg:#2b2b2b,bg:#f2f2f2,hl:#007aff 
+  --color=fg+:#2b2b2b,bg+:#f2f2f2,hl+:#007aff 
+  --color=info:#5856d6,prompt:#ff2d55,pointer:#55bef0 
+  --color=marker:#28cd41,spinner:#5856d6,header:#59adc4'

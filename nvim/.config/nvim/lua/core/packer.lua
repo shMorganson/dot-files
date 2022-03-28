@@ -52,6 +52,7 @@ return require('packer').startup(function()
   --use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/playground'           -- Used for finding Highlights
   use {                                      -- Used for configuring the nvim LSP.
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer'
@@ -90,15 +91,19 @@ return require('packer').startup(function()
     },
   }
   use 'goolord/alpha-nvim'
-  use 'wfxr/minimap.vim'                     -- Minimap for neovim
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
-  use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- vimwiki preview plugin
+
   use 'mvpopuk/inspired-github.vim'          -- Inspired GitHub Theme
-  use 'akinsho/bufferline.nvim'              -- Bufferline
+  use 'seblj/nvim-tabline'                   -- Tabline
+  use 'projekt0n/github-nvim-theme'          -- GitHub Neovim Theme
+  use 'lewis6991/gitsigns.nvim'              -- Git Status for StatusLine
+  --use '~/apple_ui.nvim/'
+  use 'shMorganson/apple_ui.nvim'            -- Apple HIG Style Theme
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

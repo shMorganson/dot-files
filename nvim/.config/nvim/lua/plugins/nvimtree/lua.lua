@@ -9,9 +9,9 @@ local g = vim.g
 
 -- Settings for nvim-tree
 g.nvim_tree_refresh_wait = 300
-g.nvim_tree_git_hl = 1
+g.nvim_tree_git_hl = 0
 g.nvim_tree_root_folder_modifier = ':~'
-g.nvim_tree_icon_padding = '  '
+g.nvim_tree_icon_padding = ' '
 g.nvim_tree_symlink_arrow = ' >> '
 g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_create_in_closed_folder = 0

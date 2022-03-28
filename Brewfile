@@ -18,6 +18,7 @@ brew "code-minimap"
 brew "stow"
 brew "utm"
 brew "htop"
+brew "tmux"
 
 # numo Intalls
 tap "hashicorp/tap"
