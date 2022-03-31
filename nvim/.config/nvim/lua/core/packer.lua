@@ -102,8 +102,10 @@ return require('packer').startup(function()
   use 'seblj/nvim-tabline'                   -- Tabline
   use 'projekt0n/github-nvim-theme'          -- GitHub Neovim Theme
   use 'lewis6991/gitsigns.nvim'              -- Git Status for StatusLine
+  use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme written in lua
   --use '~/apple_ui.nvim/'
-  use 'shMorganson/apple_ui.nvim'            -- Apple HIG Style Theme
+  --use 'shMorganson/apple_ui.nvim'            -- Apple HIG Style Theme
+  --use '~/Desktop/anura.nvim/'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

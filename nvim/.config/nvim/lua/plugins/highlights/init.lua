@@ -1,18 +1,16 @@
-local palette = require "plugins.highlights.catppuccin"
-
-vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/apple_ui.vim'
+--vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/anura.vim'
 -- Nord Theme Settings
---vim.g.nord_contrast = true
---vim.g.nord_borders = false
---vim.g.nord_disable_background = false
---vim.g.nord_italic = false
+--vim.g.anura_contrast = true
+--vim.g.anura_borders = false
+--vim.g.anura_disable_background = false
+--vim.g.anura_italic = false
 
 -- Load the colorscheme
-require('apple_ui').set()
+--require('anura').set()
 
 -- Setting the theme
---vim.o.background = "dark"
---vim.cmd[[colorscheme apple_ui]]
+vim.o.background = "dark"
+vim.cmd [[colorscheme gruvbox]]
 
 --require("github-theme").setup({
 --  theme_style = "light_default",
@@ -34,13 +32,13 @@ require('apple_ui').set()
 --})
 
 -- StatusLine Highlighting
-local set_hl = function(group, options)
-  local bg = options.bg == nil and '' or 'guibg=' .. options.bg
-  local fg = options.fg == nil and '' or 'guifg=' .. options.fg
-  local gui = options.gui == nil and '' or 'gui=' .. options.gui
+--local set_hl = function(group, options)
+--  local bg = options.bg == nil and '' or 'guibg=' .. options.bg
+--  local fg = options.fg == nil and '' or 'guifg=' .. options.fg
+--  local gui = options.gui == nil and '' or 'gui=' .. options.gui
 
-  vim.cmd(string.format('hi %s %s %s %s', group, bg, fg, gui))
-end
+--  vim.cmd(string.format('hi %s %s %s %s', group, bg, fg, gui))
+--end
 
 -- you can of course pick whatever colour you want, I picked these colours
 -- because I use Gruvbox and I like them

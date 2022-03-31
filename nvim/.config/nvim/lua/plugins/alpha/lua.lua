@@ -46,8 +46,8 @@ dashboard.section.buttons.val = {
 }
 
 dashboard.section.footer.val = footer()
-dashboard.section.footer.opts.hl = "DevIconGvimrc"
-dashboard.section.header.opts.hl = "DashboardHeader"
+dashboard.section.footer.opts.hl = "GruvboxGreen"
+dashboard.section.header.opts.hl = "GruvboxBlue"
 --dashboard.section.buttons.opts.hl = "GruvboxGreen"
 
 dashboard.opts.opts.noautocmd = true

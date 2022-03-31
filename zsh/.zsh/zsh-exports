@@ -18,8 +18,8 @@ export PATH="/opt/homebrew/bin:$PATH"
 export AWS_PROFILE=mvc-1-app-2
 
 # FZF Theme
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
-  --color=fg:#2b2b2b,bg:#f2f2f2,hl:#007aff 
-  --color=fg+:#2b2b2b,bg+:#f2f2f2,hl+:#007aff 
-  --color=info:#5856d6,prompt:#ff2d55,pointer:#55bef0 
-  --color=marker:#28cd41,spinner:#5856d6,header:#59adc4'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#fbf1c7,bg:#3c3836,hl:#458588
+ --color=fg+:#fbf1c7,bg+:#3c3836,hl+:#83a598
+ --color=info:#d79921,prompt:#9d0006,pointer:#83a598
+ --color=marker:#8ec07c,spinner:#b16286,header:#689d6a'
