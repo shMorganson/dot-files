@@ -13,7 +13,7 @@ set laststatus=2                    " Always display the status line, even if on
 set confirm                         " Asking if you wish to save changed files.
 set visualbell                      " Use visual bell instead of beeping when doing something wrong
 set t_vb=                           " Reset the terminal code for the visual bell.
-set conceallevel=2
+set conceallevel=0
 set relativenumber
 set cmdheight=2                     " Set the command window height to 2 lines
 set number                          " Display line numbers on the left
@@ -44,16 +44,20 @@ let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
 
-" Vim  MAPPINGS
-
+" VIM MAPPINGS
 " Copy to the clipboard at yank.
 vmap <leader>c "*y
+" Open new tab.
 nnoremap <leader>t :tabnew<CR>
+" Set spellcheck on for .txt
 nnoremap <leader>sc :setlocal spell spelllang=en_us<CR>
+" Clear search highlighting
 nnoremap <C-l> :noh<CR>
-nnoremap <q-q> :q<CR>
+" Set conceallevel to 0 for .md
+nmap <leader>cl :setl conceallevel=0<CR>
 
 " Vim Autocommands
+" Set .conf as dosini
 autocmd BufRead,BufNewFile *.conf setf dosini
 "autocmd BufWinLeave * NERDtreeRefreshRoot
 
@@ -154,8 +158,8 @@ autocmd VimEnter,Colorscheme * :hi NERDTreeCWD guifg=#92B3B3 ctermfg=14
 
 " NERDTree Shortcuts
 noremap <leader>f :NERDTree<CR>
-nnoremap <leader>ft> :NERDTreeToggle<CR>
-"nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>fo :NERDTreeToggle<CR>
+nnoremap <leader>tf :NERDTreeFind<CR>
 
 " DEV ICON SETTINGS
 " Loading the plugin
