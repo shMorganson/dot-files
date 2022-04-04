@@ -28,6 +28,8 @@ set tabstop=4
 set splitright
 set splitbelow
 set nowrap
+set nocompatible
+filetype plugin on
 
 " Enable syntax highlighting
 if has('syntax')
@@ -117,6 +119,14 @@ function! Vertical_Terminal()
    set termwinsize=0x0
    :vert term
 endfunction
+
+" vimwiki Highlighting
+:highlight markdownH1 gui=bold guifg=#5E81AC
+:highlight markdownH2 gui=bold guifg=#BF616A
+:highlight markdownH3 gui=bold guifg=#D08770
+:highlight markdownH4 gui=bold guifg=#EBCB8B
+:highlight markdownH5 gui=bold guifg=#A3BE8C
+:highlight markdownH6 gui=bold guifg=#B48EAD
 
 " VIM THEME SETTINGS
 set t_Co=256
@@ -304,6 +314,6 @@ nmap <leader>u :PlugUpdate<CR>
 
 let g:dashboard_default_executive ='fzf'
 
-" VimWiki Settings
+" vimwiki Settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]

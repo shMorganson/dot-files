@@ -1,8 +1,8 @@
 " Neovim Highlights
 " highlight NormalFloat guibg=#F5F5F5
 " highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
-highlight EndOfBuffer guibg=#282828 guifg=#282828
-highlight SignColumn guibg=#282828
+highlight EndOfBuffer guibg=#2E3440 guifg=#2E3440
+" highlight SignColumn guibg=#282828
 
 " Telescope Highlights
   " Prompt
@@ -30,12 +30,12 @@ highlight SignColumn guibg=#282828
   "highlight TelescopeMatching guifg=#007aff
 
 " NvimTree Highlights
-highlight NvimTreeFolderIcon guifg=#FABD2F
+highlight NvimTreeFolderIcon guifg=#EBCB8B
 "highlight NvimTreeGitNew guifg=#28CD41
-highlight NvimTreeNormal guibg=#3C3836
+highlight NvimTreeNormal guibg=#3B4252
 "highlight NvimTreeVertSplit guifg=#FFFFFF
 " highlight NvimTreeEmptyFolderName guifg=#D8DEE9
- highlight NvimTreeEndOfBuffer guibg=#3C3836 guifg=#3C3836
+highlight NvimTreeEndOfBuffer guibg=#3B4252 guifg=#3B4252
 " highlight NvimTreeIndentMarker guifg=#C3BAC6
 "highlight NvimTreeFolderName gui=NONE guifg=#2b2b2b
 " highlight NvimTreeOpenedFolderName guibg=#d6e5f6 guifg=#60676f
