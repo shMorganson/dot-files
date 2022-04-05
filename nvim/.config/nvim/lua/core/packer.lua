@@ -90,19 +90,16 @@ return require('packer').startup(function()
       'kyazdani42/nvim-web-devicons',
     },
   }
-  use 'goolord/alpha-nvim'
+  use 'goolord/alpha-nvim'                   -- Neovim Dashboard plugin
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
   use 'shaunsingh/nord.nvim'                 -- Nord theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
-  use 'shift-d/scratch.nvim'                 -- Scratchpad for quick edit.
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- vimwiki preview plugin
-
-  use 'mvpopuk/inspired-github.vim'          -- Inspired GitHub Theme
   use 'seblj/nvim-tabline'                   -- Tabline
-  use 'projekt0n/github-nvim-theme'          -- GitHub Neovim Theme
   use 'lewis6991/gitsigns.nvim'              -- Git Status for StatusLine
-  use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme written in lua
+  use 'akinsho/toggleterm.nvim'              -- Terminal tool
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
