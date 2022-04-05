@@ -25,7 +25,7 @@ local colors = {
 
 local custom_nord_theme = {
   normal = {
-    a = { fg = colors.nord1, bg = colors.nord7 },
+    a = { fg = colors.nord1, bg = colors.nord8 },
     b = { fg = colors.nord6, bg = colors.nord1 },
     c = { fg = colors.nord6, bg = colors.nord3 },
     y = { fg = colors.nord6, bg = colors.nord1 },

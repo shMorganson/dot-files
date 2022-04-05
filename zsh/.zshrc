@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#!/bin/bash
-
 # Setup and load complettion plugins.
 autoload -Uz compinit
 compinit
@@ -22,7 +20,7 @@ compinit
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 # Sources/Plugins
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-functions
 source ~/.zsh/zsh-aliases
 source ~/.zsh/zsh-exports
