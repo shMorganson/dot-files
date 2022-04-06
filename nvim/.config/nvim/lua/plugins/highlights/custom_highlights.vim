@@ -1,33 +1,33 @@
 " Neovim Highlights
 " highlight NormalFloat guibg=#F5F5F5
 " highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
-highlight EndOfBuffer guibg=#2E3440 guifg=#2E3440
+highlight EndOfBuffer guifg=#2E3440
 " highlight SignColumn guibg=#282828
 
 " Telescope Highlights
   " Prompt
-  "highlight TelescopePromptTitle guifg=#ffffff guibg=#007aff
-  "highlight TelescopePromptPrefix guifg=#989898
-  highlight TelescopePrompt guibg=#504945
-  highlight TelescopePromptBorder guifg=#83a598 guibg=#504945
-  "highlight TelescopePromptCounter guifg=#989898
-  highlight TelescopePromptNormal guibg=#504945
+  highlight TelescopePromptTitle guifg=#ECEFF4 guibg=#5E81AC
+  highlight TelescopePromptPrefix guifg=#B48EAD
+  highlight TelescopePrompt guibg=#4C566A
+  highlight TelescopePromptBorder guifg=#83a598 guibg=#4C566A
+  highlight TelescopePromptCounter guifg=#D8DEE9
+  highlight TelescopePromptNormal guibg=#4C566A
 
   " Results
-  "highlight TelescopeResultsTitle guifg=#ffffff guibg=#28cd41
-  highlight TelescopeResultsBorder guifg=#ECEFF4 guibg=#3C3836
-  highlight TelescopeResultsNormal guifg=#EBDBB2 guibg=#3C3836
+  highlight TelescopeResultsTitle guifg=#2E3440 guibg=#8FBCBB
+  highlight TelescopeResultsBorder guibg=#434C5E
+  highlight TelescopeResultsNormal guibg=#434C5E
 
   " Preview
-  "highlight TelescopePreviewTitle guifg=#ffffff guibg=#28cd41
-  highlight TelescopePreviewBorder guifg=#8ec07c guibg=#32302F
-  highlight TelescopePreviewNormal guifg=#EBDBB2 guibg=#32302F
+  highlight TelescopePreviewTitle guifg=#2E3440 guibg=#8FBCBB
+  highlight TelescopePreviewBorder guifg=#8ec07c guibg=#3B4252
+  highlight TelescopePreviewNormal guifg=#EBDBB2 guibg=#3B4252
 
   " Other
   "highlight TelescopeSelection gui=bold guifg=#3E3E3E guibg=#E7E7E7
   "highlight TelescopeNormal guifg=#ECEFF4 guibg=#363944
   "highlight TelescopeSelectionCaret guifg=#55bef0
-  "highlight TelescopeMatching guifg=#007aff
+  highlight TelescopeMatching guifg=#88C0D0 gui=bold
 
 " NvimTree Highlights
 highlight NvimTreeFolderIcon guifg=#EBCB8B
@@ -41,9 +41,9 @@ highlight NvimTreeEndOfBuffer guibg=#3B4252 guifg=#3B4252
 " highlight NvimTreeOpenedFolderName guibg=#d6e5f6 guifg=#60676f
 
 " vimwiki Highlighting
-highlight VimwikiHeader1 gui=bold guifg=#007aff
-highlight VimwikiHeader2 gui=bold guifg=#55bef0
-highlight VimwikiHeader3 gui=bold guifg=#59adc4
-highlight VimwikiHeader4 gui=bold guifg=#00c7be
-highlight VimwikiHeader5 gui=bold guifg=#28cd41
-highlight VimwikiHeader6 gui=bold guifg=#5856d6
+highlight VimwikiHeader1 gui=bold guifg=#5E81AC
+highlight VimwikiHeader2 gui=bold guifg=#8FBCBB
+highlight VimwikiHeader3 gui=bold guifg=#81A1C1
+highlight VimwikiHeader4 gui=bold guifg=#88C0D0
+highlight VimwikiHeader5 gui=bold guifg=#B48EAD
+highlight VimwikiHeader6 gui=bold guifg=#A3BE8C
