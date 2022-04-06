@@ -18,6 +18,7 @@ brew "code-minimap"
 brew "stow"
 brew "utm"
 brew "htop"
+brew "gotop"
 brew "tmux"
 
 # numo Intalls
