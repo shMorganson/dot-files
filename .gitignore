@@ -58,5 +58,6 @@ default.profraw
 
 # Directories to ignore
 nvim/.config/nvim/plugin/
-zsh/.config/zsh/plugins/
+zsh/.zsh/plugins/
 tmux/.tmux/plugins/
+tmux/.tmux/resurrect/
