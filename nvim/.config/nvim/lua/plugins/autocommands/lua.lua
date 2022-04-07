@@ -20,11 +20,9 @@ vim.cmd [[
     autocmd!
     autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
   augroup end
+
+  augroup _closenvimtree
+    autocmd!
+    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+  augroup end
 ]]
-
---augroup _dosini
---  autocmd! 
---  autocmd BufRead,BufNewFile *.conf setf dosini
---  augroup end
-
-
