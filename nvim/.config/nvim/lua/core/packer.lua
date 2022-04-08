@@ -49,7 +49,6 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use 'windwp/nvim-autopairs'                -- Autopairs for neovim
-  --use 'dense-analysis/ale'                   -- ALE for linting
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'           -- Used for finding Highlights
