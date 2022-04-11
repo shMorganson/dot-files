@@ -79,6 +79,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'nvim-telescope/telescope-ui-select.nvim'  -- nvim-ui-selector as default
   use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
@@ -98,6 +99,7 @@ return require('packer').startup(function()
   use 'seblj/nvim-tabline'                   -- Tabline
   use 'lewis6991/gitsigns.nvim'              -- Git Status for StatusLine
   use 'akinsho/toggleterm.nvim'              -- Terminal tool
+  use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -55,6 +55,11 @@ require('telescope').setup{
       dir_icon_hl = "NvimTreeFolderIcon",
       hidden = true,
     },
+    ui_select = {
+      require("telescope.themes").get_dropdown {
+
+      }
+    },
     -- extension_name = {
     --   extension_config_key = value,
     -- }
@@ -62,4 +67,5 @@ require('telescope').setup{
   }
 }
 
+require("telescope").load_extension "ui-select"
 require("telescope").load_extension "file_browser"
