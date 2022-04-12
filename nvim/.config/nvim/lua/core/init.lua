@@ -3,7 +3,6 @@ require('core.mappings')
 require('core.options')
 require('core.packer')
 require('plugins')
-require('tools.terminal')
 
 -- Helpers
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
