@@ -5,19 +5,19 @@ if not tabline_status_ok then
 end
 
 -- Custom Highlighting
-vim.cmd [[highlight TabLine guibg=#FFFFFF guifg=#BFC4C3 gui=bold]]
-vim.cmd [[highlight TabLineSel guifg=#85889B guibg=#FFFFFF]]
-vim.cmd [[highlight TabLineFill guifg=#FFFFFF guibg=#FFFFFF]]
+vim.cmd [[highlight TabLine guibg=#2E3440 guifg=#4C566A]]
+vim.cmd [[highlight TabLineSel guifg=#ECEFF4 guibg=#2E3440 gui=bold]]
+vim.cmd [[highlight TabLineFill guifg=#ECEFF4 guibg=#2E3440]]
 --TabLineSeparatorActive
 --TabLineSeparatorInactive
 --TabLineModifiedSeparatorActive
 --TabLineModifiedSeparatorInactive
 --TabLinePaddingActive
 --TabLinePaddingInactive
-vim.cmd [[highlight TabLineModifiedActive guibg=#FFFFFF guifg=#85889B]]
-vim.cmd [[highlight TabLineModifiedInactive guibg=FFFFFF guifg=#BFC4C3]]
-vim.cmd [[highlight TabLineCloseActive guibg=#FFFFFF guifg=#85889B]]
-vim.cmd [[highlight TabLineCloseInactive guibg=#FFFFFF guifg=#BFC4C3]]
+vim.cmd [[highlight TabLineModifiedActive guibg=#2E3440 guifg=#ECEFF4]]
+vim.cmd [[highlight TabLineModifiedInactive guibg=2E3440 guifg=#ECEFF4]]
+vim.cmd [[highlight TabLineCloseActive guibg=#2E3440 guifg=#ECEFF4]]
+vim.cmd [[highlight TabLineCloseInactive guibg=#2E3440 guifg=#ECEFF4]]
 
 
 require('tabline').setup{
