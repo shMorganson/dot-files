@@ -49,31 +49,33 @@ local lsp_symbols = {
   TypeParameter = "   (TypeParameter)"
 }
 
-cmp.setup({
+cmp.setup {
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert ({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-x><C-s>'] = cmp.mapping.complete({
+      config = {
+        sources = {
+          { name = 'vsnip' }
+        }
+      }
+    }),
     ['<C-e>'] = cmp.mapping.close(),
     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    --['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, { "i", "s" }),
+    end
+  }),
 
     ['<S-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
@@ -82,9 +84,8 @@ cmp.setup({
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end
     end, { "i", "s"}),
-  },
 
-  sources = cmp.config.sources({
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
     { name = 'path' },
@@ -92,8 +93,11 @@ cmp.setup({
     { name = 'zsh' },
   },
   {
-    { name = 'buffer' },
-  })
-})
+    name = 'buffer',
+    option = {
+        get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
+      },
+   },
+}
 
 
