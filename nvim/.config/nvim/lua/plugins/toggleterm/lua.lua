@@ -39,7 +39,7 @@ require("toggleterm").setup{
     -- not natively supported but implemented in this plugin.
     border = 'curved',
     width = 200,
-    height = 50,
+    height = 47,
     winblend = 3,
     highlights = {
       border = "Normal",
@@ -66,7 +66,7 @@ local newfloat = Terminal:new({
   direction = 'float',
     float_opts = {
       width = 200,
-      height = 50,
+      height = 47,
       winblend = 3,
       highlights = {
         border = "Normal",
@@ -80,7 +80,12 @@ function _NEW_FLOAT_TOGGLE()
   newfloat:toggle()
 end
 
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  dir = "git_dir",
+  close_on_exit = true,
+  hidden = true,
+})
 
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
