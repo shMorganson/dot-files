@@ -83,7 +83,6 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
-  use 'kdheepak/lazygit.nvim'                -- LazyGit for Neovim
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
     requires = {

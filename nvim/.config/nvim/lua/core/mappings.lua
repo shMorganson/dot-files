@@ -41,9 +41,6 @@ map('n', '<leader>fb', '<cmd>Telescope file_browser<CR>',{ noremap = true })  --
 -- Nvim Tree Mappings
 map('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', {noremap = true})
 
--- LazyGit Mappings
-map('n', '<leader>gg', '<cmd>LazyGit<CR>', {noremap = true})
-
 -- symbols-outline Mappings
 map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
 
