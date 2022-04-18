@@ -105,6 +105,16 @@ require'nvim-tree'.setup {
     relativenumber = false,
     signcolumn = "yes"
   },
+  renderer = {
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = " ",
+      },
+    },
+  },
   trash = {
     cmd = "trash",
     require_confirm = true
