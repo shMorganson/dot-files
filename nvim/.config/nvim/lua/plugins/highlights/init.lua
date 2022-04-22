@@ -1,14 +1,15 @@
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
+--vim.g.nord_contrast = true
+--vim.g.nord_borders = false
+--vim.g.nord_disable_background = false
+--vim.g.nord_italic = false
 
 -- Load the colorscheme
-require('nord').set()
+--require('nord').set()
 
 -- Setting the theme
 vim.o.background = "dark"
--- vim.cmd('colorscheme nord')
+vim.cmd('colorscheme gruvbox')
 
 -- Calling custom highlights
+-- require("plugins.highlights.custom_highlighting")
 vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'
