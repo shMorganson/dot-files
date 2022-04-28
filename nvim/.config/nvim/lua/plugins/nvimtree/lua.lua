@@ -39,9 +39,9 @@ g.nvim_tree_icons = {
       arrow_open = "",
       arrow_closed = "",
       default = " ",
-      open = " ",
-      empty = " ",
-      empty_open = " ",
+      open = "  ",
+      empty = " ",
+      empty_open = " ",
       symlink = " ",
       symlink_open = " ",
     },
@@ -59,11 +59,8 @@ require'nvim-tree'.setup {
   auto_close          = false,
   open_on_tab         = true,
   hijack_cursor       = true,
-  update_cwd          = true,
-  update_to_buf_dir   = {
     enable = true,
     auto_open = true,
-  },
   --diagnostics = {
   --  enable = true,
   --  icons = {
@@ -105,30 +102,31 @@ require'nvim-tree'.setup {
     relativenumber = false,
     signcolumn = "yes"
   },
-  renderer = {
-    indent_markers = {
-      enable = true,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = " ",
-      },
-    },
-  },
+  --renderer = {
+  --  indent_markers = {
+  --    enable = true,
+  --    icons = {
+  --      corner = "└ ",
+  --      edge = "│ ",
+  --      none = " ",
+  --    },
+  --  },
+  --},
   trash = {
     cmd = "trash",
     require_confirm = true
   },
-  open_file = {
-    quit_on_open = false,
-    resize_window = false,
-    window_picker = {
-      enable = true,
-      chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-      exclude = {
-      filetype = { "notify", "packer", "fugitive", "fugitiveblame", },
-      buftype  = { "nofile", "terminal", "help", },
-      }
-    }
-  }
+  actions = {
+    open_file = {
+      quit_on_open = false,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "fugitive", "fugitiveblame", },
+          buftype = { "nofile", "terminal", "help", },
+        },
+      },
+    },
+  },
 }

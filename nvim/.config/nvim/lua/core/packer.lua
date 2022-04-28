@@ -99,10 +99,8 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim'              -- Git Status for StatusLine
   use 'akinsho/toggleterm.nvim'              -- Terminal tool
   use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
-  use 'ellisonleao/gruvbox.nvim'             -- Gruvbox theme for neovim.
-  use 'sainnhe/everforest'                   -- Everforest theme for neovim
-
-
+  use 'rcarriga/nvim-notify'                 -- Notify for plugins
+  use 'catppuccin/nvim'                      -- Catppuccin theme
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
