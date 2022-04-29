@@ -37,3 +37,5 @@ Example code for Neovim:
 ``` bash
 stow nvim
 ```
+
+test
