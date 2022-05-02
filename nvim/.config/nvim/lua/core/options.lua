@@ -26,3 +26,7 @@ opt.showcmd = true
 opt.shell = "zsh"
 opt.conceallevel = 0                  -- Set the conceal level to 2.
 opt.laststatus = 2                    -- Set the Global Statusline
+
+-- Enabling Syntax Highlighting
+vim.cmd "syntax enable"
+vim.cmd "syntax on"
