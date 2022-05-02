@@ -1,28 +1,37 @@
-vim.cmd [[
-  
-  augroup _term
-    autocmd!
-    autocmd TermOpen * setlocal nonumber norelativenumber
-    autocmd TermOpen * startinsert
-  augroup end
+-- Setting local variables
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
-  augroup _lazygit
-    autocmd!
-    autocmd TermClose * NvimTreeRefresh
-  augroup end
+local reset_group = augroup('reset_group', {clear = true})
 
-  augroup _awsdosini
-    autocmd!
-    autocmd BufRead,BufNewFile config setf dosini
-  augroup end
+autocmd("TextYankPost", {
+  callback = function ()
+    vim.highlight.on_yank {on_visual = false}
+  end
+})
 
-  augroup _spellchecking
-    autocmd!
-    autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
-  augroup end
+autocmd("TermClose", {
+  command = "NvimTreeRefresh",
+  group = reset_group,
+  desc = "Refresh NvimTree on terminal close."
+})
 
-  augroup _closenvimtree
-    autocmd!
-    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-  augroup end
-]]
+autocmd("BufRead,BufNewFile", {
+  pattern = "config",
+  command = "setf dosini",
+  group = reset_group,
+  desc = "Set dosini syntax for cofig files."
+})
+
+autocmd("BufRead,BufNewFile", {
+  pattern = "*.txt",
+  command = "setlocal spell spelllang=en_us",
+  group = reset_group,
+  desc = "Set spell check to .txt files."
+})
+
+--autocmd("BufEnter", {
+--  command = "++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+--  group = reset_group,
+--  desc = "Close Neovim is NvimTree is only one left open."
+--})

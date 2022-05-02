@@ -1,54 +1,105 @@
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+-- Local Variables
+local keymap = vim.api.nvim_set_keymap
 
 -- nvim Mappings
-map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select and operator modes
-map('i', '<C-u>', '<C-g>u<C-u>')  -- Make <C-u> undo-friendly
-map('i', '<C-w>', '<C-g>u<C-w>')  -- Make <C-w> undo-friendly
-map('n', '<leader>t', '<cmd>tabnew<CR>', {noremap = true})  -- Open a new tab
-map('n', '<leader>sc', '<cmd>setlocal spell spelllang=en_us<CR>', {noremap = true})  -- Turn on spell check for the buffer.
-map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
-map('n', '<leader>o', 'm`o<Esc>``')  -- Insert a newline in normal mode
+keymap('', '<leader>c', '"+y', {
+})
+keymap("i", "<C-u>", "<C-g>u<C-u>", {
+  noremap = true,
+})
+keymap("i", "<C-w>", "<C-g>u<C-w>", {
+  noremap = true,
+})
+keymap("n", "<leader>t", "<cmd>tabnew<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>sc", "<cmd>setlocal spell spelllang=en_us<CR>", {
+  noremap = true,
+})
 
 -- Toggleterm Mappings
-map('t', '<Esc>', '<C-\\><C-n>')  -- Exit Terminal
-map('t', ':q!', '<cmd><C-\\><C-n>:q!<CR>')  -- Exit Terminal
-map("n", "<leader>lg", ":call v:lua._LAZYGIT_TOGGLE()<CR>", {noremap = true})  -- LazyGit in Toggleterm
-map("n", "<leader>ht", ":call v:lua._HTOP_TOGGLE()<CR>", {noremap = true})     -- htop in Toggleterm
-map("n", "<C-h>", "<cmd>ToggleTerm direction=horizontal size=17<CR>")  -- Horizontal ToggleTerm
-map("n", "<C-f>", ":call v:lua._NEW_FLOAT_TOGGLE()<CR>", {noremap = true})  -- New Float toggle
+keymap("t", "<Esc>", "<C-\\><C-n>", {
+  noremap = true,
+})
+keymap("t", ":q!", "<cmd><C-\\><C-n>:q!<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>lg", ":call v:lua._LAZYGIT_TOGGLE()<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>ht", ":call v:lua._HTOP_TOGGLE()<CR>", {
+  noremap = true,
+})
+keymap("n", "<C-h>", "<cmd>ToggleTerm direction=horizontal size=17<CR>", {
+  noremap = true,
+})
+keymap("n", "<C-f>", ":call v:lua._NEW_FLOAT_TOGGLE()<CR>", {
+  noremap = true,
+})
 
 -- Alpha Mappings
-map('n', '<leader>en', '<cmd>:ene <BAR> startinsert <CR>')
-map('n', '<leader>u', '<cmd>PackerUpdate<CR>')
-map('n', '<leader>ev', '<cmd>edit ~/.config/nvim/lua/core/init.lua<CR>')
-map('n', '<leader>q', '<cmd>exit<CR>')
-map('n', '<leader>ip', '<cmd>e: ~/.config/nvim/lua/core/packer.lua<CR>')
+keymap("n", "<leader>en", "<cmd>:ene <BAR> startinsert <CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>u", "<cmd>PackerUpdate<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>ev", "<cmd>edit ~/.config/nvim/lua/core/init.lua<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>q", "<cmd>exit<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>ip", "<cmd>e: ~/.config/nvim/lua/core/packer.lua<CR>", {
+  noremap = true,
+})
 
 -- Telescope
-map('n', '<leader>fm', '<cmd>Telescope marks<CR>')
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
-map('n', '<leader>fh', '<cmd>Telescope oldfiles<CR>')
-map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>')
-map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', {noremap = true})
-map('n', '<leader>bl', '<cmd>Telescope buffers<CR>')
-map('n', '<leader>fp', '<cmd>Telescope projects<CR>')
-map('n', '<leader>fb', '<cmd>Telescope file_browser<CR>',{ noremap = true })  -- File Browser in Telescope
+keymap("n", "<leader>fm", "<cmd>Telescope marks<CR>", {
+   noremap = true,
+})
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>bl", "<cmd>Telescope buffers<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>fp", "<cmd>Telescope projects<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", {
+  noremap = true,
+})
 
 -- Nvim Tree Mappings
-map('n', '<leader>f', '<cmd>NvimTreeOpen<CR>', {noremap = true})
+keymap ("n", "<leader>f", "<cmd>NvimTreeOpen<CR>", {
+  noremap = true,
+})
+keymap ("n", "<leader>ft", "<cmd>NvimTreeToggle<CR>", {
+  noremap = true,
+})
+keymap ("n", "<leader>fs", "<cmd>NvimTreeFocus<CR>", {
+  noremap = true,
+})
 
 -- symbols-outline Mappings
-map('n', '<leader>so', '<cmd>SymbolsOutline<CR>', {noremap = true})
+keymap ("n", "<leader>so", "<cmd>SymbolsOutline<CR>", {
+  noremap = true,
+})
 
 -- Markup Preview Mappings
-map('n', '<leader>mp', '<cmd>MarkdownPreview<CR>', {noremap = true})
-map('n', '<leader>qp', '<cmd>MarkdownPreviewStop<CR>', {noremap = true})
-
--- Buffline Mappings
-map('n', 'b[', '<cmd>BufferLineCycleNext<CR>', {noremap = true})
-map('n', 'b]', '<cmd>BufferLineCyclePrev<CR>', {noremap = true})
-map('n', 'qq', '<cmd>bdelete<CR>', {noremap = true})
+keymap ("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", {
+  noremap = true,
+})
+keymap ("n", "<leader>qp", "<cmd>MarkdownPreviewStop<CR>", {
+  noremap = true
+})
