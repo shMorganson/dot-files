@@ -7,10 +7,12 @@ end
 -- Setup Telescope
 require('telescope').setup{
   defaults = {
-    borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+    border = true,
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     layout_config = { prompt_position = "top" },
     prompt_prefix = " ",
     sorting_strategy = "ascending",
+    winblend = 3,
     dynamic_preview_title = true,
     selection_caret = " ",
     mappings = {
