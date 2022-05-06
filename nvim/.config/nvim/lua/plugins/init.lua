@@ -20,8 +20,6 @@ require('plugins.toggleterm.lua')
 require('plugins.nvim-notify.lua')
 
 -- Loading Vim Script plugins
-vim.cmd 'source ~/.config/nvim/lua/plugins/undotree/undotree.vim'
 vim.cmd 'source ~/.config/nvim/lua/plugins/vimwiki/vimwiki.vim'
 vim.cmd 'source ~/.config/nvim/lua/plugins/markdownpreview/markdownpreview.vim'
-vim.cmd 'source ~/.config/nvim/lua/plugins/markdown/markdown.vim'
 vim.cmd 'source ~/.config/nvim/lua/plugins/jsonnet/jsonnet.vim'
