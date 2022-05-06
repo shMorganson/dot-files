@@ -1,4 +1,4 @@
-# 'brew tap'
+# My 'brew tap'
 tap "epk/epk"
 
 # 'brew tap' with custom Git URL
@@ -7,7 +7,7 @@ tap "epk/epk"
 # set arguments for all 'brew install --cask' commands
 # cask_args appdir: "~/Applications", require_sha: true
 
-# 'brew install'
+# My 'brew install'
 brew "node"
 brew "jsonnet"
 brew "nvim"
@@ -21,16 +21,20 @@ brew "htop"
 brew "gotop"
 brew "tmux"
 
-# numo Intalls
+# My 'brew install --cask'
+cask "font-sf-mono-nerd-font"
+
+# numo 'brew tap'
 tap "hashicorp/tap"
 
+# numo 'brew install'
 brew "awscli"
 brew "aws-okta"
 brew "hashicorp/tap/terraform"
 brew "direnv"
+cask "wireshark"
 
-# 'brew install --cask'
-cask "font-sf-mono-nerd-font"
+# numo 'brew install --cask'
 cask "homebrew/cask/docker"
 
 # 'mas install'
