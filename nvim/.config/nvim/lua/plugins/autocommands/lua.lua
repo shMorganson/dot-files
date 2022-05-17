@@ -24,7 +24,7 @@ autocmd("BufRead,BufNewFile", {
 })
 
 autocmd("BufRead,BufNewFile", {
-  pattern = "*.txt",
+  pattern = "text",
   command = "setlocal spell spelllang=en_us",
   group = reset_group,
   desc = "Set spell check to .txt files."
