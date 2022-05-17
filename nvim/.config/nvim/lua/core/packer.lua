@@ -55,7 +55,8 @@ return require('packer').startup(function()
   use {                                      -- Used for configuring the nvim LSP.
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer'
-    }
+  }
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})  -- Scala LSP.
   use 'hrsh7th/cmp-nvim-lsp'                 -- CMP LSP
   use 'hrsh7th/cmp-buffer'                   -- CMP Buffer
   use 'hrsh7th/nvim-cmp'                     -- Nvim CMP completion plugin
@@ -101,6 +102,7 @@ return require('packer').startup(function()
   use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
   use 'catppuccin/nvim'                      -- Catppuccin theme
+  use 'sainnhe/everforest'                   -- Everforest theme
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

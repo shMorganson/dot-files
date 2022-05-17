@@ -1,8 +1,12 @@
 require("plugins.highlights.catppuccin")
 -- Setting the theme
 vim.o.background = "dark"
-vim.cmd('colorscheme catppuccin')
 
+-- Everforest Settings
+vim.g.everforest_sign_column_background = "none"
+vim.g.everforest_show_eob = 0
+
+vim.cmd('colorscheme everforest')
 
 -- Calling custom highlights
 -- require("plugins.highlights.custom_highlighting")
