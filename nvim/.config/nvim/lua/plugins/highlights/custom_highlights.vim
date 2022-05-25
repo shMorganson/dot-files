@@ -45,10 +45,10 @@
 " NvimTree Highlights
 "highlight NvimTreeFolderIcon guifg=#FAE3B0
 "highlight NvimTreeGitNew guifg=28CD41
-"highlight NvimTreeNormal guibg=#282828
+"highlight NvimTreeNormal guibg=#282D32
 "highlight NvimTreeVertSplit guifg=#4C566A guifg=#4C566A
-" highlight NvimTreeEmptyFolderName guifg=#D8DEE9
-"highlight NvimTreeEndOfBuffer guibg=#282828 guifg=#282828
+"highlight NvimTreeEmptyFolderName guifg=#D8DEE9
+"highlight NvimTreeEndOfBuffer guibg=#282D32 guifg=#282D32
 highlight NvimTreeIndentMarker guifg=#575268
 "highlight NvimTreeFolderName gui=NONE guifg=#B8BB26
 "highlight NvimTreeRootFolder guifg=#665C54

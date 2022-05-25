@@ -1,4 +1,3 @@
-require("plugins.highlights.catppuccin")
 -- Setting the theme
 vim.o.background = "dark"
 
