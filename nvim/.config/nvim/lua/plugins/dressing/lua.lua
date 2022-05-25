@@ -7,7 +7,7 @@ require('dressing').setup({
     default_prompt = "Input:",
 
     -- Can be 'left', 'right', or 'center'
-    prompt_align = "left",
+    prompt_align = "center",
 
     -- When true, <Esc> will close the modal
     insert_only = true,
@@ -19,7 +19,7 @@ require('dressing').setup({
     relative = "cursor",
 
     -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-    prefer_width = 40,
+    prefer_width = 30,
     width = nil,
     -- min_width and max_width can be a list of mixed types.
     -- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"

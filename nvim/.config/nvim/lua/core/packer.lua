@@ -66,7 +66,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'                     -- File path plugin for nvim-cmp
   use 'hrsh7th/cmp-cmdline'                  -- Command line completion
   use 'ray-x/cmp-treesitter'                 -- Treesitter plugin for nvim-cmp
-  use 'tamago324/cmp-zsh'                    -- zsh plugin for nvim-cmpi
+  use 'tamago324/cmp-zsh'                    -- zsh plugin for nvim-cmp
   use 'rafamadriz/friendly-snippets'         -- Snippets for vsnip
   use {
   'ojroques/nvim-lspfuzzy',

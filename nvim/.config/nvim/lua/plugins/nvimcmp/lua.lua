@@ -83,15 +83,15 @@ cmp.setup {
     end, { "i", "s"}),
   }),
 
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      { name = 'path' },
-      { name = 'treesitter' },
-      { name = 'zsh' },
-    }, {
-      { name = 'buffer' },
-    })
-  }
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' }, -- For vsnip users.
+    { name = 'path' },
+    { name = 'treesitter' },
+    { name = 'zsh' },
+  }, {
+    { name = 'buffer' },
+  })
+}
 
 
