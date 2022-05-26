@@ -16,14 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads Neovim whenever the plugin.lua is saved.
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
-    augroup end
-]]
-
 -- Use a protected call so we don't error out on first use.
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -101,8 +93,8 @@ return require('packer').startup(function()
   use 'akinsho/toggleterm.nvim'              -- Terminal tool
   use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
-  use 'catppuccin/nvim'                      -- Catppuccin theme
   use 'sainnhe/everforest'                   -- Everforest theme
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
