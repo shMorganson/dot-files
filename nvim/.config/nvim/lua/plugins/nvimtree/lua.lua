@@ -4,60 +4,19 @@ if not nvimtree_status_ok then
   return
 end
 
--- Variables needed for accessing vim api
-local g = vim.g
-
--- Settings for nvim-tree
-g.nvim_tree_refresh_wait = 300
-g.nvim_tree_git_hl = 0
-g.nvim_tree_root_folder_modifier = ':~'
-g.nvim_tree_icon_padding = ' '
-g.nvim_tree_symlink_arrow = ' >> '
-g.nvim_tree_respect_buf_cwd = 1
-g.nvim_tree_create_in_closed_folder = 0
-
-g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1,
-  --folder_arrows = 1
-}
-
-g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-    git = {
-      unstaged = "✗",
-      staged = "✓",
-      unmerged = "",
-      renamed = "➜",
-      untracked = "★",
-      deleted = "",
-      ignored = "◌"
-    },
-    folder = {
-      arrow_open = "",
-      arrow_closed = "",
-      default = " ",
-      open = "  ",
-      empty = " ",
-      empty_open = " ",
-      symlink = " ",
-      symlink_open = " ",
-    },
-}
-
 local get_lua_cb = function(cb_name)
   return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
 end
 
 require'nvim-tree'.setup {
   disable_netrw       = true,
+  create_in_closed_folder = false,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
   open_on_tab         = true,
   hijack_cursor       = true,
+  respect_buf_cwd = false,
   --diagnostics = {
   --  enable = true,
   --  icons = {
@@ -99,6 +58,8 @@ require'nvim-tree'.setup {
     signcolumn = "yes"
   },
   renderer = {
+    highlight_git = false,
+    root_folder_modifier = ":~",
     indent_markers = {
       enable = true,
       icons = {
@@ -110,6 +71,36 @@ require'nvim-tree'.setup {
     icons = {
       webdev_colors = true,
       git_placement = "after",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = false,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          arrow_open = "",
+          arrow_closed = "",
+          default = " ",
+          open = "  ",
+          empty = " ",
+          empty_open = " ",
+          symlink = " ",
+          symlink_open = " ",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌"
+        },
+      },
     }
   },
   trash = {
