@@ -1,5 +1,6 @@
 # My 'brew tap'
 tap "epk/epk"
+tap "homebrew/cask-fonts"
 
 # 'brew tap' with custom Git URL
 # tap "scriptingosx/DownloadFullInstaller", "https://github.com/scriptingosx/DownloadFullInstaller.git"
@@ -14,7 +15,6 @@ brew "nvim"
 brew "neofetch"
 brew "lazygit"
 brew "tree"
-brew "code-minimap"
 brew "stow"
 brew "utm"
 brew "htop"
@@ -23,6 +23,7 @@ brew "tmux"
 
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
+cask "font-fira-code-nerd-font"
 
 # numo 'brew tap'
 tap "hashicorp/tap"
@@ -32,10 +33,11 @@ brew "awscli"
 brew "aws-okta"
 brew "hashicorp/tap/terraform"
 brew "direnv"
-cask "wireshark"
+brew "coursier/formulas/coursier" # Needed for scala LSP in Neovim. Need to run 'cs setup' after the install.
 
 # numo 'brew install --cask'
 cask "homebrew/cask/docker"
+cask "wireshark"
 
 # 'mas install'
 # mas "1Password", id: 443987910
