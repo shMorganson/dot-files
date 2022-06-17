@@ -6,7 +6,7 @@ end
 
 require('lualine').setup {
   options = {
-    theme = 'everforest',
+    theme = 'ayu',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = '' },
     disabled_filetypes = { },
@@ -14,14 +14,19 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', separator = { right = '' }, right_padding = 1 },
     },
-    lualine_b = { 'branch', 'filename' },
-    lualine_c = {},
+    lualine_b = { 'branch' },
+    lualine_c = {
+      {
+        'filename',
+        path = 2,
+      }
+    },
     lualine_x = { 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location', separator = { left = '' }, left_padding = 1 },
     },
   },
   inactive_sections = {

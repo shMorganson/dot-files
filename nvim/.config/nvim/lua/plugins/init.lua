@@ -18,6 +18,7 @@ require('plugins.tabline.lua')
 require('plugins.dressing.lua')
 require('plugins.toggleterm.lua')
 require('plugins.nvim-notify.lua')
+require('plugins.comment.lua')
 
 -- Loading Vim Script plugins
 vim.cmd 'source ~/.config/nvim/lua/plugins/vimwiki/vimwiki.vim'

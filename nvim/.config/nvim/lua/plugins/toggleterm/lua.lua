@@ -39,7 +39,7 @@ require("toggleterm").setup{
     -- not natively supported but implemented in this plugin.
     border = 'curved',
     width = 200,
-    height = 47,
+    height = 40,
     winblend = 3,
     highlights = {
       border = "Normal",

@@ -5,20 +5,27 @@ if not devicons_status_ok then
 end
 
 
-require "nvim-web-devicons".set_icon {
-      sh = {
-          icon = "",
-          color = "#B48EAD",
-          name = "sh"
-      },
-      brewfile = {
-        icon = "",
-        color = "#874423",
-        name = "brewfile"
-      },
-      git = {
-        icon = "",
-        color = "#5E81AC",
-        name = "git",
-      },
+require 'nvim-web-devicons'.setup {
+  override = {
+    sh = {
+      icon = "",
+      color = "#B48EAD",
+      name = "sh",
+    },
+    brewfile = {
+      icon = "",
+      color = "#874423",
+      name = "brewfile",
+    },
+    git = {
+      icon = "",
+      color = "#5E81AC",
+      name = "git",
+    },
+    tf = {
+      icon = "�",
+      color = "#5e81ac",
+      name = "terraform",
+    },
+  };
 }

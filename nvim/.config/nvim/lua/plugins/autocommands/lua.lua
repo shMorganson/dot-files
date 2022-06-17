@@ -32,13 +32,13 @@ autocmd("BufRead,BufNewFile", {
 
 autocmd("BufWritePost", {
   pattern = "packer.lua",
-  command = "PackerSync",
+  command = "source <afile> | PackerSync",
   group = reset_group,
   desc = "Auto sync Packer when the file is written to."
 })
 
---autocmd("BufEnter", {
---  command = "++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
---  group = reset_group,
---  desc = "Close Neovim is NvimTree is only one left open."
---})
+autocmd("BufEnter", {
+  command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+  group = reset_group,
+  desc = "Close Neovim is NvimTree is only one left open."
+})

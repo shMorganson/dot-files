@@ -16,7 +16,7 @@ require'nvim-tree'.setup {
   ignore_ft_on_setup  = {},
   open_on_tab         = true,
   hijack_cursor       = true,
-  respect_buf_cwd = false,
+  respect_buf_cwd = true,
   --diagnostics = {
   --  enable = true,
   --  icons = {
@@ -60,14 +60,15 @@ require'nvim-tree'.setup {
   renderer = {
     highlight_git = false,
     root_folder_modifier = ":~",
-    indent_markers = {
-      enable = true,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = " ",
-      },
-    },
+    highlight_opened_files = "icon",
+    --indent_markers = {
+    --  enable = true,
+    --  icons = {
+    --    corner = "└ ",
+    --    edge = "│ ",
+    --    none = " ",
+    --  },
+    --},
     icons = {
       webdev_colors = true,
       git_placement = "after",
