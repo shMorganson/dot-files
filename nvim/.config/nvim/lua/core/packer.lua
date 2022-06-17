@@ -59,6 +59,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'                  -- Command line completion
   use 'ray-x/cmp-treesitter'                 -- Treesitter plugin for nvim-cmp
   use 'tamago324/cmp-zsh'                    -- zsh plugin for nvim-cmp
+
   use 'rafamadriz/friendly-snippets'         -- Snippets for vsnip
   use {
   'ojroques/nvim-lspfuzzy',
@@ -68,12 +69,19 @@ return require('packer').startup(function()
     },
   }
   use 'google/vim-jsonnet'                   -- jsonnet syntax highlighting
+
+  -- Telescope Plugins
   use {                                      -- Telescope plugin
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'nvim-telescope/telescope-ui-select.nvim'  -- nvim-ui-selector as default
   use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
+
+  use 'numToStr/Comment.nvim'                       -- Comment plugin to do quick comments.
+
+  --use 'zane-/cder.nvim'                             -- Change current working directory
+
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
   use {
@@ -94,6 +102,9 @@ return require('packer').startup(function()
   use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
   use 'sainnhe/everforest'                   -- Everforest theme
+  use 'Shatur/neovim-ayu'                    -- AYU Theme
+  use 'Zane-/cder.nvim'
+  use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
