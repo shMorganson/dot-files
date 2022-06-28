@@ -1,11 +1,11 @@
 " Neovim Highlights
-highlight FloatBorder guifg=#55B4D4 guibg=#f3f4f5
-highlight NormalFloat guibg=#f3f4f5
-highlight LineNr guifg=#8a9199
+" highlight FloatBorder guifg=#55B4D4 guibg=#f3f4f5
+" highlight NormalFloat guibg=#f3f4f5
+" highlight LineNr guifg=#8a9199
 " highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
-highlight EndOfBuffer guifg=#FCFCFC
+" highlight EndOfBuffer guifg=#FCFCFC
 " highlight VertSplit gui=bold guifg=#8a9199
-highlight SignColumn guibg=#FCFCFC
+" highlight SignColumn guibg=#FCFCFC
 " highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828
 " highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828
 " highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828
@@ -20,8 +20,8 @@ highlight SignColumn guibg=#FCFCFC
 
 " Telescope Highlights
   " Prompt
-  highlight TelescopePromptTitle guifg=#55B4D4
-  highlight TelescopePromptBorder guifg=#55B4D4
+  highlight TelescopePromptTitle ctermfg=4
+  highlight TelescopePromptBorder ctermfg=4
   "highlight TelescopePromptPrefix guifg=#F28FAD
   "highlight TelescopePrompt guibg=#575268
   "highlight TelescopePromptBorder guifg=#83a598 guibg=#575268
@@ -29,13 +29,13 @@ highlight SignColumn guibg=#FCFCFC
   "highlight TelescopePromptNormal guibg=#575268
 
   " Results
-  highlight TelescopeResultsTitle guifg=#86B300
-  highlight TelescopeResultsBorder guifg=#86B300
+  highlight TelescopeResultsTitle ctermfg=5
+  highlight TelescopeResultsBorder ctermfg=5
   "highlight TelescopeResultsNormal guibg=#302D41
 
   " Preview
-  highlight TelescopePreviewTitle  guifg=#F2AE49
-  highlight TelescopePreviewBorder guifg=#F2AE49
+  highlight TelescopePreviewTitle  ctermfg=2
+  highlight TelescopePreviewBorder ctermfg=2
   "highlight TelescopePreviewNormal guifg=#D9E0EE guibg=#1E1E2E
 
   " Other
@@ -45,7 +45,7 @@ highlight SignColumn guibg=#FCFCFC
   highlight TelescopeMatching guifg=#FA8D3E gui=bold
 
 " NvimTree Highlights
-"highlight NvimTreeFolderIcon guifg=#FAE3B0
+highlight NvimTreeFolderIcon ctermfg=4
 "highlight NvimTreeGitNew guifg=28CD41
 "highlight NvimTreeNormal guibg=#282D32
 "highlight NvimTreeVertSplit guifg=#4C566A guifg=#4C566A
@@ -53,9 +53,15 @@ highlight SignColumn guibg=#FCFCFC
 "highlight NvimTreeEndOfBuffer guibg=#282D32 guifg=#282D32
 highlight NvimTreeIndentMarker guifg=#575268
 highlight NvimTreeFolderName gui=NONE guifg=#5c6166
-highlight NvimTreeRootFolder guifg=#a37acc
+highlight NvimTreeRootFolder ctermfg=141
 highlight NvimTreeOpenedFolderName guifg=#5c6166
 highlight NvimTreeOpenedFile guifg=#FFAA33
+highlight NvimTreeGitNew ctermfg=2
+highlight NvimTreeGitDirty ctermfg=1
+highlight NvimTreeGitMerge ctermfg=3
+highlight NvimTreeGitStaged ctermfg=6
+highlight NvimTreeGitDeleted ctermfg=1
+highlight NvimTreeGitRename ctermfg=3
 
 " vimwiki Highlighting
  highlight VimwikiHeader1 gui=bold guifg=#55B4D4
@@ -66,8 +72,40 @@ highlight NvimTreeOpenedFile guifg=#FFAA33
  highlight VimwikiHeader6 gui=bold guifg=#F07171
 
 " Alpha Highlights
-highlight AlphaFooterColor guifg=#86B300
-highlight AlphaHeaderColor guifg=#55B4D4
+highlight AlphaFooterColor ctermfg=2
+highlight AlphaHeaderColor ctermfg=5
 
-" Lualine Highlights
-"highlight lualine_transitional_lualine_a_insert_to_StatusLine guifg=#689D6A guibg=#32302F
+" Notify
+" Error
+highlight NotifyERRORBorder guifg=#F07171 ctermfg=1
+highlight NotifyERRORIcon guifg=#E65050 ctermfg=1
+highlight NotifyERRORTitle  guifg=#E65050 ctermfg=1
+highlight link NotifyERRORBody Normal
+
+" Warn
+" highlight NotifyWARNBorder guifg=#79491D
+" highlight NotifyWARNIcon guifg=#F79000
+" highlight NotifyWARNTitle guifg=#F79000
+" highlight link NotifyWARNBody Normal
+
+" Info
+" highlight NotifyINFOBorder guifg=#4F6752
+" highlight NotifyINFOIcon guifg=#A9FF68
+" highlight NotifyINFOTitle guifg=#A9FF68
+" highlight link NotifyINFOBody Normal
+
+" Debug
+" highlight NotifyDEBUGBorder guifg=#8B8B8B
+" highlight NotifyDEBUGIcon guifg=#8B8B8B
+" highlight NotifyDEBUGTitle  guifg=#8B8B8B
+" highlight link NotifyDEBUGBody Normal
+
+" Trace
+" highlight NotifyTRACEBorder guifg=#4F3552
+" highlight NotifyTRACEIcon guifg=#D484FF
+" highlight NotifyTRACETitle  guifg=#D484FF
+" highlight link NotifyTRACEBody Normal
+
+" DevIcon
+highlight DevIconterraform guifg=#5e81ac ctermfg=2
+highlight DevIconbrewfile guifg=#874423 ctermfg=94

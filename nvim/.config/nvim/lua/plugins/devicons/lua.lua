@@ -23,7 +23,7 @@ require 'nvim-web-devicons'.setup {
       name = "git",
     },
     tf = {
-      icon = "�",
+      icon = "",
       color = "#5e81ac",
       name = "terraform",
     },

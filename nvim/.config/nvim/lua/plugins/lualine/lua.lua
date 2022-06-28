@@ -6,7 +6,7 @@ end
 
 require('lualine').setup {
   options = {
-    theme = 'ayu',
+    theme = 'nord',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = '' },
     disabled_filetypes = { },

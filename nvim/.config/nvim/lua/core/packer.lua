@@ -105,6 +105,7 @@ return require('packer').startup(function()
   use 'Shatur/neovim-ayu'                    -- AYU Theme
   use 'Zane-/cder.nvim'
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
+  use 'arcticicestudio/nord-vim'             -- Nord theme
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

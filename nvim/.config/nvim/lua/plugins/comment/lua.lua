@@ -1,6 +1,9 @@
 local comment_status_ok, comment = pcall(require, "Comment")
 if not comment_status_ok then
-  print("comment.nvim is etiher broken or is not installed.")
+  vim.notify = require("notify")
+  vim.notify("Comment plugin is not installed or is broken.", "error", {
+    title = "Missing or Broken Plugin"
+  })
   return
 end
 
