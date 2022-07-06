@@ -1,6 +1,10 @@
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
-	return
+  vim.notify = require("notify")
+  vim.notify("Alpha plugin is not installed or is broken.", "error", {
+    title = "Missing or Broken Plugin"
+  })
+  return
 end
 
 local function footer()

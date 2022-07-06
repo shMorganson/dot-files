@@ -75,12 +75,11 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'nvim-telescope/telescope-ui-select.nvim'  -- nvim-ui-selector as default
-  use 'nvim-telescope/telescope-file-browser.nvim'  -- File Browser for Telescope
-
-  use 'numToStr/Comment.nvim'                       -- Comment plugin to do quick comments.
-
-  --use 'zane-/cder.nvim'                             -- Change current working directory
+  use 'nvim-telescope/telescope-ui-select.nvim'      -- nvim-ui-selector as default
+  use 'nvim-telescope/telescope-file-browser.nvim'   -- File Browser for Telescope
+  use 'AckslD/nvim-neoclip.lua'                      -- Yank extension for Telescope
+  use 'numToStr/Comment.nvim'                        -- Comment plugin to do quick comments.
+  use 'zane-/cder.nvim'                              -- Change current working directory
 
   use 'yorik1984/vim-gitignore'              -- Gitignore syntax highlighting
   use 'ahmedkhalf/project.nvim'              -- Project plugin for Neovim
@@ -103,9 +102,9 @@ return require('packer').startup(function()
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
   use 'sainnhe/everforest'                   -- Everforest theme
   use 'Shatur/neovim-ayu'                    -- AYU Theme
-  use 'Zane-/cder.nvim'
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
   use 'arcticicestudio/nord-vim'             -- Nord theme
+  use 'pineapplegiant/spaceduck'             -- SpaceSuck theme
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

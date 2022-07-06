@@ -82,6 +82,9 @@ keymap("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", {
 keymap("n", "<leader>hn", "<cmd>Telescope help_tags<CR>", {
   noremap = true,
 })
+keymap("n", "<leader>ty", "<cmd>Telescope neoclip<CR>", {
+  noremap = true
+})
 
 -- Nvim Tree Mappings
 keymap ("n", "<leader>f", "<cmd>NvimTreeOpen<CR>", {
@@ -92,6 +95,9 @@ keymap ("n", "<leader>ft", "<cmd>NvimTreeToggle<CR>", {
 })
 keymap ("n", "<leader>fs", "<cmd>NvimTreeFocus<CR>", {
   noremap = true,
+})
+keymap ("n", "<leader>fq", "<cmd>NvimTreeClose<CR>", {
+  noremap = true
 })
 
 -- symbols-outline Mappings
