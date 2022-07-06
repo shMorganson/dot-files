@@ -12,7 +12,7 @@ require('telescope').setup{
     layout_config = { prompt_position = "top" },
     prompt_prefix = " ",
     sorting_strategy = "ascending",
-    -- winblend = 3,
+    winblend = 3,
     dynamic_preview_title = true,
     selection_caret = " ",
     mappings = {
@@ -74,4 +74,4 @@ require("telescope").load_extension("ui-select")
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("notify")
 require("telescope").load_extension("cder")
---require('telescope').load_extension('cder')
+require('telescope').load_extension('neoclip')
