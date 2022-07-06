@@ -15,7 +15,7 @@
 --vim.g.everforest_show_eob = 0
 
 -- vim.g.ayucolor="light"
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme spaceduck')
 
 -- Calling custom highlights
 vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'

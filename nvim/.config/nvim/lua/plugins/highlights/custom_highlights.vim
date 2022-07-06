@@ -1,10 +1,11 @@
 " Neovim Highlights
-" highlight FloatBorder guifg=#55B4D4 guibg=#f3f4f5
+highlight Comment guifg=#818596
+highlight FloatBorder guibg=#0f111b
 " highlight NormalFloat guibg=#f3f4f5
-" highlight LineNr guifg=#8a9199
+" highlight LineNr guifg=#686f9a
 " highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
-" highlight EndOfBuffer guifg=#FCFCFC
-" highlight VertSplit gui=bold guifg=#8a9199
+highlight EndOfBuffer guifg=#0f111b
+highlight VertSplit gui=NONE guifg=#0f111b
 " highlight SignColumn guibg=#FCFCFC
 " highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828
 " highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828
@@ -15,71 +16,71 @@
 
 " GitSigns Highlights
 " highlight GitSignsAdd guifg=#B8BB26 guibg=#282828
-" highlight GitSignsChange guifg=#FE8019 guibg=#282828
+highlight GitSignsChange guifg=#e39400 guibg=#0f111b
 " highlight GitSignsDelete guifg=#FB4934 guibg=#282828
 
 " Telescope Highlights
   " Prompt
-  highlight TelescopePromptTitle ctermfg=4
-  highlight TelescopePromptBorder ctermfg=4
-  "highlight TelescopePromptPrefix guifg=#F28FAD
+  highlight TelescopePromptTitle guifg=#00a3cc
+  highlight TelescopePromptBorder guifg=#00a3cc
+  highlight TelescopePromptPrefix guifg=#ce6f8f
   "highlight TelescopePrompt guibg=#575268
   "highlight TelescopePromptBorder guifg=#83a598 guibg=#575268
-  "highlight TelescopePromptCounter guifg=#988BA2
+  highlight TelescopePromptCounter guifg=#c1c3cc
   "highlight TelescopePromptNormal guibg=#575268
 
   " Results
-  highlight TelescopeResultsTitle ctermfg=5
-  highlight TelescopeResultsBorder ctermfg=5
+  highlight TelescopeResultsTitle guifg=#5ccc96
+  highlight TelescopeResultsBorder guifg=#5ccc96
   "highlight TelescopeResultsNormal guibg=#302D41
 
   " Preview
-  highlight TelescopePreviewTitle  ctermfg=2
-  highlight TelescopePreviewBorder ctermfg=2
+ highlight TelescopePreviewTitle guifg=#7a5ccc
+ highlight TelescopePreviewBorder guifg=#7a5ccc
   "highlight TelescopePreviewNormal guifg=#D9E0EE guibg=#1E1E2E
 
   " Other
   "highlight TelescopeSelection gui=bold guifg=#3E3E3E guibg=#E7E7E7
   "highlight TelescopeNormal guifg=#ECEFF4 guibg=#363944
   "highlight TelescopeSelectionCaret guifg=#F8BD96
-  highlight TelescopeMatching guifg=#FA8D3E gui=bold
+  " highlight TelescopeMatching guifg=#FA8D3E gui=bold
 
 " NvimTree Highlights
-highlight NvimTreeFolderIcon ctermfg=4
+"highlight NvimTreeFolderIcon gui=NONE guifg=#f2ce00
 "highlight NvimTreeGitNew guifg=28CD41
 "highlight NvimTreeNormal guibg=#282D32
 "highlight NvimTreeVertSplit guifg=#4C566A guifg=#4C566A
 "highlight NvimTreeEmptyFolderName guifg=#D8DEE9
 "highlight NvimTreeEndOfBuffer guibg=#282D32 guifg=#282D32
-highlight NvimTreeIndentMarker guifg=#575268
-highlight NvimTreeFolderName gui=NONE guifg=#5c6166
-highlight NvimTreeRootFolder ctermfg=141
-highlight NvimTreeOpenedFolderName guifg=#5c6166
-highlight NvimTreeOpenedFile guifg=#FFAA33
-highlight NvimTreeGitNew ctermfg=2
-highlight NvimTreeGitDirty ctermfg=1
-highlight NvimTreeGitMerge ctermfg=3
-highlight NvimTreeGitStaged ctermfg=6
-highlight NvimTreeGitDeleted ctermfg=1
-highlight NvimTreeGitRename ctermfg=3
-
+"highlight NvimTreeIndentMarker guifg=#575268
+highlight NvimTreeFolderName gui=NONE guifg=#ecf0c1
+"highlight NvimTreeRootFolder ctermfg=141
+"highlight NvimTreeOpenedFolderName guifg=#5c6166
+"highlight NvimTreeOpenedFile guifg=#FFAA33
+"highlight NvimTreeGitNew ctermfg=2
+"highlight NvimTreeGitDirty ctermfg=1
+"highlight NvimTreeGitMerge ctermfg=3
+"highlight NvimTreeGitStaged ctermfg=6
+"highlight NvimTreeGitDeleted ctermfg=1
+"highlight NvimTreeGitRename ctermfg=3
+"
 " vimwiki Highlighting
- highlight VimwikiHeader1 gui=bold guifg=#55B4D4
- highlight VimwikiHeader2 gui=bold guifg=#F2AE49
- highlight VimwikiHeader3 gui=bold guifg=#86B300
- highlight VimwikiHeader4 gui=bold guifg=#A37ACC
- highlight VimwikiHeader5 gui=bold guifg=#4CBF99
- highlight VimwikiHeader6 gui=bold guifg=#F07171
+ highlight VimwikiHeader1 gui=bold guifg=#55B4D4 ctermfg=6
+ highlight VimwikiHeader2 gui=bold guifg=#F2AE49 ctermfg=5
+ highlight VimwikiHeader3 gui=bold guifg=#86B300 ctermfg=4
+ highlight VimwikiHeader4 gui=bold guifg=#A37ACC ctermfg=3
+ highlight VimwikiHeader5 gui=bold guifg=#4CBF99 ctermfg=2
+ highlight VimwikiHeader6 gui=bold guifg=#F07171 ctermfg=1
 
 " Alpha Highlights
-highlight AlphaFooterColor ctermfg=2
-highlight AlphaHeaderColor ctermfg=5
+highlight AlphaFooterColor guifg=#5ccc96
+highlight AlphaHeaderColor guifg=#00a3cc
 
 " Notify
 " Error
-highlight NotifyERRORBorder guifg=#F07171 ctermfg=1
-highlight NotifyERRORIcon guifg=#E65050 ctermfg=1
-highlight NotifyERRORTitle  guifg=#E65050 ctermfg=1
+highlight NotifyERRORBorder guifg=#e33400
+highlight NotifyERRORIcon guifg=#e33400
+highlight NotifyERRORTitle  guifg=#e33400
 highlight link NotifyERRORBody Normal
 
 " Warn
@@ -107,5 +108,6 @@ highlight link NotifyERRORBody Normal
 " highlight link NotifyTRACEBody Normal
 
 " DevIcon
-highlight DevIconterraform guifg=#5e81ac ctermfg=2
-highlight DevIconbrewfile guifg=#874423 ctermfg=94
+highlight DevIconterraform guifg=#5e81ac
+highlight DevIconbrewfile guifg=#874423
+highlight DevIconsh guifg=#b48ead

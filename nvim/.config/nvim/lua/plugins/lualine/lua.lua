@@ -6,7 +6,7 @@ end
 
 require('lualine').setup {
   options = {
-    theme = 'nord',
+    theme = 'spaceduck',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = '' },
     disabled_filetypes = { },
@@ -14,7 +14,7 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { right = '' }, right_padding = 1 },
+      { 'mode', separator = { left = '', right = '' }, right_padding = 1 },
     },
     lualine_b = { 'branch' },
     lualine_c = {
@@ -26,7 +26,7 @@ require('lualine').setup {
     lualine_x = { 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = {
-      { 'location', separator = { left = '' }, left_padding = 1 },
+      { 'location', separator = { left = '', right = '' }, left_padding = 1 },
     },
   },
   inactive_sections = {
