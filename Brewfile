@@ -24,6 +24,7 @@ brew "tmux"
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "font-fira-code-nerd-font"
+cask "alacritty"
 
 # numo 'brew tap'
 tap "hashicorp/tap"
