@@ -7,14 +7,6 @@ end
 -- Variables
 local opt = vim.opt
 
--- Highlighting
--- vim.cmd [[highlight IndentBlanklineSpaceChar guifg=#F5F5F5i gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#A3BE8C gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent3 guifg=#EBCB8B gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent4 guifg=#D08770 gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#B48EAD gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#BF616A gui=nocombine]]
-
 -- Options
 opt.list = true
 -- opt.listchars = {
