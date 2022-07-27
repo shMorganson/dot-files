@@ -16,6 +16,12 @@ keymap("n", "<leader>t", "<cmd>tabnew<CR>", {
 keymap("n", "<leader>sc", "<cmd>setlocal spell spelllang=en_us<CR>", {
   noremap = true,
 })
+keymap("n", "<leader>cl", "<cmd>set cursorline<CR>", {
+  noremap = true,
+})
+keymap("n", "<leader>lo", "<cmd>set nocursorline<CR>", {
+  noremap = true,
+})
 
 -- Toggleterm Mappings
 keymap("t", "<Esc>", "<C-\\><C-n>", {
