@@ -37,6 +37,7 @@ dashboard.section.header.val = {
  [[ ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
  [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
 }
+
 dashboard.section.buttons.val = {
   dashboard.button("<leader> f b", "   File Browser", ":Telescope file_browser <CR>"),
   dashboard.button("<leader> e n", "   New File", ":ene <BAR> startinsert <CR>"),
