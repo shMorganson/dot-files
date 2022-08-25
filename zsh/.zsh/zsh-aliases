@@ -18,6 +18,9 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
+# Tmux shortcuts
+alias tms='active_tmux'
+
 # Neovim shortcuts.
 alias neoconfig="nvim ~/dot-files/nvim/.config/nvim/init.lua"
 alias neopacker="nvim ~/dot-files/nvim/.config/nvim/lua/core/packer.lua"
