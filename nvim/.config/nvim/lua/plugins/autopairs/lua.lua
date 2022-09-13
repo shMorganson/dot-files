@@ -1,14 +1,14 @@
 -- Setup nvim autopairs
-local status_ok, npairs = pcall(require, "npairs")
+local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
   vim.notify = require("notify")
-  vim.notify("Neoclip plugin is not installed or is broken.", "error", {
+  vim.notify("NVIM-AUTOPAIRS plugin is not installed or is broken.", "error", {
     title = "Missing or Broken Plugin"
   })
   return
 end
 
-npairs.setup {
+require("nvim-autopairs").setup {
   check_ts = true,
   ts_config = {
     lua = { "string", "source" },

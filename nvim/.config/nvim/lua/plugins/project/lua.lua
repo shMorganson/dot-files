@@ -29,7 +29,7 @@ project.setup({
   -- exclude_dirs ={"~/dot-files/"},
 
 -- Show hidden files in telescope when searching for files in a project
-  show_hidden = false,
+  show_hidden = true,
 
   -- When set to false, you will get a message when project.nvim changes your directory.
   -- When set to false, you will get a message when project.nvim changes your directory.

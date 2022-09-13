@@ -86,12 +86,12 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',              -- NvimTree
     requires = {
-      'kyazdani42/nvim-web-devicons',
+      'kyazdani42/nvim-web-devicons', opt = true
     },
   }
   use 'goolord/alpha-nvim'                   -- Neovim Dashboard plugin
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
-  use 'shaunsingh/nord.nvim'                 -- Nord theme
+  use 'arcticicestudio/nord-vim'                -- Nord theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- vimwiki preview plugin
@@ -100,11 +100,9 @@ return require('packer').startup(function()
   use 'akinsho/toggleterm.nvim'              -- Terminal tool
   use 'stevearc/dressing.nvim'               -- Match UI schemes/tools
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
-  use 'sainnhe/everforest'                   -- Everforest theme
-  use 'Shatur/neovim-ayu'                    -- AYU Theme
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
-  use 'arcticicestudio/nord-vim'             -- Nord theme
   use 'pineapplegiant/spaceduck'             -- SpaceSuck theme
+  use 'catppuccin/nvim'                      -- Catppuccin theme
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

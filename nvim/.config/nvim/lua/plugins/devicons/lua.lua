@@ -26,6 +26,6 @@ require 'nvim-web-devicons'.setup {
       icon = "",
       color = "#5e81ac",
       name = "terraform",
-    },
-  };
+    }
+  }
 }

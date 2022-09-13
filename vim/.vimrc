@@ -86,14 +86,12 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
-Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'darfink/vim-plist'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'google/vim-jsonnet'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
 Plug 'jiangmiao/auto-pairs'
@@ -101,6 +99,7 @@ Plug 'yorik1984/vim-gitignore'
 Plug 'glepnir/dashboard-nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'hashivim/vim-terraform'
+Plug 'pineapplegiant/spaceduck'
 
 call plug#end()
 
@@ -131,7 +130,7 @@ endfunction
 " VIM THEME SETTINGS
 set t_Co=256
 set background=dark
-colorscheme nord
+colorscheme spaceduck
 
 " Plugin Settins and Configuration
 
@@ -159,10 +158,10 @@ let NERDTreeShowHidden=1
 
 " NERDTree UI Changes
 let NERDTreeHighlightCursorline = 1
-autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
-autocmd VimEnter,Colorscheme * :hi NERDTreeOpenable  guifg=#A3BE8C   ctermfg=2
-autocmd VimEnter,Colorscheme * :hi NERDTreeUp guifg=#BF616A ctermfg=1
-autocmd VimEnter,Colorscheme * :hi NERDTreeCWD guifg=#92B3B3 ctermfg=14
+"autocmd VimEnter,Colorscheme * :hi NERDTreeExecFile  guifg=#A3BE8C   ctermfg=2
+"autocmd VimEnter,Colorscheme * :hi NERDTreeOpenable  guifg=#A3BE8C   ctermfg=2
+"autocmd VimEnter,Colorscheme * :hi NERDTreeUp guifg=#BF616A ctermfg=1
+"autocmd VimEnter,Colorscheme * :hi NERDTreeCWD guifg=#92B3B3 ctermfg=14
 "autocmd VimEnter,Colorscheme * :hi NERDTreeFlags guifg=#FFFFFF ctermfg=7
 "autocmd VimEnter,Colorscheme * :hi NERDTreeDir guifg=#AF8EAC ctermfg=5
 
@@ -174,6 +173,7 @@ nnoremap <leader>tf :NERDTreeFind<CR>
 " DEV ICON SETTINGS
 " Loading the plugin
 let g:webdevicons_enable = 1
+set guifont="SFMono Nerd Font":h"15"
 
 " Adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 1
@@ -183,7 +183,7 @@ let g:NERDTreeDirArrowCollapsible = ''
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:NERDTreeHighlightFoldersFullName = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:webdevicons_conceal_nerdtree_brackets = 0
 
 " Change the default folder/directory glyph/icon
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
@@ -274,7 +274,7 @@ let g:ale_fixers = {
 
 
 " AIRLINE SETTINGS
-let g:airline_theme = "nord"
+let g:airline_theme = "spaceduck"
 let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = 'E:'
 let airline#extensions#ale#warning_symbol = 'W:'

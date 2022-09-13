@@ -14,7 +14,7 @@ highlight SDForeground guifg=#ecf0c1 ctermfg=255
 highlight SDGrey guifg=#818596 ctermfg=102
 highlight SDGrey2 guifg=#c1c3cc ctermfg=251
 highlight SDPureWhite guifg=#ffffff ctermfg=15
-highlight SDPureBlack guifg=#000000 ctermfg=0
+" highlight SDPureBlack guifg=#000000 ctermfg=0
 
 " Neovim Highlights
   highlight Comment guifg=#818596 ctermfg=102 gui=italic
@@ -23,7 +23,7 @@ highlight SDPureBlack guifg=#000000 ctermfg=0
 " highlight LineNr guifg=#686f9a
 " highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
   highlight EndOfBuffer guifg=#0f111b ctermfg=233
-  highlight VertSplit gui=NONE guifg=#0f111b
+  highlight VertSplit guifg=#c1c3cc ctermfg=251 guibg=#0f111b ctermbg=233
 " highlight SignColumn guibg=#FCFCFC
 " highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828
 " highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828
