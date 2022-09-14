@@ -103,6 +103,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
   use 'pineapplegiant/spaceduck'             -- SpaceSuck theme
   use 'catppuccin/nvim'                      -- Catppuccin theme
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

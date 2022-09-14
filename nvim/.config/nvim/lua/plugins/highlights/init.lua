@@ -8,4 +8,4 @@ require("catppuccin").setup()
 vim.cmd [[colorscheme catppuccin]]
 
 -- Calling custom highlights
---vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'
+vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'
