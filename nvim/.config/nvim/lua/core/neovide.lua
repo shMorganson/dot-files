@@ -2,11 +2,13 @@
 vim.cmd [[
 if exists("g:neovide")
   let g:neovide_transparency=0.0
-  let g:transparency = 1
+  let g:transparency = 0.98
   let g:neovide_background_color = '#24273a'.printf('%x', float2nr(255 * g:transparency))
   let g:neovide_input_use_logo=v:true
   let g:neovide_cursor_animation_length=0.03
   let g:neovide_cursor_trail_size=0.8
+  let g:neovide_floating_blur_amount_x = 2.0
+  let g:neovide_floating_blur_amount_y = 2.0
 
   let g:terminal_color_0 = "#6E738D"
   let g:terminal_color_8 = "#8087A2"

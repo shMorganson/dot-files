@@ -3,7 +3,9 @@ local keymap = vim.api.nvim_set_keymap
 
 -- nvim Mappings
 keymap('', '<leader>c', '"+y', {
-})
+}) --Copy to clipboard.
+keymap('', '<leader>p', '"*p', {
+}) -- Paste from clipboard.
 keymap("i", "<C-u>", "<C-g>u<C-u>", {
   noremap = true,
 })
