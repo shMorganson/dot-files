@@ -8,7 +8,7 @@ export PATH="$HOME/.local/bin":$PATH
 export PATH=$HOME/.fnm:$PATH
 
 export COLORTERM=truecolor
-export EDITOR=“cot”
+export EDITOR=“nvim”
 export TERMINAL=“terminal”
 export BROWSER="safari"
 export PATH="/opt/homebrew/bin:$PATH"
