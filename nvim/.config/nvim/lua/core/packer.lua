@@ -91,7 +91,7 @@ return require('packer').startup(function()
   }
   use 'goolord/alpha-nvim'                   -- Neovim Dashboard plugin
   use 'simrat39/symbols-outline.nvim'        -- Symbols Outline for neovim
-  use 'arcticicestudio/nord-vim'                -- Nord theme
+  use 'arcticicestudio/nord-vim'             -- Nord theme
   use 'fladson/vim-kitty'                    -- Syntax highlighting for kitty.conf
   use 'vimwiki/vimwiki'                      -- Wiki note management system.
   use {'iamcco/markdown-preview.nvim', ft = 'markdown', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- vimwiki preview plugin
@@ -102,8 +102,8 @@ return require('packer').startup(function()
   use 'rcarriga/nvim-notify'                 -- Notify for plugins
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
   use 'pineapplegiant/spaceduck'             -- SpaceSuck theme
-  use 'catppuccin/nvim'                      -- Catppuccin theme
-  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-web-devicons'         -- Dev Icons
+  use 'gruvbox-community/gruvbox'            -- Gruvbox theme
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,119 +1,116 @@
 " Neovim Highlights
-  " highlight Comment guifg=#818596 ctermfg=102 gui=italic
-  " highlight FloatBorder guibg=#0f111b ctermbg=233
-" highlight NormalFloat guibg=#f3f4f5
-" highlight LineNr guifg=#686f9a
-" highlight FloatBorder guibg=#F5F5F5 guifg=#F5F5F5
-  " highlight EndOfBuffer guifg=#0f111b ctermfg=233
-  " highlight VertSplit guifg=#c1c3cc ctermfg=251 guibg=#0f111b ctermbg=233
-" highlight SignColumn guibg=#FCFCFC
-" highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828
-" highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828
-" highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828
-" highlight DiagnosticSignError guifg=#FB4934 guibg=#282828
-" highlight DiagnosticHint guifg=#8EC07C guibg=#282828
-"highlight StatusLine guibg=#1A1826
+"highlight Comment guifg=#686f9a ctermfg=60 gui=italic
+highlight FloatBorder guibg=#504945 guifg=#504945 ctermbg=239 ctermfg=239
+ " highlight Normal guibg=NONE guifg=NONE
+"highlight LineNr guifg=#7a5ccc
+"highlight FloatermBorder guibg=None guifg=#10737B
+highlight EndOfBuffer guifg=#282828 guibg=#282828 ctermfg=235 ctermbg=235
+" highlight VertSplit gui=NONE guibg=None guifg=#10737B
+"highlight BufferLineSeparator guifg=#172030
+highlight SignColumn guibg=#282828 ctermbg=235
+highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828 ctermbg=235 ctermfg=108
+highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828 ctermbg=235 ctermfg=109
+highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828 ctermbg=235 ctermfg=214
+highlight DiagnosticSignError guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
+highlight DiagnosticHint guifg=#8EC07C guibg=#282828
+highlight StatusLine guibg=#282828
+highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
 
 " Treesitter
 " highlight! link TSField SDDarkPurple2
 
 " GitSigns Highlights
-" highlight GitSignsAdd guifg=#B8BB26 guibg=#282828
-"   highlight GitSignsChange guifg=#e39400 guibg=#0f111b
-" highlight GitSignsDelete guifg=#FB4934 guibg=#282828
+highlight GitSignsAdd guifg=#B8BB26 guibg=#282828 ctermbg=235 ctermfg=142
+highlight GitSignsChange guifg=#8EC07C guibg=#282828 ctermbg=235 ctermfg=108
+highlight GitSignsDelete guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
 
 " Telescope Highlights
   " Prompt
-    " highlight! link TelescopePromptTitle SDCyan
-    " highlight! link TelescopePromptBorder SDForeground
-    " highlight! link TelescopePromptPrefix SDMagenta
-    "highlight TelescopePrompt guibg=#575268
-    "highlight TelescopePromptBorder guifg=#83a598 guibg=#575268
-    " highlight! link TelescopePromptCounter SDGrey2
-    "highlight TelescopePromptNormal guibg=#575268
+    highlight TelescopePromptTitle guibg=#458588 ctermbg=66 guifg=#282828 ctermfg=235 
+    highlight TelescopePromptBorder guifg=#7C6F64 guibg=#7C6F64 ctermfg=243 ctermbg=243
+    highlight TelescopePromptNormal guifg=#EBDBB2 guibg=#7C6F64 ctermfg=223 ctermbg=243
+    highlight TelescopePromptPrefix guifg=#D3869B ctermfg=175
 
   " Results
-    " highlight! link TelescopeResultsTitle SDGreen
-    " highlight! link TelescopeResultsBorder SDForeground
-    "highlight TelescopeResultsNormal guibg=#302D41
+    highlight TelescopeResultsTitle guifg=#282828 guibg=#B8BB26 ctermfg=235 ctermbg=142
+    highlight TelescopeResultsBorder guifg=#665C54 guibg=#665C54 ctermfg=241 ctermbg=241
+    highlight TelescopeResultsNormal guifg=#EBDBB2 guibg=#665C54 ctermfg=223 ctermbg=241
 
   " Preview
-    " highlight! link TelescopePreviewTitle SDPurple2
-    " highlight! link TelescopePreviewBorder SDForeground
-    " highlight TelescopePreviewNormal guifg=#D9E0EE guibg=#1E1E2E
+    highlight TelescopePreviewTitle guifg=#282828 guibg=#B16286 ctermfg=235 ctermbg=132
+    highlight TelescopePreviewBorder guifg=#504945 guibg=#504945 ctermfg=239 ctermbg=239
+    highlight TelescopePreviewNormal guibg=#504945 ctermbg=239
 
   " Other
-    "highlight TelescopeSelection gui=bold guifg=#3E3E3E guibg=#E7E7E7
+    highlight TelescopeSelection gui=bold cterm=bold
     "highlight TelescopeNormal guifg=#ECEFF4 guibg=#363944
-    "highlight TelescopeSelectionCaret guifg=#F8BD96
-    " highlight TelescopeMatching guifg=#FA8D3E gui=bold
+    highlight TelescopeSelectionCaret guifg=#D3869B ctermfg=175 gui=NONE cterm=NONE
+    "highlight TelescopeMatching guifg=#FA8D3E gui=bold
 
 " NvimTree Highlights
-  " highlight NvimTreeFolderIcon guifg=#00a3cc
-  "highlight NvimTreeGitNew guifg=28CD41
+highlight NvimTreeFolderIcon guifg=#FABD2F ctermfg=214
   "highlight NvimTreeNormal guibg=#282D32
   "highlight NvimTreeVertSplit guifg=#4C566A guifg=#4C566A
   "highlight NvimTreeEmptyFolderName guifg=#D8DEE9
-  "highlight NvimTreeEndOfBuffer guibg=#282D32 guifg=#282D32
-  "highlight NvimTreeIndentMarker guifg=#575268
-  highlight NvimTreeFolderName guifg=#CAD3F5
-  "highlight NvimTreeRootFolder ctermfg=141
-  "highlight NvimTreeOpenedFolderName guifg=#7a5ccc
-  "highlight NvimTreeOpenedFile guifg=#FFAA33
-  "highlight NvimTreeGitNew ctermfg=2
-  "highlight NvimTreeGitDirty ctermfg=1
-  "highlight NvimTreeGitMerge ctermfg=3
-  "highlight NvimTreeGitStaged ctermfg=6
-  "highlight NvimTreeGitDeleted ctermfg=1
-  "highlight NvimTreeGitRename ctermfg=3
+highlight NvimTreeIndentMarker guifg=#458588 ctermfg=66
+highlight NvimTreeFolderName guifg=#EBDBB2 ctermfg=223
+highlight NvimTreeRootFolder guifg=#D3869B ctermfg=175
+highlight NvimTreeOpenedFolderName guifg=#EBDBB2 ctermfg=223
+highlight NvimTreeOpenedFile guifg=#FFAA33
+highlight NvimTreeGitNew guifg=#B8BB26 ctermfg=142
+highlight NvimTreeGitDirty guifg=#875F00 ctermfg=94
+highlight NvimTreeGitMerge guifg=#FE8019 ctermfg=208
+highlight NvimTreeGitStaged guifg=#83A598 ctermfg=109
+highlight NvimTreeGitDeleted guifg=#FB4934 ctermfg=167
+highlight NvimTreeGitRename guifg=#D79921 ctermfg=172
 
 " vimwiki Highlighting
- " highlight VimwikiHeader1 gui=bold guifg=#7a5ccc ctermfg=98
- " highlight VimwikiHeader2 gui=bold guifg=#b3a1e6 ctermfg=146
- " highlight VimwikiHeader3 gui=bold guifg=#5ccc96 ctermfg=78
- " highlight VimwikiHeader4 gui=bold guifg=#00a3cc ctermfg=38
- " highlight VimwikiHeader5 gui=bold guifg=#ce6f8f ctermfg=168
- " highlight VimwikiHeader6 gui=bold guifg=#686f9a ctermfg=60
+highlight VimwikiHeader1 gui=bold guifg=#B8BB26 ctermfg=142 cterm=bold
+highlight VimwikiHeader2 gui=bold guifg=#458588 ctermfg=66 cterm=bold
+highlight VimwikiHeader3 gui=bold guifg=#B16286 ctermfg=13 cterm=bold
+highlight VimwikiHeader4 gui=bold guifg=#689D6A ctermfg=72 cterm=bold
+highlight VimwikiHeader5 gui=bold guifg=#D79921 ctermfg=172 cterm=bold
+highlight VimwikiHeader6 gui=bold guifg=#83A598 ctermfg=109 cterm=bold
 
 " Alpha Highlights
-  highlight AlphaFooterColor guifg=#A6DA95
-  highlight AlphaHeaderColor guifg=#8BD5CA
+  highlight AlphaFooterColor guifg=#B8BB26 ctermfg=142
+  highlight AlphaHeaderColor guifg=#458588 ctermfg=66
 
 " Notify
   " Error
-  highlight! link NotifyERRORBorder SDRed
-  highlight! link NotifyERRORIcon SDRed
-  highlight! link NotifyERRORTitle SDRed
-  highlight link NotifyERRORBody Normal
+  highlight NotifyERRORBorder guifg=#CC241D ctermfg=124
+  highlight NotifyERRORIcon guifg=#FB4934 ctermfg=167
+  highlight NotifyERRORTitle guifg=#FB4934 ctermfg=167
+  highlight NotifyERRORBody guifg=#EBDBB2 ctermfg=223
 
   " Warn
-  highlight! link NotifyWARNBorder SDOrange
-  highlight! link NotifyWARNIcon SDOrange
-  highlight! link NotifyWARNTitle SDOrange
-  highlight link NotifyWARNBody Normal
+  highlight NotifyWARNBorder guifg=#FE8019 ctermfg=208
+  highlight NotifyWARNIcon guifg=#FE8019 ctermfg=208
+  highlight NotifyWARNTitle guifg=#FE8019 ctermfg=208
+  highlight NotifyWARNBody guifg=#EBDBB2 ctermfg=223
 
   " Info
-  highlight! link NotifyINFOBorder SDYellow
-  highlight! link NotifyINFOIcon SDYellow
-  highlight! link NotifyINFOTitle SDYellow
-  highlight link NotifyINFOBody Normal
+  highlight NotifyINFOBorder guifg=#FABD2F ctermfg=214
+  highlight NotifyINFOIcon guifg=#FABD2F ctermfg=214
+  highlight NotifyINFOTitle guifg=#FABD2F ctermfg=214
+  highlight NotifyINFOBody guifg=#EBDBB2 ctermfg=223
 
   " Debug
-  highlight! link NotifyDEBUGBorder SDPurple2
-  highlight! link NotifyDEBUGIcon SDPurple2
-  highlight! link NotifyDEBUGTitle  SDPurple2
-  highlight link NotifyDEBUGBody Normal
+  highlight NotifyDEBUGBorder guifg=#B16286 ctermfg=132
+  highlight NotifyDEBUGIcon guifg=#B16286 ctermfg=132
+  highlight NotifyDEBUGTitle guifg=#B16286 ctermfg=132
+  highlight NotifyDEBUGBody guifg=#EBDBB2 ctermfg=223
 
   " Trace
-  highlight! link NotifyTRACEBorder SDMagenta
-  highlight! link NotifyTRACEIcon SDMagenta
-  highlight! link NotifyTRACETitle SDMagenta
-  highlight link NotifyTRACEBody Normal
+  highlight NotifyTRACEBorder guifg=#458588 ctermfg=66
+  highlight NotifyTRACEIcon guifg=#458588 ctermfg=66
+  highlight NotifyTRACETitle guifg=#458588 ctermfg=66
+  highlight NotifyTRACEBody guifg=#EBDBB2 ctermfg=223
 
 " DevIcon
-  highlight DevIconterraform guifg=#5ccc96
-  highlight DevIconbrewfile guifg=#874423
-  highlight DevIconsh guifg=#b48ead
+  highlight DevIconterraform guifg=#005F00 ctermfg=22
+  highlight DevIconbrewfile guifg=#878700 ctermfg=100
+  highlight DevIconsh guifg=#5F87AF ctermfg=67
 
   " Indentline
   highlight IndentBlanklineChar guifg=#30365F

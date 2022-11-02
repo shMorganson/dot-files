@@ -45,8 +45,8 @@ require'nvim-tree'.setup {
     timeout = 500,
  },
   view = {
+    adaptive_size = false,
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = 'left',
     mappings = {
@@ -76,7 +76,7 @@ require'nvim-tree'.setup {
       show = {
         file = true,
         folder = true,
-        folder_arrow = false,
+        folder_arrow = true,
         git = true,
       },
       glyphs = {
@@ -86,7 +86,7 @@ require'nvim-tree'.setup {
           arrow_open = "",
           arrow_closed = "",
           default = " ",
-          open = "  ",
+          open = "  ",
           empty = " ",
           empty_open = " ",
           symlink = " ",

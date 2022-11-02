@@ -9,9 +9,9 @@ local opt = vim.opt
 
 -- Options
 opt.list = true
--- opt.listchars = {
---   space = "⋅",
--- }
+ opt.listchars = {
+   space = "⋅",
+ }
 
 -- Configuration for Indent_Blankline
 require("indent_blankline").setup {
