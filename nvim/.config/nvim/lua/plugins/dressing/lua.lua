@@ -7,7 +7,7 @@ require('dressing').setup({
     default_prompt = "Input:",
 
     -- Can be 'left', 'right', or 'center'
-    prompt_align = "center",
+    prompt_align = "left",
 
     -- When true, <Esc> will close the modal
     insert_only = true,
@@ -27,7 +27,7 @@ require('dressing').setup({
     min_width = { 20, 0.2 },
 
     -- Window transparency (0-100)
-    winblend = 98,
+    winblend = 2,
     -- Change default highlight groups (see :help winhl)
     winhighlight = "",
 

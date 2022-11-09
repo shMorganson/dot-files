@@ -2,7 +2,9 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+--  Augroups
 local reset_group = augroup('reset_group', {clear = true})
+local splitwrap_aumgroup = augroup("MySplitWrap", { clear = true })
 
 autocmd("TextYankPost", {
   callback = function ()
@@ -41,4 +43,22 @@ autocmd("BufEnter", {
   command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
   group = reset_group,
   desc = "Close Neovim is NvimTree is only one left open."
+})
+
+autocmd("WinNew", {
+    command = "windo set wrap",
+    group = splitwrap_aumgroup,
+    desc = "Set wrap text when in split view.",
+})
+
+autocmd("WinEnter", {
+  group = splitwrap_aumgroup,
+  desc = "Revet the text wrap when no longer in split.",
+  callback = function()
+    -- Get handlers for current windows, we need it to get the windows amount
+    local active_windows = vim.api.nvim_list_wins()
+    if #active_windows == 1 then
+      vim.wo.wrap = false
+    end
+  end
 })
