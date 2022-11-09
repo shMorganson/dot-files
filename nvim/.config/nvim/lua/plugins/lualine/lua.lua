@@ -6,26 +6,27 @@ end
 
 -- Colors for the theme.
 local colors = {
-  blue   = '#458588',
-  cyan   = '#83A598',
-  black  = '#282828',
-  white  = '#EBDBB2',
-  red    = '#CC241D',
-  violet = '#B16286',
-  grey   = '#504945',
-  green  = '#B8BB26',
+  blue   = '#399EE6',
+  cyan   = '#4CBF99',
+  black  = '#000000',
+  white  = '#FAFAFA',
+  red    = '#F07171',
+  violet = '#A37ACC',
+  grey   = '#A6ACB4',
+  green  = '#86B300',
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.blue },
+    a = { fg = colors.white, bg = colors.blue },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    c = { fg = colors.white, bg = colors.white },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.green } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  command = { a = {fg = colors.white, bg = colors.violet} },
+  insert = { a = { fg = colors.white, bg = colors.green } },
+  visual = { a = { fg = colors.white, bg = colors.cyan } },
+  replace = { a = { fg = colors.white, bg = colors.red } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },

@@ -2,30 +2,31 @@
 vim.cmd [[
 if exists("g:neovide")
   let g:neovide_transparency=0.0
-  let g:transparency = 0.98
-  let g:neovide_background_color = '#0f111b'.printf('%x', float2nr(255 * g:transparency))
+  let g:transparency= 1
+  "let g:transparency = 0.98
+  let g:neovide_background_color = '#FAFAFA'.printf('%x', float2nr(255 * g:transparency))
   let g:neovide_input_use_logo=v:true
   let g:neovide_cursor_animation_length=0.03
   let g:neovide_cursor_trail_size=0.8
   let g:neovide_floating_blur_amount_x = 2.0
   let g:neovide_floating_blur_amount_y = 2.0
 
-  let g:terminal_color_0 = "#3B4252"
-  let g:terminal_color_8 = "#4C566A"
-  let g:terminal_color_1 = "#BF616A"
-  let g:terminal_color_9 = "#BF616A"
-  let g:terminal_color_2 = "#A3BE8C"
-  let g:terminal_color_10 = "#A3BE8C"
-  let g:terminal_color_3 = "#EBCB8B"
-  let g:terminal_color_11 = "#BF616A"
-  let g:terminal_color_4 = "#81A1C1"
-  let g:terminal_color_12 = "#81A1C1"
-  let g:terminal_color_5 = "#B48EAD"
-  let g:terminal_color_13 = "#B48EAD"
-  let g:terminal_color_6 = "#88C0D0"
-  let g:terminal_color_14 = "#8FBCBB"
-  let g:terminal_color_7 = "#E5E9F0"
-  let g:terminal_color_15 = "#ECEFF4"
+  let g:terminal_color_0 = "#000000"
+  let g:terminal_color_8 = "#686868"
+  let g:terminal_color_1 = "#F07171"
+  let g:terminal_color_9 = "#F07171"
+  let g:terminal_color_2 = "#86B300"
+  let g:terminal_color_10 = "#86B300"
+  let g:terminal_color_3 = "#F2AE49"
+  let g:terminal_color_11 = "#F2AE49"
+  let g:terminal_color_4 = "#399EE6"
+  let g:terminal_color_12 = "#399EE6"
+  let g:terminal_color_5 = "#A37ACC"
+  let g:terminal_color_13 = "#A37ACC"
+  let g:terminal_color_6 = "#4CBF99"
+  let g:terminal_color_14 = "#4CBF99"
+  let g:terminal_color_7 = "#9A9A9A"
+  let g:terminal_color_15 = "#D1D1D1"
 endif
 ]]
 

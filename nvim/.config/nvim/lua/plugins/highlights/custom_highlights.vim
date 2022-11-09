@@ -1,7 +1,7 @@
 " Neovim Highlights
 "highlight Comment guifg=#686f9a ctermfg=60 gui=italic
 highlight FloatBorder guibg=#504945 guifg=#504945 ctermbg=239 ctermfg=239
- " highlight Normal guibg=NONE guifg=NONE
+" highlight Normal guibg=NONE guifg=NONE
 "highlight LineNr guifg=#7a5ccc
 "highlight FloatermBorder guibg=None guifg=#10737B
 highlight EndOfBuffer guifg=#282828 guibg=#282828 ctermfg=235 ctermbg=235
@@ -15,8 +15,12 @@ highlight DiagnosticSignError guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=16
 highlight DiagnosticHint guifg=#8EC07C guibg=#282828
 highlight StatusLine guibg=#282828
 highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
+highlight FloatShadow guibg=#282828 blend=0
+highlight FloatShadowThrough guibg=#282828 blend=0
+highlight FloatTitle guifg=#83A598 ctermfg=12
 
 " Treesitter
+highlight @function.call guifg=#FABD2F ctermfg=214
 " highlight! link TSField SDDarkPurple2
 
 " GitSigns Highlights
@@ -48,7 +52,7 @@ highlight GitSignsDelete guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
     "highlight TelescopeMatching guifg=#FA8D3E gui=bold
 
 " NvimTree Highlights
-highlight NvimTreeFolderIcon guifg=#FABD2F ctermfg=214
+" highlight NvimTreeFolderIcon guifg=#FABD2F ctermfg=214
   "highlight NvimTreeNormal guibg=#282D32
   "highlight NvimTreeVertSplit guifg=#4C566A guifg=#4C566A
   "highlight NvimTreeEmptyFolderName guifg=#D8DEE9
@@ -114,3 +118,20 @@ highlight VimwikiHeader6 gui=bold guifg=#83A598 ctermfg=109 cterm=bold
 
   " Indentline
   highlight IndentBlanklineChar guifg=#30365F
+
+  " TabLine
+" highlight TabLine guibg=#3c3836 guifg=#A89984 gui=NONE
+" highlight TabLineSel guifg=#ebdbb2 guibg=#282828 gui=bold
+" highlight TabLineFill guifg=#ECEFF4 guibg=#3C3836
+" highlight TabLineSeparatorActive guifg=#83A598 guibg=#282828
+" highlight TabLineSeparatorInactive guifg=#A89984 guibg=#3C3836
+" highlight TabLineModifiedSeparatorActive guifg=#B8BB26 guibg=#282828
+" highlight TabLineModifiedSeparatorInactive guifg=#A89984 guibg=#3C3836
+" TabLinePaddingActive
+" TabLinePaddingInactive
+" highlight TabLineModifiedActive guibg=#282828 guifg=#B8BB26
+" highlight TabLineModifiedInactive guibg=#3C3836 guifg=#A89984
+" highlight TabLineCloseActive guibg=#282828 guifg=#CC241D
+" highlight TabLineCloseInactive guibg=#3C3836 guifg=#A89984
+
+
