@@ -25,12 +25,10 @@ require('dressing').setup({
     -- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"
     max_width = { 140, 0.9 },
     min_width = { 20, 0.2 },
-
-    -- Window transparency (0-100)
-    winblend = 2,
-    -- Change default highlight groups (see :help winhl)
-    winhighlight = "",
-
+    win_options = {
+      -- Window transparency (0-100)
+      winblend = 2,
+    },
     override = function(conf)
       -- This is the config that will be pssed to nvim_open_win.
       -- Change values here to customize the layout

@@ -45,8 +45,8 @@ require'nvim-tree'.setup {
     timeout = 500,
  },
   view = {
-    adaptive_size = true,
-    width = 30,
+    adaptive_size = false,
+    width = 35,
     hide_root_folder = false,
     side = 'left',
     mappings = {

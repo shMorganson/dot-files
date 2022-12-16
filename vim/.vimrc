@@ -100,6 +100,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'hashivim/vim-terraform'
 Plug 'pineapplegiant/spaceduck'
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
@@ -130,7 +131,7 @@ endfunction
 " VIM THEME SETTINGS
 set t_Co=256
 set background=dark
-colorscheme spaceduck
+colorscheme default
 
 " Plugin Settins and Configuration
 
@@ -274,7 +275,7 @@ let g:ale_fixers = {
 
 
 " AIRLINE SETTINGS
-let g:airline_theme = "spaceduck"
+let g:airline_theme = "default"
 let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = 'E:'
 let airline#extensions#ale#warning_symbol = 'W:'
