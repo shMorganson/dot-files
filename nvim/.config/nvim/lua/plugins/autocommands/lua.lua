@@ -51,6 +51,12 @@ autocmd("WinNew", {
     desc = "Set wrap text when in split view.",
 })
 
+autocmd("BufRead,BufEnter", {
+  command = "if winnr('$')  == 1 && bufname() == 'NvimTree_ . tabpagenr() | vim.wo.wrap = false | endif",
+  group = splitwrap_aumgroup,
+  desc = "Don't line wrap NvimTree."
+})
+
 autocmd("WinEnter", {
   group = splitwrap_aumgroup,
   desc = "Revet the text wrap when no longer in split.",
