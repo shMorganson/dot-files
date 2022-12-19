@@ -4,7 +4,7 @@ vim.o.background = "light"
 -- Calling the theme settings.
 require("plugins.highlights.ayu")
 
-vim.cmd [[colorscheme ayu-nvim]]
+vim.cmd [[colorscheme dim]]
 
 require("gruvbox").setup({
   undercurl = false,
@@ -36,4 +36,4 @@ vim.g.nord_uniform_diff_background = false
 -- require('nord').set()
 
 -- Calling custom highlights
--- vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'
+vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'

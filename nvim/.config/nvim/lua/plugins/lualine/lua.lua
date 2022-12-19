@@ -6,14 +6,14 @@ end
 
 -- Colors for the theme.
 local colors = {
-  blue   = '#399EE6',
-  cyan   = '#4CBF99',
+  blue   = '#488BA8',
+  cyan   = '#348986',
   black  = '#000000',
-  white  = '#FAFAFA',
-  red    = '#F07171',
-  violet = '#A37ACC',
+  white  = '#F7F7F7',
+  red    = '#B22729',
+  violet = '#862753',
   grey   = '#A6ACB4',
-  green  = '#86B300',
+  green  = '#639808',
 }
 
 local bubbles_theme = {

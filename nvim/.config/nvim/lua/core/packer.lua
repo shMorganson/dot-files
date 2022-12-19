@@ -103,6 +103,7 @@ return require('packer').startup(function()
   use 'ellisonleao/gruvbox.nvim'             -- Lua Gruvbox theme.
   use 'KritPaoIn/ayu.nvim'                   -- Ayu Theme
   use 'Everblush/nvim'                       -- Everblush theme
+  use 'jeffkreeftmeijer/vim-dim'             -- Updated Default theme tool.
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
