@@ -24,7 +24,7 @@ require("nvim-autopairs").setup {
     end_key = "$",
     keys = "qwertyuiopzxcvbnmasdfghjkl",
     check_comma = true,
-    highlight = "PmenuSel",
+    highlight = "Search",
     highlight_grey = "LineNr",
   },
 }

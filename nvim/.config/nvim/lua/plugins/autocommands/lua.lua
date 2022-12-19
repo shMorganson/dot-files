@@ -52,7 +52,7 @@ autocmd("WinNew", {
 })
 
 autocmd("BufRead,BufEnter", {
-  command = "if winnr('$')  == 1 && bufname() == 'NvimTree_ . tabpagenr() | vim.wo.wrap = false | endif",
+  command = "if winnr('$')  == 1 && bufname() == 'NvimTree_' . tabpagenr() | vim.wo.wrap = false | endif",
   group = splitwrap_aumgroup,
   desc = "Don't line wrap NvimTree."
 })

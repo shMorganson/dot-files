@@ -1,31 +1,34 @@
 " Neovim Highlights
-" "highlight Comment guifg=#686f9a ctermfg=60 gui=italic
-" " highlight Normal guibg=NONE guifg=NONE
-" "highlight LineNr guifg=#7a5ccc
-highlight EndOfBuffer ctermfg=15 ctermbg=15
-highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
-" "highlight BufferLineSeparator guifg=#172030
-highlight SignColumn ctermbg=15
-" highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828 ctermbg=235 ctermfg=108
-" highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828 ctermbg=235 ctermfg=109
-" highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828 ctermbg=235 ctermfg=214
-" highlight DiagnosticSignError guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
-" highlight DiagnosticHint guifg=#8EC07C guibg=#282828
-" highlight StatusLine guibg=#282828
-" highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
-  
+  " "highlight Comment guifg=#686f9a ctermfg=60 gui=italic
+  " " highlight Normal guibg=NONE guifg=NONE
+  " "highlight LineNr guifg=#7a5ccc
+  highlight EndOfBuffer ctermfg=15 ctermbg=15
+  highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
+  " "highlight BufferLineSeparator guifg=#172030
+  highlight SignColumn ctermbg=15
+  highlight Search ctermfg=15 ctermbg=13
+  " highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828 ctermbg=235 ctermfg=108
+  " highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828 ctermbg=235 ctermfg=109
+  " highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828 ctermbg=235 ctermfg=214
+  " highlight DiagnosticSignError guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
+  " highlight DiagnosticHint guifg=#8EC07C guibg=#282828
+  " highlight StatusLine guibg=#282828
+  " highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
+
   " Pmenu
     highlight Pmenu ctermbg=254
-    highlight PmenuSel ctermbg=12
+    highlight PmenuSel ctermbg=12 ctermfg=15
 
   " Float
     " highlight FloatShadow guibg=#282828 blend=0
     " highlight FloatShadowThrough guibg=#282828 blend=0
     " highlight FloatTitle guifg=#83A598 ctermfg=12
     " highlight FloatermBorder guibg=None guifg=#10737B
-    highlight FloatBorder ctermbg=254 ctermfg=254
+    highlight FloatBorder ctermbg=15 ctermfg=5
+    highlight NormalFloat ctermbg=15
 
 " Treesitter
+highlight @variable ctermfg=2
 " highlight @function.call guifg=#FABD2F ctermfg=214
 " highlight! link TSField SDDarkPurple2
 "
@@ -119,12 +122,12 @@ highlight AlphaHeaderColor ctermfg=4
    highlight NotifyTRACEBody guifg=#EBDBB2 ctermfg=223
 
  " DevIcon
-   highlight DevIconterraform guifg=#005F00 ctermfg=22
+   highlight DevIconterraform ctermfg=22
    highlight DevIconbrewfile guifg=#878700 ctermfg=100
    highlight DevIconsh guifg=#5F87AF ctermfg=67
 
 " Indentline
-"   highlight IndentBlanklineChar guifg=#30365F
+highlight IndentBlanklineContextChar ctermfg=2
 
 " TabLine
 " highlight TabLine guibg=#3c3836 guifg=#A89984 gui=NONE
@@ -140,4 +143,3 @@ highlight AlphaHeaderColor ctermfg=4
 " highlight TabLineModifiedInactive guibg=#3C3836 guifg=#A89984
 " highlight TabLineCloseActive guibg=#282828 guifg=#CC241D
 " highlight TabLineCloseInactive guibg=#3C3836 guifg=#A89984
-"
