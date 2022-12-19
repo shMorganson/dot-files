@@ -25,7 +25,7 @@ highlight SignColumn ctermbg=15
     " highlight FloatermBorder guibg=None guifg=#10737B
     highlight FloatBorder ctermbg=254 ctermfg=254
 
-" " Treesitter
+" Treesitter
 " highlight @function.call guifg=#FABD2F ctermfg=214
 " highlight! link TSField SDDarkPurple2
 "

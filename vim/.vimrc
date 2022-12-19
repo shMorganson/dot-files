@@ -70,6 +70,7 @@ let g:plug_window = 'vertical new'
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
+Plug 'https://gitlab.com/ali-lab/manifest-light'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -130,8 +131,8 @@ endfunction
 
 " VIM THEME SETTINGS
 set t_Co=256
-set background=dark
-colorscheme default
+set background=light
+colorscheme manifest-light
 
 " Plugin Settins and Configuration
 
