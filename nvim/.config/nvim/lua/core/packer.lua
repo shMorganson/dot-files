@@ -44,9 +44,13 @@ return require('packer').startup(function()
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'           -- Used for finding Highlights
-  use {                                      -- Used for configuring the nvim LSP.
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer'
+  -- use {                                      -- Used for configuring the nvim LSP.
+  --   'neovim/nvim-lspconfig',
+  -- }
+  use {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig'
   }
   use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})  -- Scala LSP.
   use 'hrsh7th/cmp-nvim-lsp'                 -- CMP LSP
