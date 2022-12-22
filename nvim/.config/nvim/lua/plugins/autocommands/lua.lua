@@ -45,6 +45,12 @@ autocmd("BufEnter", {
   desc = "Close Neovim is NvimTree is only one left open."
 })
 
+-- autocmd("BufWritePre", {
+--   command = ":lua vim.lsp.buf.formatting_sync()",
+--   group = reset_group,
+--   desc = "Format the buffer with LSP/Null-ls"
+-- })
+
 autocmd("WinNew", {
     command = "windo set wrap",
     group = splitwrap_aumgroup,

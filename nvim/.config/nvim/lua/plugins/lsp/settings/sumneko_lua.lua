@@ -26,7 +26,7 @@ return {
         },
       },
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "use" },
       },
       workspace = {
         library = {
@@ -35,7 +35,7 @@ return {
           -- [vim.fn.datapath "config" .. "/lua"] = true,
         },
       },
-      telmetry = {
+      telemetry = {
         enable = false,
       },
     },

@@ -3,140 +3,57 @@ if not status_ok then
   return
 end
 
-local status_ok_1, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_ok_1 then
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_lspconfig_status_ok then
   return
 end
-
-local servers = {
-  -- "cssls",
-  -- "cssmodules_ls",
-  -- "emmet_ls",
-  -- "html",
-  -- "jdtls",
-  "jsonls",
-  -- "solc",
-  -- "solidity_ls",
-  "sumneko_lua",
-  "tflint",
-  "terraformls",
-  -- "tsserver",
-  "pyright",
-  "yamlls",
-  "bashls",
-  -- "clangd",
-  -- "rust_analyzer",
-  -- "taplo",
-  -- "zk@v0.10.1",
-  "lemminx"
-}
-
-local settings = {
-  ui = {
-    border = "rounded",
-    icons = {
-      package_installed = "◍",
-      package_pending = "◍",
-      package_uninstalled = "◍",
-    },
-  },
-  log_level = vim.log.levels.INFO,
-  max_concurrent_installers = 4,
-}
-
-mason.setup(settings)
-mason_lspconfig.setup {
-  ensure_installed = servers,
-  automatic_installation = true,
-}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
   return
 end
 
-local opts = {}
+require("lspconfig.ui.windows").default_options.border = "rounded"
 
-for _, server in pairs(servers) do
-  opts = {
-    on_attach = require("plugins.lsp.handlers").on_attach,
-    capabilities = require("plugins.lsp.handlers").capabilities,
-  }
+local servers = {
+	"bashls",
+	"sumneko_lua",
+	"pyright",
+	"terraformls",
+	"tflint",
+	"yamlls",
+	-- "cssmodules_ls",
+	-- "clangd",
+	"jsonls",
+}
 
-  server = vim.split(server, "@")[1]
+mason.setup {
+  ui = {
+    border = "single",
+    icons = {
+      package_installed = "✓",
+      package_pending = "",
+      package_uninstalled = "➜",
+    },
+  },
+}
 
-  -- if server == "jsonls" then
-  --   local jsonls_opts = require "plugins.lsp.settings.jsonls"
-  --   opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-  -- end
+mason_lspconfig.setup {
+  ensure_installed = servers,
+}
 
-  if server == "yamlls" then
-    local yamlls_opts = require "plugins.lsp.settings.yamlls"
-    opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
-  end
-
-  if server == "sumneko_lua" then
-    local l_status_ok, lua_dev = pcall(require, "lua-dev")
-    if not l_status_ok then
-      return
-    end
-     local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-     opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
-    local luadev = lua_dev.setup {
-      --   -- add any options here, or leave empty to use the default settings
-      -- lspconfig = opts,
-      lspconfig = {
-        on_attach = opts.on_attach,
-        capabilities = opts.capabilities,
-        --   -- settings = opts.settings,
-      },
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    local opts = {
+      on_attach = require("plugins.lsp.handlers").on_attach,
+      capabilities = require("plugins.lsp.handlers").capabilities,
     }
-    lspconfig.sumneko_lua.setup(luadev)
-    goto continue
-  end
 
-  -- if server == "tsserver" then
-  --   local tsserver_opts = require "plugins.lsp.settings.tsserver"
-  --   opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
-  -- end
+    local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
+    if require_ok then
+      opts = vim.tbl_deep_extend("force", server, opts)
+    end
 
-  if server == "pyright" then
-    local pyright_opts = require "plugins.lsp.settings.pyright"
-    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-  end
-
-  -- if server == "solc" then
-  --   local solc_opts = require "plugins.lsp.settings.solc"
-  --   opts = vim.tbl_deep_extend("force", solc_opts, opts)
-  -- end
-
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "plugins.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-  end
-
-  -- if server == "zk" then
-  --   local zk_opts = require "plugins.lsp.settings.zk"
-  --   opts = vim.tbl_deep_extend("force", zk_opts, opts)
-  -- end
-
-  -- if server == "jdtls" then
-  --   goto continue
-  -- end
-
-  -- if server == "rust_analyzer" then
-  --   local rust_opts = require "plugins.lsp.settings.rust"
-  --   -- opts = vim.tbl_deep_extend("force", rust_opts, opts)
-  --   local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
-  --   if not rust_tools_status_ok then
-  --     return
-  --   end
-  --
-  --   rust_tools.setup(rust_opts)
-  --   goto continue
-  -- end
-
-  lspconfig[server].setup(opts)
-  ::continue::
-end
+    lspconfig[server_name].setup(opts)
+  end,
+}

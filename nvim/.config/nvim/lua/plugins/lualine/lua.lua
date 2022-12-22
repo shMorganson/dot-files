@@ -7,13 +7,13 @@ end
 -- Colors for the theme.
 local colors = {
   blue   = '#488BA8',
-  cyan   = '#75C9C6',
+  cyan   = '#348986',
   black  = '#000000',
   white  = '#F7F7F7',
   red    = '#F26669',
   violet = '#C76090',
   grey   = '#A6ACB4',
-  green  = '#9CD936',
+  green  = '#639808',
 }
 
 local bubbles_theme = {

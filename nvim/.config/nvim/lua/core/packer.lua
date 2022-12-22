@@ -44,9 +44,6 @@ return require('packer').startup(function()
   use 'godlygeek/tabular'                    -- Required for vim-markdown to work
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'           -- Used for finding Highlights
-  -- use {                                      -- Used for configuring the nvim LSP.
-  --   'neovim/nvim-lspconfig',
-  -- }
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -79,6 +76,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'      -- nvim-ui-selector as default
   use 'nvim-telescope/telescope-file-browser.nvim'   -- File Browser for Telescope
   use 'AckslD/nvim-neoclip.lua'                      -- Yank extension for Telescope

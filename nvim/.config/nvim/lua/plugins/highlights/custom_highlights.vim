@@ -14,6 +14,7 @@
   " highlight DiagnosticHint guifg=#8EC07C guibg=#282828
   " highlight StatusLine guibg=#282828
   " highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
+  highlight helpNote ctermfg=3 ctermbg=15 cterm=BOLD
 
   " Pmenu
     highlight Pmenu ctermbg=254
@@ -29,9 +30,14 @@
 
 " Treesitter
 highlight @variable ctermfg=2
+highlight @text.todo ctermfg=3 ctermbg=15 cterm=BOLD
 " highlight @function.call guifg=#FABD2F ctermfg=214
 " highlight! link TSField SDDarkPurple2
-"
+
+" LSP
+highlight DiagnosticSignHint ctermbg=15 ctermfg=3
+highlight DiagnosticHint ctermbg=15 ctermfg=3
+
 " GitSigns Highlights
 highlight GitSignsAdd ctermbg=15 ctermfg=2
 highlight GitSignsChange ctermbg=15 ctermfg=3
@@ -129,7 +135,16 @@ highlight AlphaHeaderColor ctermfg=4
 " Indentline
 highlight IndentBlanklineContextChar ctermfg=2
 
-" TabLine
+" Mason
+  highlight MasonHighlightBlock ctermfg=4 ctermbg=15 cterm=bold
+  highlight MasonHighlightBlockBold ctermfg=6 ctermbg=15 cterm=bold
+  highlight MasonHeader cterm=bold ctermfg=5
+  highlight MasonHighlight ctermbg=15 ctermfg=2
+  highlight MasonHighlightSecondary ctermbg=15 ctermfg=12
+  highlight MasonError ctermfg=1
+  highlight MasonMuted ctermfg=12 ctermbg=15
+
+  " TabLine
 " highlight TabLine guibg=#3c3836 guifg=#A89984 gui=NONE
 " highlight TabLineSel guifg=#ebdbb2 guibg=#282828 gui=bold
 " highlight TabLineFill guifg=#ECEFF4 guibg=#3C3836
