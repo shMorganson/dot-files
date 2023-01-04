@@ -15,6 +15,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/vimr/bin:$PATH"
 # export TERM=xterm
 
+# Lazy Docker
+export DOCKER_HOST=ssh://192.168.5.245 lazydocker
+
 # AWS
 export AWS_PROFILE=mvc-1-app-2
 
