@@ -88,8 +88,19 @@ local lazygit = Terminal:new({
   hidden = true,
 })
 
+local lazydocker = Terminal:new({
+  cmd = "lazydocker",
+  dir = "git_dir",
+  close_on_exit = true,
+  hidden = true,
+})
+
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
+end
+
+function _LAZYDOCKER_TOGGLE()
+  lazydocker:toggle()
 end
 
 local node = Terminal:new({ cmd = "htop", hidden = true })

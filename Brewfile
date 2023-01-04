@@ -20,11 +20,12 @@ brew "utm"
 brew "htop"
 brew "gotop"
 brew "tmux"
+brew "cmake"
+brew "luarocks"
 
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "font-fira-code-nerd-font"
-cask "neovide"
 
 # numo 'brew tap'
 tap "hashicorp/tap"

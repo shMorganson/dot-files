@@ -57,3 +57,4 @@ mason_lspconfig.setup_handlers {
     lspconfig[server_name].setup(opts)
   end,
 }
+

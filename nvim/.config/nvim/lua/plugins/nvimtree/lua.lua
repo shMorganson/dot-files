@@ -9,9 +9,9 @@ local get_lua_cb = function(cb_name)
 end
 
 require'nvim-tree'.setup {
-  disable_netrw       = true,
+  disable_netrw       = false,
   create_in_closed_folder = false,
-  hijack_netrw        = true,
+  hijack_netrw        = false,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
   open_on_tab         = true,

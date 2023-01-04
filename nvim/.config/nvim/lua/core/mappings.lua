@@ -20,6 +20,7 @@ keymap("n", "<leader>ht", ":call v:lua._HTOP_TOGGLE()<CR>", {noremap = true})
 keymap("n", "<C-h>", "<cmd>ToggleTerm direction=horizontal size=17<CR>",
        {noremap = true})
 keymap("n", "<C-f>", ":call v:lua._NEW_FLOAT_TOGGLE()<CR>", {noremap = true})
+keymap("n", "<leader>d", ":call v:lua._LAZYDOCKER_TOGGLE()<CR>", {noremap = true})
 
 -- Alpha Mappings
 keymap("n", "<leader>en", "<cmd>:ene <BAR> startinsert <CR>", {noremap = true})
