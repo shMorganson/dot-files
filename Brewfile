@@ -22,24 +22,25 @@ brew "gotop"
 brew "tmux"
 brew "cmake"
 brew "luarocks"
+brew "make"
+brew "lazydocker"
 
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "font-fira-code-nerd-font"
 
 # numo 'brew tap'
-tap "hashicorp/tap"
+# tap "hashicorp/tap"
 
 # numo 'brew install'
-brew "awscli"
-brew "aws-okta"
-brew "hashicorp/tap/terraform"
-brew "direnv"
-brew "coursier/formulas/coursier" # Needed for scala LSP in Neovim. Need to run 'cs setup' after the install.
+# brew "awscli"
+# brew "aws-okta"
+# brew "hashicorp/tap/terraform"
+# brew "direnv"
+# brew "coursier/formulas/coursier" # Needed for scala LSP in Neovim. Need to run 'cs setup' after the install.
 
-# numo 'brew install --cask'
-cask "homebrew/cask/docker"
-cask "wireshark"
+# cask "homebrew/cask/docker"
+# cask "wireshark"
 
 # 'mas install'
 # mas "1Password", id: 443987910
