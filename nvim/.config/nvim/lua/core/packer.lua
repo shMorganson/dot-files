@@ -110,11 +110,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'                 -- LSP Icons used in nvim-cmp.
   use 'kyazdani42/nvim-web-devicons'         -- Dev Icons
   use 'jeffkreeftmeijer/vim-dim'             -- Updated Default theme tool.
-  -- use {
-  --   'dgrbrady/nvim-docker',
-  --   requires = {'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim'},
-  --   rocks = 'reactivex' -- ReactiveX Lua implementation
-  -- }
+  use 'nat-418/scamp.nvim'                   -- Remote editing. 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

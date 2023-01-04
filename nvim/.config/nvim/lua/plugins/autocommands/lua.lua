@@ -58,7 +58,7 @@ autocmd("WinNew", {
 })
 
 autocmd("BufRead,BufEnter", {
-  command = "if winnr('$')  == 1 && bufname() == 'NvimTree_' . tabpagenr() | vim.wo.wrap = false | endif",
+  command = "if winnr('$')  == 1 && bufname() == 'NvimTree_' . tabpagenr() | windo set nowrap | endif",
   group = splitwrap_aumgroup,
   desc = "Don't line wrap NvimTree."
 })
@@ -70,7 +70,7 @@ autocmd("WinEnter", {
     -- Get handlers for current windows, we need it to get the windows amount
     local active_windows = vim.api.nvim_list_wins()
     if #active_windows == 1 then
-      vim.wo.wrap = false
+       vim.wo.wrap = false
     end
   end
 })
