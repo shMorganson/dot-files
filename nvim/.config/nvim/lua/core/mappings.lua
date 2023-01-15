@@ -24,7 +24,7 @@ keymap("n", "<leader>d", ":call v:lua._LAZYDOCKER_TOGGLE()<CR>", {noremap = true
 
 -- Alpha Mappings
 keymap("n", "<leader>en", "<cmd>:ene <BAR> startinsert <CR>", {noremap = true})
-keymap("n", "<leader>u", "<cmd>Lazy sync<CR>", {noremap = true})
+keymap("n", "<leader>u", "<cmd>Lazy update<CR>", {noremap = true})
 keymap("n", "<leader>ev", "<cmd>edit ~/.config/nvim/lua/core/init.lua<CR>",
        {noremap = true})
 keymap("n", "<leader>q", "<cmd>exit<CR>", {noremap = true})

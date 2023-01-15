@@ -86,4 +86,18 @@ require("lazy").setup({
   "nat-418/scamp.nvim",
 })
 
+-- packer.nvim to lazy
+--
+-- setup ➡️ init
+-- requires ➡️ dependencies
+-- as ➡️ name
+-- opt ➡️ lazy
+-- run ➡️ build
+-- lock ➡️ pin
+-- disable=true ➡️ enabled = false
+-- tag='*' ➡️ version="*"
+-- after ℹ️ not needed for most use-cases. Use dependencies otherwise.
+-- wants ℹ️ not needed for most use-cases. Use dependencies otherwise.
+-- config don't support string type, use fun(LazyPlugin) instead.
+-- module is auto-loaded. No need to specify
 

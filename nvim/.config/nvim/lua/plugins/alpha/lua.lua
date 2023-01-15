@@ -44,8 +44,8 @@ dashboard.section.buttons.val = {
   dashboard.button("<leader> f p", "   Find Project", ":Telescope projects <CR>"),
   dashboard.button("<leader> f h", "   Recently Files", ":Telescope oldfiles <CR>"),
   dashboard.button("<leader> w w", "   Notes", ":VimwikiIndex <CR>"),
-  dashboard.button("<leader>   u", "   Update Plugins", ":PackerUpdate <CR>"),
-  dashboard.button("<leader> i p", "   Add/Remove Plugins", ":e ~/.config/nvim/lua/core/packer.lua<CR>"),
+  dashboard.button("<leader>   u", "   Update Plugins", ":Lazy update <CR>"),
+  dashboard.button("<leader> i p", "   Add/Remove Plugins", ":e ~/.config/nvim/lua/core/lazy.lua<CR>"),
   dashboard.button("<leader> e v", "   Configuration", ":e ~/.config/nvim/lua/core/init.lua <CR>"),
   dashboard.button("<leader>   q", "   Quit Neovim", ":qa<CR>"),
 }
