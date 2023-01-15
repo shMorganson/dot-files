@@ -32,12 +32,12 @@ autocmd("BufRead,BufNewFile", {
   desc = "Set spell check to .txt files."
 })
 
-autocmd("BufWritePost", {
-  pattern = "packer.lua",
-  command = "source <afile> | PackerSync",
-  group = reset_group,
-  desc = "Auto sync Packer when the file is written to."
-})
+-- autocmd("BufWritePost", {
+--   pattern = "lazy.lua",
+--   command = "source <afile> | Lazy install",
+--   group = reset_group,
+--   desc = "Auto sync Lazy when the file is written to."
+-- })
 
 autocmd("BufEnter", {
   command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
