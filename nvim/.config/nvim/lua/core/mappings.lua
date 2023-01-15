@@ -24,11 +24,11 @@ keymap("n", "<leader>d", ":call v:lua._LAZYDOCKER_TOGGLE()<CR>", {noremap = true
 
 -- Alpha Mappings
 keymap("n", "<leader>en", "<cmd>:ene <BAR> startinsert <CR>", {noremap = true})
-keymap("n", "<leader>u", "<cmd>PackerUpdate<CR>", {noremap = true})
+keymap("n", "<leader>u", "<cmd>Lazy sync<CR>", {noremap = true})
 keymap("n", "<leader>ev", "<cmd>edit ~/.config/nvim/lua/core/init.lua<CR>",
        {noremap = true})
 keymap("n", "<leader>q", "<cmd>exit<CR>", {noremap = true})
-keymap("n", "<leader>ip", "<cmd>e: ~/.config/nvim/lua/core/packer.lua<CR>",
+keymap("n", "<leader>ip", "<cmd>e: ~/.config/nvim/lua/core/lazy.lua<CR>",
        {noremap = true})
 
 -- Telescope
@@ -50,7 +50,7 @@ keymap("n", "<leader>fs", "<cmd>NvimTreeFocus<CR>", {noremap = true})
 keymap("n", "<leader>fq", "<cmd>NvimTreeClose<CR>", {noremap = true})
 
 -- symbols-outline Mappings
-keymap("n", "<leader>so", "<cmd>SymbolsOutline<CR>", {noremap = true})
+-- keymap("n", "<leader>so", "<cmd>SymbolsOutline<CR>", {noremap = true})
 
 -- Markup Preview Mappings
 keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", {noremap = true})
