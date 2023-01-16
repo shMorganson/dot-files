@@ -11,8 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  "jeffkreeftmeijer/vim-dim",                            -- Updated Default theme tool.
+local plugins = {
+  { "jeffkreeftmeijer/vim-dim", -- Updated Default theme tool.
+    lazy = false,
+    priority = 1000,
+  },
   "lukas-reineke/indent-blankline.nvim",                 -- Indent Line
   {"nvim-lualine/lualine.nvim",                          -- Lualine/Status line
     dependencies = "kyazdani42/nvim-web-devicons",       -- Web Dev Icons
@@ -82,9 +85,21 @@ require("lazy").setup({
   "rcarriga/nvim-notify",                                 -- Notify for plugins
   "onsails/lspkind.nvim",                                 -- LSP Icons used in nvim-cmp.
   "kyazdani42/nvim-web-devicons",                         -- Dev Icons
-  "jeffkreeftmeijer/vim-dim",                             -- Updated Default theme tool.
-  "nat-418/scamp.nvim",
-})
+  { "mrded/nvim-lsp-notify",                              -- LSP notification plugin.
+    dependencies = {
+      "rcarriga/nvim-notify",
+    },
+  },
+}
+
+local opts = {
+    ui = {
+        border = "rounded"
+    }
+}
+
+require("lazy").setup(plugins, opts)
+
 
 -- packer.nvim to lazy
 --
