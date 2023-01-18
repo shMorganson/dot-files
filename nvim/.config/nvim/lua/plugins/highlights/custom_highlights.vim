@@ -158,3 +158,5 @@ highlight IndentBlanklineContextChar ctermfg=2
 " highlight TabLineModifiedInactive guibg=#3C3836 guifg=#A89984
 " highlight TabLineCloseActive guibg=#282828 guifg=#CC241D
 " highlight TabLineCloseInactive guibg=#3C3836 guifg=#A89984
+
+highlight LazySpecial ctermfg=2
