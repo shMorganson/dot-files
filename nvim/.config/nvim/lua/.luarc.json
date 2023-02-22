@@ -59,6 +59,7 @@
         "/Users/justin/.local/share/nvim/lazy/vim-vsnip-integ/after",
         "/Users/justin/.local/share/nvim/lazy/cmp-zsh/after",
         "/Users/justin/.local/share/nvim/lazy/cmp-treesitter/after",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

@@ -6,21 +6,21 @@ end
 
 -- Colors for the theme.
 local colors = {
-  blue   = '#488BA8',
-  cyan   = '#348986',
-  black  = '#000000',
-  white  = '#F7F7F7',
-  red    = '#F26669',
-  violet = '#C76090',
-  grey   = '#A6ACB4',
-  green  = '#639808',
+  blue   = '#83a598',
+  cyan   = '#8ec07c',
+  black  = '#282828',
+  white  = '#fbf1c7',
+  red    = '#cc241d',
+  violet = '#d3869b',
+  grey   = '#928374',
+  green  = '#b8bb26',
 }
 
 local bubbles_theme = {
   normal = {
     a = { fg = colors.white, bg = colors.blue },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.white, bg = colors.white },
+    c = { fg = colors.white, bg = colors.black },
   },
 
   command = { a = {fg = colors.white, bg = colors.violet} },

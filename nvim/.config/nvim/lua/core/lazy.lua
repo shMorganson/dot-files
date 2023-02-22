@@ -12,7 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { "jeffkreeftmeijer/vim-dim", -- Updated Default theme tool.
+  -- { "jeffkreeftmeijer/vim-dim", -- Updated Default theme tool.
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  { "ellisonleao/gruvbox.nvim", -- Gruvbox theme
     lazy = false,
     priority = 1000,
   },
