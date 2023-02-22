@@ -1,6 +1,6 @@
 -- Loading the plugins
 require('plugins.highlights.init')
-require('gitsigns').setup()
+-- require('plugins.gitsigns.lua')
 require('plugins.lualine.lua')
 require('plugins.nvimcmp.lua')
 require('plugins.telescope.lua')

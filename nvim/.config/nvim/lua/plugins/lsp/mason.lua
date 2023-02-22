@@ -17,7 +17,7 @@ require("lspconfig.ui.windows").default_options.border = "rounded"
 
 local servers = {
 	"bashls",
-	"sumneko_lua",
+	"lua_ls",
 	"pyright",
 	"terraformls",
 	"tflint",
