@@ -52,7 +52,7 @@ require('telescope').setup{
         find_cmd = "rg" -- find command (defaults to `fd`)
     },
     file_browser = {
-      --theme = "gruvbox",
+      -- theme = "gruvbox",
       dir_icon = "",
       dir_icon_hl = "NvimTreeFolderIcon",
       hidden = true,

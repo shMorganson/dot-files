@@ -16,7 +16,7 @@ local plugins = {
   --   lazy = false,
   --   priority = 1000,
   -- },
-  { "ellisonleao/gruvbox.nvim", -- Gruvbox theme
+  { "gruvbox-community/gruvbox", -- Gruvbox theme
     lazy = false,
     priority = 1000,
   },

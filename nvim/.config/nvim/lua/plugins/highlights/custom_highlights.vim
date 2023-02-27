@@ -2,7 +2,7 @@
   " "highlight Comment guifg=#686f9a ctermfg=60 gui=italic
   " " highlight Normal guibg=NONE guifg=NONE
   " "highlight LineNr guifg=#7a5ccc
-  highlight EndOfBuffer ctermfg=15 ctermbg=15
+  highlight EndOfBuffer guifg=#282828 guibg=#282828 ctermfg=0 ctermbg=0
   highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
   " "highlight BufferLineSeparator guifg=#172030
   highlight SignColumn ctermbg=15

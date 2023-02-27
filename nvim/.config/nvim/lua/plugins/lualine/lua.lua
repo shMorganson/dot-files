@@ -12,7 +12,7 @@ local colors = {
   white  = '#fbf1c7',
   red    = '#cc241d',
   violet = '#d3869b',
-  grey   = '#928374',
+  grey   = '#3c3826',
   green  = '#b8bb26',
 }
 
