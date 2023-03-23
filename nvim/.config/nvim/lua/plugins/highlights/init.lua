@@ -1,32 +1,26 @@
+-- Set local variables
+local highlight = vim.api.nvim_set_hl
+
 -- Setting the theme
 vim.o.background = "dark"
 
--- require("gruvbox").setup({
---   undercurl = true,
---   underline = true,
---   bold = true,
---   italic = true,
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "", -- can be "hard", "soft" or empty string
---   palette_overrides = {},
---   overrides = {
---     EndOfBuffer = {bg = "#282828", fg = "#282828"},
---     AlphaFooterColor = {fg = "#b8bb26"},
---     AlphaHeaderColor = {fg = "#83a598"},
---     StatusLine = {bg = "#282828"},
---     IndentBlanklineChar = {fg = "#b8bb26"},
---     IndentBlanklineSpaceChar = {fg = "#928374"},
---     IndentBlanklineContextChar = {fg = "#fe8019"},
---   },
---   dim_inactive = false,
---   transparent_mode = false,
--- })
+vim.cmd [[colorscheme nord]]
 
-vim.cmd [[colorscheme gruvbox]]
-vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/gruvbox.vim'
--- vim.cmd 'source ~/.config/nvim/lua/plugins/highlights/custom_highlights.vim'
+-- EXAMPLE vim.api.nvim_set_hl (0,'NvimTreeRootFolder', {fg='#A6DA95'})
+
+-- nvim UI
+-- highlight (0, 'StatusLine', {ctermbg = 15, bg = '#2E3440'})
+-- highlight (0, 'EndOfBuffer', {ctermfg = 15, bg = '#2E3440', fg = '#2E3440'})
+
+-- Alpha Highlights
+highlight (0, 'AlphaHeaderColor', {ctermfg = 5, fg = '#B48EAD'})
+highlight (0, 'AlphaFooterColor', {ctermfg = 10, fg = '#A3BE8C'})
+highlight (0, 'DiagnosticError', { fg = '#BF616A', bg = '#3B4252' })
+highlight (0, 'DiagnosticWarn', { fg = '#EBCB8B', bg = '#3B4252' })
+highlight (0, 'DiagnosticInfo', { fg = '#5E81AC', bg = '#3B4252' })
+highlight (0, 'DiagnosticHint', { fg = '#B48EAD', bg = '#3B4252' })
+highlight (0, 'StatusLine', { bg = '#2E3440' })
+highlight (0, 'EndOfBuffer', { fg = '#2E3440', bg = '#2E3440'})
+highlight (0, 'NvimTreeRootFolder', { fg = '#8FBCBB', bold = true })
+highlight (0, 'NvimTreeOpenedFile', { fg = '#B48EAD' })
+highlight (0, 'NvimTreeIndentMarker', { fg = '#434C5E' })

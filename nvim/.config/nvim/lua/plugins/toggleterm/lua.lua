@@ -32,20 +32,20 @@ require("toggleterm").setup{
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
 
-highlights = {
-  Normal = {
-    ctermbg = 15,
-  },
-  NormalFloat = {
-    ctermbg = 15
-  },
-},
+-- highlights = {
+--   Normal = {
+--     ctermbg = 15,
+--   },
+--   NormalFloat = {
+--     ctermbg = 15
+--   },
+-- },
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
     border = 'curved',
     width = 200,
     height = 40,
-    winblend = 0,
+    winblend = 3,
   }
 }
 
@@ -68,7 +68,7 @@ local newfloat = Terminal:new({
     float_opts = {
       width = 200,
       height = 47,
-      winblend = 0,
+      winblend = 3,
       highlights = {
         border = "Normal",
         background = "Normal",

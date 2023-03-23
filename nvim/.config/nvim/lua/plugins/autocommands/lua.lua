@@ -32,6 +32,13 @@ autocmd("BufRead,BufNewFile", {
   desc = "Set spell check to .txt files."
 })
 
+autocmd("FileType", {
+  pattern = "*.md",
+  command = "setf markdown",
+  group = reset_group,
+  desc = "Set vimwiki files to marksdown files.",
+})
+
 -- autocmd("BufWritePost", {
 --   pattern = "lazy.lua",
 --   command = "source <afile> | Lazy install",

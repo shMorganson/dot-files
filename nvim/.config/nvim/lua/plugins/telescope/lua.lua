@@ -12,7 +12,7 @@ require('telescope').setup{
     layout_config = { prompt_position = "top" },
     prompt_prefix = " ",
     sorting_strategy = "ascending",
-    --winblend = 3,
+    winblend = 0,
     dynamic_preview_title = true,
     selection_caret = " ",
     mappings = {
@@ -26,7 +26,7 @@ require('telescope').setup{
   },
   pickers = {
     git_status = {
-      git_icons = { 
+      git_icons = {
         added = " ",
         changed = " ",
         copied = " ",

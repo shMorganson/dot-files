@@ -2,31 +2,31 @@
   " "highlight Comment guifg=#686f9a ctermfg=60 gui=italic
   " " highlight Normal guibg=NONE guifg=NONE
   " "highlight LineNr guifg=#7a5ccc
-  highlight EndOfBuffer guifg=#282828 guibg=#282828 ctermfg=0 ctermbg=0
+  highlight EndOfBuffer guifg=#FFFFFF guibg=#FFFFFF ctermfg=231 ctermbg=231
   highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=7
   " "highlight BufferLineSeparator guifg=#172030
-  highlight SignColumn ctermbg=15
-  highlight Search ctermfg=15 ctermbg=13
+  highlight SignColumn ctermbg=231
+  highlight Search ctermfg=8 ctermbg=11
   " highlight DiagnosticSignHint guifg=#8EC07C guibg=#282828 ctermbg=235 ctermfg=108
   " highlight DiagnosticSignInfo guifg=#83A598 guibg=#282828 ctermbg=235 ctermfg=109
   " highlight DiagnosticSignWarn guifg=#FABD2F guibg=#282828 ctermbg=235 ctermfg=214
   " highlight DiagnosticSignError guifg=#FB4934 guibg=#282828 ctermbg=235 ctermfg=167
   " highlight DiagnosticHint guifg=#8EC07C guibg=#282828
-  " highlight StatusLine guibg=#282828
+highlight StatusLine guibg=#FFFFFF ctermbg=231
   " highlight CursorLine guibg=#30365F ctermbg=237 gui=bold
-  highlight helpNote ctermfg=3 ctermbg=15 cterm=BOLD
+highlight helpNote ctermfg=3 ctermbg=15 cterm=BOLD
 
-  " Pmenu
-    highlight Pmenu ctermbg=254
-    highlight PmenuSel ctermbg=12 ctermfg=15
+" Pmenu
+highlight Pmenu ctermbg=254
+highlight PmenuSel ctermbg=12 ctermfg=15
 
-  " Float
-    " highlight FloatShadow guibg=#282828 blend=0
-    " highlight FloatShadowThrough guibg=#282828 blend=0
-    " highlight FloatTitle guifg=#83A598 ctermfg=12
-    " highlight FloatermBorder guibg=None guifg=#10737B
-    highlight FloatBorder ctermbg=15 ctermfg=5
-    highlight NormalFloat ctermbg=15
+" Float
+ " highlight FloatShadow guibg=#282828 blend=0
+ " highlight FloatShadowThrough guibg=#282828 blend=0
+ " highlight FloatTitle guifg=#83A598 ctermfg=12
+ " highlight FloatermBorder guibg=None guifg=#10737B
+highlight FloatBorder ctermbg=15 ctermfg=5
+highlight NormalFloat ctermbg=15
 
 " Treesitter
 highlight @variable ctermfg=2
@@ -39,9 +39,9 @@ highlight DiagnosticSignHint ctermbg=15 ctermfg=3
 highlight DiagnosticHint ctermbg=15 ctermfg=3
 
 " GitSigns Highlights
-highlight GitSignsAdd ctermbg=15 ctermfg=2
-highlight GitSignsChange ctermbg=15 ctermfg=3
-highlight GitSignsDelete ctermbg=15 ctermfg=1
+highlight GitSignsAdd ctermbg=231 ctermfg=2
+highlight GitSignsChange ctermbg=231 ctermfg=3
+highlight GitSignsDelete ctermbg=231 ctermfg=1
 "
 " Telescope Highlights
  " Prompt

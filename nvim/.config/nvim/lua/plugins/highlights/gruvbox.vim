@@ -7,6 +7,9 @@ let g:gruvbox_termcolors = "true"
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_sign_colmn = "bg0"
+let g:gruvbox_contrast = "soft"
+let g:gruvbox_contrast_dark = "soft"
+
 
 
 """"""""""""""""
@@ -51,12 +54,16 @@ highlight! link TelescopePromptPrefix GruvboxRed
 highlight TelescopePromptTitle guifg=#282828 ctermfg=235 guibg=#83a598 ctermbg=109
 highlight TelescopePromptNormal guifg=#ebdbb2 ctermfg=223 guibg=#504945 ctermbg=239 
 highlight! link TelescopePromptCounter GruvboxGray
-
+highlight! link TelescopePreviewDirectory GruvboxBlueBold
+highlight! link TelescopeResultsDiffChange GruvboxAquaBold
+  " TelescopeResultsDiffAdd = { default = true, link = "DiffAdd" },
+  " TelescopeResultsDiffDelete = { default = true, link = "DiffDelete" },
+  " TelescopeResultsDiffUntracked = { default = true, link = "NonText" },
 
 " Nvim Tree
 highlight! link NvimTreeSymlink GruvboxAqua
 highlight! link NvimTreeRootFolder GruvboxPurpleBold
-highlight! link NvimTreeFolderIcon GruvboxBlueBold
+highlight! link NvimTreeFolderIcon GruvboxBlue
 highlight! link NvimTreeFileIcon GruvboxFg2
 highlight! link NvimTreeExecFile GruvboxGreenBold
 highlight! link NvimTreeOpenedFile GruvboxRedBold
@@ -71,3 +78,6 @@ highlight! link NvimTreeGitNew GruvboxYellow
 highlight! link NvimTreeGitDeleted GruvboxRed
 highlight! link NvimTreeWindowPicker GruvboxAqua
 highlight! link NvimTreeFolderName GruvboxBlue
+
+" Highlight-nvim
+highlight Headline1 guibg=#83a598 ctermbg=109 guifg=#458588 ctermfg=66 

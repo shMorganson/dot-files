@@ -1,4 +1,5 @@
 local opt = vim.opt  -- to set options.
+local cmd = vim.cmd  -- set vim cmd.
 
 opt.completeopt = "menuone,noselect"
 opt.expandtab = true                  -- Use spaces instead of tabs
@@ -28,5 +29,7 @@ opt.conceallevel = 0                  -- Set the conceal level to 2.
 opt.laststatus = 2                    -- Set the Global Statusline
 
 -- Enabling Syntax Highlighting
-vim.cmd "syntax enable"
-vim.cmd "syntax on"
+cmd "syntax enable"
+cmd "syntax on"
+
+

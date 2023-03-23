@@ -12,13 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- { "jeffkreeftmeijer/vim-dim", -- Updated Default theme tool.
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
-  { "gruvbox-community/gruvbox", -- Gruvbox theme
+  { "jeffkreeftmeijer/vim-dim",                       -- Updated Default theme tool.
     lazy = false,
     priority = 1000,
+  },
+  { "shaunsingh/nord.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  { "pineapplegiant/spaceduck",                                   -- Catppuccin theme
+    lazy = false,
+    priority = 1000,
+  },
+  { "ellisonleao/gruvbox.nvim",                           -- Nord theme
+     lazy = false,
+     priority = 1000,
   },
   "lukas-reineke/indent-blankline.nvim",                 -- Indent Line
   {"nvim-lualine/lualine.nvim",                          -- Lualine/Status line
@@ -61,45 +69,48 @@ local plugins = {
       "nvim-lua/plenary.nvim"
     },
   },
-  { "goolord/alpha-nvim",                                  -- Neovim Dashboard plugin
+  { "goolord/alpha-nvim",                                -- Neovim Dashboard plugin
     lazy = false,
     priority = 900,
   },
-  "nvim-telescope/telescope-ui-select.nvim",               -- nvim-ui-selector as default
-  "nvim-telescope/telescope-file-browser.nvim",            -- File Browser for Telescope
-  "AckslD/nvim-neoclip.lua",                               -- Yank extension for Telescope
-  "numToStr/Comment.nvim",                                 -- Comment plugin to do quick comments.
-  "zane-/cder.nvim",                                       -- Change current working directory
-  "yorik1984/vim-gitignore",                               -- Gitignore syntax highlighting
-  "ahmedkhalf/project.nvim",                               -- Project plugin for Neovim
-  { "kyazdani42/nvim-tree.lua",                            -- NvimTree
+  "nvim-telescope/telescope-ui-select.nvim",             -- nvim-ui-selector as default
+  "nvim-telescope/telescope-file-browser.nvim",          -- File Browser for Telescope
+  "AckslD/nvim-neoclip.lua",                             -- Yank extension for Telescope
+  "numToStr/Comment.nvim",                               -- Comment plugin to do quick comments.
+  "zane-/cder.nvim",                                     -- Change current working directory
+  "yorik1984/vim-gitignore",                             -- Gitignore syntax highlighting
+  "ahmedkhalf/project.nvim",                             -- Project plugin for Neovim
+  { "kyazdani42/nvim-tree.lua",                          -- NvimTree
     dependencies = {
       'kyazdani42/nvim-web-devicons'
     },
-    build = true,
+    -- build = true,
   },
-  "vimwiki/vimwiki",                                       -- Wiki note management system.
-  { "iamcco/markdown-preview.nvim",                        -- vimwiki preview plugin
+  "vimwiki/vimwiki",                                     -- Wiki note management system.
+  { "iamcco/markdown-preview.nvim",                      -- vimwiki preview plugin
     build = 'cd app && yarn install',
     cmd = 'MarkdownPreview'
   },
-  "lewis6991/gitsigns.nvim",                              -- Git Status for StatusLine
-  "akinsho/toggleterm.nvim",                              -- Terminal tool
-  "stevearc/dressing.nvim",                               -- Match UI schemes/tools
-  "rcarriga/nvim-notify",                                 -- Notify for plugins
-  "onsails/lspkind.nvim",                                 -- LSP Icons used in nvim-cmp.
-  "kyazdani42/nvim-web-devicons",                         -- Dev Icons
-  { "mrded/nvim-lsp-notify",                              -- LSP notification plugin.
+  "lewis6991/gitsigns.nvim",                            -- Git Status for StatusLine
+  "akinsho/toggleterm.nvim",                            -- Terminal tool
+  "stevearc/dressing.nvim",                             -- Match UI schemes/tools
+  "rcarriga/nvim-notify",                               -- Notify for plugins
+  "onsails/lspkind.nvim",                               -- LSP Icons used in nvim-cmp.
+  "kyazdani42/nvim-web-devicons",                       -- Dev Icons
+  { "mrded/nvim-lsp-notify",                            -- LSP notification plugin.
     dependencies = {
       "rcarriga/nvim-notify",
     },
+  },
+  { "lukas-reineke/headlines.nvim",                     -- Improved Markdown highlighting.  
+    dependencies = {"nvim-treesitter/nvim-treesitter"},
   },
 }
 
 local opts = {
     ui = {
         border = "rounded"
-    }
+    },
 }
 
 require("lazy").setup(plugins, opts)
