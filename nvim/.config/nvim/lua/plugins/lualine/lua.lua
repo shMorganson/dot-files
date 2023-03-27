@@ -5,39 +5,39 @@ if not lualine_status_ok then
 end
 
 -- -- Colors for the theme.
--- local colors = {
---   blue   = '#83a598',
---   cyan   = '#8ec07c',
---   black  = '#282828',
---   white  = '#ebdbb2',
---   red    = '#fb4934',
---   violet = '#d3869b',
---   grey   = '#665c54',
---   green  = '#b8bb26',
--- }
+local colors = {
+  blue   = '#005F87',
+  cyan   = '#00AFAF',
+  black  = '#444444',
+  white  = '#EEEEEE',
+  red    = '#AF0000',
+  violet = '#af005f',
+  grey   = '#bcbcbc',
+  green  = '#5faf00',
+}
 
--- local bubbles_theme = {
---   normal = {
---     a = { fg = colors.white, bg = colors.blue },
---     b = { fg = colors.white, bg = colors.grey },
---     c = { fg = colors.white, ctermbg = 0 },
---   },
---
---   command = { a = {fg = colors.white, bg = colors.violet} },
---   insert = { a = { fg = colors.white, bg = colors.green} },
---   visual = { a = { fg = colors.white, bg = colors.cyan } },
---   replace = { a = { fg = colors.white, bg = colors.red } },
---
---   inactive = {
---     a = { fg = colors.white, ctermbg = 0 },
---     b = { fg = colors.white, ctermbg = 0 },
---     c = { fg = colors.black, ctermbg = 0 },
---   },
--- }
+local papercolor_theme = {
+  normal = {
+    a = { fg = colors.white, bg = colors.blue },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.white, ctermbg = 0 },
+    },
+
+  command = { a = {fg = colors.white, bg = colors.violet} },
+    insert = { a = { fg = colors.white, bg = colors.green} },
+    visual = { a = { fg = colors.white, bg = colors.cyan } },
+    replace = { a = { fg = colors.white, bg = colors.red } },
+
+  inactive = {
+    a = { fg = colors.white, ctermbg = 0 },
+    b = { fg = colors.white, ctermbg = 0 },
+    c = { fg = colors.black, ctermbg = 0 },
+  },
+}
 
 require('lualine').setup {
     options = {
-        theme = 'nord',
+        theme = papercolor_theme,
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},

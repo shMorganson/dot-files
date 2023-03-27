@@ -20,6 +20,10 @@ local plugins = {
     lazy = false,
     priority = 1000,
   },
+  { "NLKNguyen/papercolor-theme",
+    lazy = false,
+    priority = 1000,
+  },
   { "pineapplegiant/spaceduck",                                   -- Catppuccin theme
     lazy = false,
     priority = 1000,
