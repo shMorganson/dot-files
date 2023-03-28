@@ -45,7 +45,7 @@ require("toggleterm").setup{
     border = 'curved',
     width = 200,
     height = 40,
-    winblend = 3,
+    winblend = 0,
   }
 }
 
@@ -68,7 +68,7 @@ local newfloat = Terminal:new({
     float_opts = {
       width = 200,
       height = 47,
-      winblend = 3,
+      winblend = 0,
       highlights = {
         border = "Normal",
         background = "Normal",
