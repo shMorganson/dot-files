@@ -33,9 +33,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#ebdbb2,bg:#282828,hl:#b16286
-  --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b
-  --color=info:#d65d0e,prompt:#458588,pointer:#fe8019
-  --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#   --color=fg:#ebdbb2,bg:#282828,hl:#b16286
+#   --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b
+#   --color=info:#d65d0e,prompt:#458588,pointer:#fe8019
+#   --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
 
