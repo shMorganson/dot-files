@@ -4,10 +4,10 @@ compinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
 # zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats 'on %F{70}  %F{70}%b ' # git(main)
+zstyle ':vcs_info:*' formats 'on %F{70}⇵ %F{70}%b ' # git(main)
 setopt prompt_subst
 
-PS1=' %F{blue} %F{blue}%/%f $vcs_info_msg_0_%F{205} ' # logo /tmp/repo (main) $
+PS1='%F{blue} %F{blue}%/%f $vcs_info_msg_0_%F{205}→ ' # logo /tmp/repo (main) $
 
 # Sources/Plugins
 # source ~/.local/share/nvim/lazy/gruvbox/gruvbox_256palette_osx.sh # better gruvbox color support
