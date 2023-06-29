@@ -11,9 +11,6 @@
 Session.vim
 Sessionx.vim
 
-# nova Editor
-Configuration.json
-
 # Temporary
 .netrwhist
 *~
@@ -45,6 +42,7 @@ Icon
 
 # Nova Editor
 .nova
+Configuration.json
 
 # Directories potentially created on remote AFP share
 .AppleDB
