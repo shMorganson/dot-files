@@ -1,6 +1,6 @@
 require("headlines").setup {
     markdown = {
-        query = vim.treesitter.parse_query(
+        query = vim.treesitter.query.parse_query(
             "markdown",
             [[
                 (atx_heading [
@@ -37,7 +37,7 @@ require("headlines").setup {
         fat_headline_lower_string = "▀",
         },
     rmd = {
-        query = vim.treesitter.parse_query(
+        query = vim.treesitter.query.parse_query(
             "markdown",
             [[
                 (atx_heading [

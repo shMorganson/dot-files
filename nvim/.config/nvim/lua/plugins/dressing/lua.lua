@@ -13,7 +13,7 @@ require('dressing').setup({
     insert_only = true,
 
     -- These are passed to nvim_open_win
-    anchor = "SW",
+    --anchor = "SW",
     border = "rounded",
     -- 'editor' and 'win' will default to being centered
     relative = "cursor",

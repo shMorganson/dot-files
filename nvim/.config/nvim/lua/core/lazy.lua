@@ -84,12 +84,6 @@ local plugins = {
   "zane-/cder.nvim",                                     -- Change current working directory
   "yorik1984/vim-gitignore",                             -- Gitignore syntax highlighting
   "ahmedkhalf/project.nvim",                             -- Project plugin for Neovim
-  { "kyazdani42/nvim-tree.lua",                          -- NvimTree
-    dependencies = {
-      'kyazdani42/nvim-web-devicons'
-    },
-    -- build = true,
-  },
   "vimwiki/vimwiki",                                     -- Wiki note management system.
   { "iamcco/markdown-preview.nvim",                      -- vimwiki preview plugin
     build = 'cd app && yarn install',

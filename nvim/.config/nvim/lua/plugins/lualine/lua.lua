@@ -6,21 +6,21 @@ end
 
 -- -- Colors for the theme.
 local colors = {
-  blue   = '#005F87',
-  cyan   = '#00AFAF',
-  black  = '#444444',
-  white  = '#EEEEEE',
-  red    = '#AF0000',
-  violet = '#af005f',
-  grey   = '#bcbcbc',
-  green  = '#5faf00',
+  blue   = '#488BA8',
+  cyan   = '#75C9C6',
+  black  = '#000000',
+  white  = '#f7f7f7',
+  red    = '#F26669',
+  violet = '#C76090',
+  grey   = '#B1B1B1',
+  green  = '#9CD936',
 }
 
 local papercolor_theme = {
   normal = {
     a = { fg = colors.white, bg = colors.blue },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.white, ctermbg = 0 },
+    c = { fg = colors.grey, ctermbg = 0 },
     },
 
   command = { a = {fg = colors.white, bg = colors.violet} },

@@ -9,7 +9,6 @@ require('plugins.treesitter.lua')
 require('plugins.autocommands.lua')
 require('plugins.autopairs.lua')
 require('plugins.project.lua')
-require('plugins.nvimtree.lua')
 require('plugins.devicons.lua')
 require('plugins.alpha.lua')
 require('plugins.indentline.lua')
@@ -19,7 +18,7 @@ require('plugins.nvim-notify.lua')
 require('plugins.comment.lua')
 require('plugins.neoclip.lua')
 require("plugins.nvim-lsp-notify.lua")
-require("plugins.highlights-nvim.lua")
+-- require("plugins.highlights-nvim.lua")
 
 -- Loading Vim Script plugins
 vim.cmd 'source ~/.config/nvim/lua/plugins/vimwiki/vimwiki.vim'

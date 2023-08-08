@@ -4,13 +4,12 @@ compinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
 # zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats 'on %F{70}⇵ %F{70}%b ' # git(main)
+zstyle ':vcs_info:*' formats 'on %F{70} %F{70}%b ' # git(main)
 setopt prompt_subst
 
 PS1='%F{blue} %F{blue}%/%f $vcs_info_msg_0_%F{205}→ ' # logo /tmp/repo (main) $
 
 # Sources/Plugins
-# source ~/.local/share/nvim/lazy/gruvbox/gruvbox_256palette_osx.sh # better gruvbox color support
 source ~/.zsh/zsh-functions
 source ~/.zsh/zsh-aliases
 source ~/.zsh/zsh-exports
@@ -33,9 +32,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-#   --color=fg:#ebdbb2,bg:#282828,hl:#b16286
-#   --color=fg+:#689d6a,bg+:#32302f,hl+:#d3869b
-#   --color=info:#d65d0e,prompt:#458588,pointer:#fe8019
-#   --color=marker:#8ec07c,spinner:#cc241d,header:#fabd2f'
-
+#export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+# --color=fg:#313131,bg:#f7f7f7,hl:#348986
+# --color=fg+:#313131,bg+:#f7f7f7,hl+:#75c9c6
+# --color=info:#d4a046,prompt:#ed77ba,pointer:#639808
+# --color=marker:#9cd936,spinner:#862753,header:#1B556B'
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

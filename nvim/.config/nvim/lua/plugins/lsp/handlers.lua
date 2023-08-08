@@ -12,13 +12,18 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
 M.setup = function()
- local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+ -- local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+ --  for type, icon in pairs(signs) do
+ --   local hl = "DiagnosticSign" .. type
+ --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  --  end
+  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
   for type, icon in pairs(signs) do
-   local hl = "DiagnosticSign" .. type
-   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
-  local config = {
+  vim.diagnostic.config({
     -- Enable virtual text
     virtual_text = false,
     virtual_lines = false,
@@ -27,19 +32,19 @@ M.setup = function()
       active = signs,
     },
     update_in_insert = true,
-    underline = true,
+    underline = false,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",
       header = "",
       prefix = "",
     },
-  }
+  })
 
-  vim.diagnostic.config(config)
+  -- vim.diagnostic.config(config)
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
@@ -54,6 +59,7 @@ local function lsp_keymaps(bufnr)
   local buf_opts = { noremap = true, buffer = bufnr, silent = true }
   keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
   keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
+  keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", buf_opts)
   -- keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", buf_opts)
   -- keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", buf_opts)
   keymap("n", "K", vim.lsp.buf.hover, buf_opts)
