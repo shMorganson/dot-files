@@ -12,12 +12,6 @@ autocmd("TextYankPost", {
   end
 })
 
-autocmd("TermClose", {
-  command = "NvimTreeRefresh",
-  group = reset_group,
-  desc = "Refresh NvimTree on terminal close."
-})
-
 autocmd("BufRead,BufNewFile", {
   pattern = "config",
   command = "setf dosini",
