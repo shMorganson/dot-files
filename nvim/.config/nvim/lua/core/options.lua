@@ -28,6 +28,12 @@ opt.shell = "zsh"
 opt.conceallevel = 0                  -- Set the conceal level to 2.
 opt.laststatus = 2                    -- Set the Global Statusline
 
+-- netrw Settings
+vim.g.netrw_winsize = 30              -- Set window size.
+vim.g.netrw_banner = 0                -- Hide banner.
+-- vim.g.netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' -- Hide dot files.
+vim.g.netrw_localcopydircmd = 'cp -r' -- Change the copy command. Mostly to enable recursive copy of directories.
+
 -- Enabling Syntax Highlighting
 cmd "syntax enable"
 cmd "syntax on"

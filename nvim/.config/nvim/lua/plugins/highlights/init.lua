@@ -76,3 +76,37 @@ highlight (0, 'MasonHighlightBlockBold', { ctermfg = 4, fg = '#1B556B', bold = t
 highlight (0, 'MasonHighlightSecondary', { ctermfg = 10 })
 highlight (0, 'MasonHighlightBlockSecondary', { ctermfg = 10 })
 -- MasonHighlightBlockBoldSecondary
+
+-- Lazy
+highlight (0, 'LazyH1', { ctermfg = 4, ctermbg = 254, fg = '#1B556B', bg = '#fefefe' })
+-- highlight (0, 'LazyH2', { ctermfg = 4, fg = '#1B556B', bold = true })
+-- LazyH2
+-- LazyDir
+-- LazyUrl
+highlight (0, 'LazyProp', { ctermbg = 15 })
+-- LazyDimmed
+-- LazyLocal
+-- LazyValue
+highlight (0, 'LazyButton', { ctermfg = 4, fg = '#1B556B' })
+-- LazyCommit
+-- LazyNoCond
+highlight (0, 'LazyNormal', { ctermbg = 15, bg = '#f7f7f7' })
+-- LazyComment
+highlight (0, 'LazySpecial', { ctermfg = 10 })
+-- LazyReasonFt
+-- LazyReasonCmd
+-- LazyTaskError
+-- LazyCommitType
+-- LazyReasonKeys
+-- LazyTaskOutput
+-- LazyCommitIssues
+-- LazyCommitScope
+-- LazyReasonEvent
+-- LazyReasonStart
+highlight (0, 'LazyButtonActive', { ctermfg = 4, ctermbg = 254, fg = '#1B556B', bg = '#fefefe' })
+-- highlight (0, 'LazyProgressDone', { ctermfg = 10 })
+-- LazyProgressTodo
+-- LazyReasonImport
+-- LazyReasonPlugin
+-- LazyReasonSource
+-- LazyReasonRuntime
