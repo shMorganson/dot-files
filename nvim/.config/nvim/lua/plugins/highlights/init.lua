@@ -21,6 +21,8 @@ highlight (0, 'StatusLine', { ctermbg = 15, bg = '#f7f7f7' })
 highlight (0, 'EndOfBuffer', { ctermbg = 15, ctermfg = 15, fg = '#f7f7f7', bg = '#f7f7f7' })
 highlight (0, 'VertSplit', { ctermfg = 24, ctermbg = 15, bg = '#F7F7F7', fg = '#005f87' })
 highlight (0, 'SignColumn', { ctermfg = 4, ctermbg = 15, bg = '#F7F7F7', fg = '#1B556B' })
+highlight (0, 'Pmenu', { ctermfg = 241, ctermbg = 254, bg = '#fefefe', fg = '#f1f1f1' })
+highlight (0, 'PMenuSel', { ctermfg = 254, ctermbg = 13, bg = '#C76090', fg = '#fefefe' })
 
 -- GitSigns
 highlight (0, 'GitSignsAdd', { ctermfg = 70, ctermbg = 15, fg = '#5faf00', bg = '#F7F7F7' })
