@@ -16,7 +16,7 @@ local plugins = {
     lazy = false,
     priority = 1000,
   },
-  { "shaunsingh/nord.nvim",
+  { "shMorganson/anura-nvim",
     lazy = false,
     priority = 1000,
   },
@@ -84,11 +84,6 @@ local plugins = {
   "zane-/cder.nvim",                                     -- Change current working directory
   "yorik1984/vim-gitignore",                             -- Gitignore syntax highlighting
   "ahmedkhalf/project.nvim",                             -- Project plugin for Neovim
-  "vimwiki/vimwiki",                                     -- Wiki note management system.
-  { "iamcco/markdown-preview.nvim",                      -- vimwiki preview plugin
-    build = 'cd app && yarn install',
-    cmd = 'MarkdownPreview'
-  },
   "lewis6991/gitsigns.nvim",                            -- Git Status for StatusLine
   "akinsho/toggleterm.nvim",                            -- Terminal tool
   "stevearc/dressing.nvim",                             -- Match UI schemes/tools
@@ -103,6 +98,20 @@ local plugins = {
   { "lukas-reineke/headlines.nvim",                     -- Improved Markdown highlighting.  
     dependencies = {"nvim-treesitter/nvim-treesitter"},
   },
+  {
+    "nvim-neorg/neorg",                                 -- Neorg Notes
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      -- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  }
 }
 
 local opts = {

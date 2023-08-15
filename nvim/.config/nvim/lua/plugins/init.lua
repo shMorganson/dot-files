@@ -1,6 +1,7 @@
 -- Loading the plugins
 require('plugins.highlights.init')
 require('plugins.gitsigns.lua')
+require('plugins.neorg.lua')
 require('plugins.lualine.lua')
 require('plugins.nvimcmp.lua')
 require('plugins.telescope.lua')
@@ -18,6 +19,7 @@ require('plugins.nvim-notify.lua')
 require('plugins.comment.lua')
 require('plugins.neoclip.lua')
 require("plugins.nvim-lsp-notify.lua")
+require("plugins.neotree.neotree")
 -- require("plugins.highlights-nvim.lua")
 
 -- Loading Vim Script plugins

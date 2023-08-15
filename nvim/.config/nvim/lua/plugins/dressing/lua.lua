@@ -27,7 +27,7 @@ require('dressing').setup({
     min_width = { 20, 0.2 },
     win_options = {
       -- Window transparency (0-100)
-      winblend = 0,
+      winblend = 5,
     },
     override = function(conf)
       -- This is the config that will be pssed to nvim_open_win.

@@ -3,31 +3,31 @@ vim.cmd [[
 if exists("g:neovide")
   let g:neovide_transparency=0.0
   let g:transparency = 1
-  let g:neovide_background_color = '#2E3440'.printf('%x', float2nr(255 * g:transparency))
+  let g:neovide_background_color = '#f7f7f7'.printf('%x', float2nr(255 * g:transparency))
   let g:neovide_input_use_logo=v:true
   let g:neovide_cursor_animation_length=0.03
   let g:neovide_cursor_trail_size=0.8
 
-  let g:terminal_color_0 = "#6E738D"
-  let g:terminal_color_8 = "#8087A2"
-  let g:terminal_color_1 = "#ED8796"
-  let g:terminal_color_9 = "#ED8796"
-  let g:terminal_color_2 = "#A6DA95"
-  let g:terminal_color_10 = "#A6DA95"
-  let g:terminal_color_3 = "#EED49F"
-  let g:terminal_color_11 = "#EED49F"
-  let g:terminal_color_4 = "#8AADF4"
-  let g:terminal_color_12 = "#8AADF4"
-  let g:terminal_color_5 = "#F5BDE6"
-  let g:terminal_color_13 = "#F5BDE6"
-  let g:terminal_color_6 = "#91D7E3"
-  let g:terminal_color_14 = "#91D7E3"
-  let g:terminal_color_7 = "#CAD3F5"
-  let g:terminal_color_15 = "#CAD3F5"
+  let g:terminal_color_0 = "#000000"
+  let g:terminal_color_8 = "#7f7f7f"
+  let g:terminal_color_1 = "#b22729"
+  let g:terminal_color_9 = "#f26669"
+  let g:terminal_color_2 = "#639808"
+  let g:terminal_color_10 = "#9cd936"
+  let g:terminal_color_3 = "#d4a046"
+  let g:terminal_color_11 = "#d4a046"
+  let g:terminal_color_4 = "#1b556b"
+  let g:terminal_color_12 = "#488ba8"
+  let g:terminal_color_5 = "#862753"
+  let g:terminal_color_13 = "#c76090"
+  let g:terminal_color_6 = "#348986"
+  let g:terminal_color_14 = "#75c9c6"
+  let g:terminal_color_7 = "#b1b1b1"
+  let g:terminal_color_15 = "#f7f7f7"
 endif
 ]]
 
-vim.g.gui_font_default_size = 17
+vim.g.gui_font_default_size = 18
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = "SFMono Nerd Font"
 

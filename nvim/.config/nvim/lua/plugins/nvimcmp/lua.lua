@@ -49,13 +49,20 @@ local lsp_symbols = {
   TypeParameter = "   (TypeParameter)"
 }
 
+cmp.setup {
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  }
+}
+
 -- #### WIP #### --
---cmp.setup.filetype({ 'vimwiki', 'help' }, {
---    sources = {
---      { name = 'path' },
---      { name = 'buffer' },
---    }
---})
+cmp.setup.filetype({ 'norg', 'help' }, {
+    sources = {
+      { name = 'path' },
+      { name = 'buffer' },
+    }
+})
 
 local lspkind = require('lspkind')
 cmp.setup {
