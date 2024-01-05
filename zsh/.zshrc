@@ -4,10 +4,10 @@ compinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
 # zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats 'on %F{70} %F{70}%b ' # git(main)
+zstyle ':vcs_info:*' formats '%F{4}%1/ %F{0}on %F{2} %F{2}%b ' # git(main)
 setopt prompt_subst
 
-PS1='%F{blue} %F{blue}%/%f $vcs_info_msg_0_%F{205}→ ' # logo /tmp/repo (main) $
+PS1='$vcs_info_msg_0_%F{205}❯ ' # logo /tmp/repo (main) $
 
 # Sources/Plugins
 source ~/.zsh/zsh-functions
@@ -25,7 +25,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 # Allow aproximation when completing
 zstyle ':completion:::::' completer _complete _approximate
 zstyle ':completion:*:approximate:*' max-errors 2
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # better completion. 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # better completion.
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -38,3 +38,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # --color=info:#d4a046,prompt:#ed77ba,pointer:#639808
 # --color=marker:#9cd936,spinner:#862753,header:#1B556B'
 [[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Users/justin/Library/Developer/Xcode/DerivedData/CodeEdit-eccipnsgefyhyhajoezmqsnbzewk/Build/Products/Debug/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

@@ -28,11 +28,12 @@ brew "lazydocker"
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "font-fira-code-nerd-font"
+cask "raspberry-pi-imager"
 
 # numo 'brew tap'
 # tap "hashicorp/tap"
 
-# numo 'brew install'
+# numo 'brew install' 
 # brew "awscli"
 # brew "aws-okta"
 # brew "hashicorp/tap/terraform"
@@ -41,6 +42,8 @@ cask "font-fira-code-nerd-font"
 
 # cask "homebrew/cask/docker"
 # cask "wireshark"
+# cask "pppc-utility"
+# cask "rapidapi"
 
 # 'mas install'
 # mas "1Password", id: 443987910
