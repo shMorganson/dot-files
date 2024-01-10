@@ -25,10 +25,3 @@ export AWS_PROFILE=mvc-1-app-2
 # export TF_LOG_CORE=TRACE
 # export TF_LOG_PROVIDER=TRACE
 # export TF_LOG_PATH=~/Library/Logs/terraform.log
-
-# FZF Theme
- export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-   --color=fg:#ecf0c1,bg:#30365f,hl:#818596
-   --color=fg+:#ecf0c1,bg+:#30365f,hl+:#00a3cc
-   --color=info:#f2ce00,prompt:#ce6f8f,pointer:#00a3cc
-   --color=marker:#5ccc96,spinner:#ce6f8f,header:#f2ce00'

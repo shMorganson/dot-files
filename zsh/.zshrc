@@ -4,7 +4,7 @@ compinit
 autoload -Uz vcs_info # enable vcs_info
 precmd () { vcs_info } # always load before displaying the prompt
 # zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats '%F{4}%1/ %F{0}on %F{2} %F{2}%b ' # git(main)
+zstyle ':vcs_info:*' formats '%F{4}%1/ %F{0}on %F{2} %F{2}%b ' # git(main)
 setopt prompt_subst
 
 PS1='$vcs_info_msg_0_%F{205}❯ ' # logo /tmp/repo (main) $
@@ -31,15 +31,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-# --color=fg:#313131,bg:#f7f7f7,hl:#348986
-# --color=fg+:#313131,bg+:#f7f7f7,hl+:#75c9c6
-# --color=info:#d4a046,prompt:#ed77ba,pointer:#639808
-# --color=marker:#9cd936,spinner:#862753,header:#1B556B'
-[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Users/justin/Library/Developer/Xcode/DerivedData/CodeEdit-eccipnsgefyhyhajoezmqsnbzewk/Build/Products/Debug/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#000000,bg:#f7f7f7,hl:#1b556b
+ --color=fg+:#000000,bg+:#f7f7f7,hl+:#488ba8
+ --color=info:#d4a046,prompt:#fd6dbb,pointer:#9cd936
+ --color=marker:#639808,spinner:#862753,header:#348986'
