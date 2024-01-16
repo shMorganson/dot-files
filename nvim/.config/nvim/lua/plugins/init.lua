@@ -20,6 +20,7 @@ require('plugins.comment.lua')
 require('plugins.neoclip.lua')
 require("plugins.nvim-lsp-notify.lua")
 require("plugins.highlights-nvim.lua")
+require("plugins.neotree.lua")
 
 -- Loading Vim Script plugins
 vim.cmd 'source ~/.config/nvim/lua/plugins/vimwiki/vimwiki.vim'

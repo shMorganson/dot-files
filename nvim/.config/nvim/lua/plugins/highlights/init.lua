@@ -22,4 +22,26 @@ vim.cmd [[colorscheme anura]]
 -- highlight (0, 'MasonHighlightSecondary', { ctermfg = 10 })
 -- highlight (0, 'MasonHighlightBlockSecondary', { ctermfg = 10 })
 -- -- MasonHighlightBlockBoldSecondary
---
+
+-- Telescope
+  -- Prompt
+    highlight (0, 'TelescopePromptTitle', { ctermfg=6, bold = true })
+--     highlight TelescopePromptBorder ctermfg=4 ctermbg=15
+--     highlight TelescopePromptNormal ctermbg=15
+    highlight (0, 'TelescopePromptPrefix', { ctermfg=5 })
+
+  -- Results
+    highlight (0, 'TelescopeResultsTitle', { ctermfg=2, bold = true })
+--     highlight TelescopeResultsBorder ctermfg=2 ctermbg=15
+--     highlight TelescopeResultsNormal ctermbg=15
+-- "
+--    " Preview
+    highlight (0, 'TelescopePreviewTitle', { ctermfg=3, bold = true })
+--      highlight TelescopePreviewBorder ctermfg=13 ctermbg=15
+--      highlight TelescopePreviewNormal ctermbg=15
+-- "
+--    " Other
+--      highlight TelescopeSelection cterm=bold
+--      "highlight TelescopeNormal guifg=#ECEFF4 guibg=#363944
+   highlight (0, 'TelescopeSelectionCaret', { ctermfg=5 })
+

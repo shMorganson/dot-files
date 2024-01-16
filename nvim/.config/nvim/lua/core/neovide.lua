@@ -1,9 +1,6 @@
 --Settings for Neovide
 vim.cmd [[
 if exists("g:neovide")
-  let g:neovide_transparency=0.0
-  let g:transparency = 1
-  let g:neovide_background_color = '#f7f7f7'.printf('%x', float2nr(255 * g:transparency))
   let g:neovide_input_use_logo=v:true
   let g:neovide_cursor_animation_length=0.03
   let g:neovide_cursor_trail_size=0.8
@@ -27,9 +24,28 @@ if exists("g:neovide")
 endif
 ]]
 
-vim.g.gui_font_default_size = 18
+-- Helper function for transparency formatting
+local alpha = function()
+  return string.format("%x", math.floor(255 * vim.g.transparency))
+end
+-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+vim.g.neovide_transparency = 0.0
+vim.g.transparency = 1
+vim.g.neovide_background_color = "#f7f7f7" .. alpha()
+
+-- Floating Blur Amount
+vim.g.neovide_floating_blur_amount_x = 1.0
+vim.g.neovide_floating_blur_amount_y = 1.0
+
+-- Floating Shadow
+vim.g.neovide_floating_shadow = true
+vim.g.neovide_floating_z_height = 10
+vim.g.neovide_light_angle_degrees = 45
+vim.g.neovide_light_radius = 5
+
+vim.g.gui_font_default_size = 15
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = "SFMono Nerd Font"
+vim.g.gui_font_face = "SauceCodePro Nerd Font"
 
 RefreshGuiFont = function()
   vim.opt.guifont = string.format("%s:h%s",vim.g.gui_font_face, vim.g.gui_font_size)
