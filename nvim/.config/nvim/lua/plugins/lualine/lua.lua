@@ -6,14 +6,14 @@ end
 
 -- -- Colors for the theme.
 local colors = {
-  blue   = '#488BA8',
-  cyan   = '#75C9C6',
-  black  = '#000000',
-  white  = '#f7f7f7',
-  red    = '#F26669',
-  violet = '#C76090',
-  grey   = '#B1B1B1',
-  green  = '#9CD936',
+  blue   = '#458588',
+  cyan   = '#689D6A',
+  black  = '#282828',
+  white  = '#EBDBB2',
+  red    = '#CC241D',
+  violet = '#B16286',
+  grey   = '#928374',
+  green  = '#98971A',
 }
 
 local papercolor_theme = {

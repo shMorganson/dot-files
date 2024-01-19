@@ -34,6 +34,9 @@ vim.g.netrw_banner = 0                -- Hide banner.
 -- vim.g.netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' -- Hide dot files.
 vim.g.netrw_localcopydircmd = 'cp -r' -- Change the copy command. Mostly to enable recursive copy of directories.
 
+-- Hide EndOfBuffer Characters
+vim.opt.fillchars:append({ eob = " " })
+
 -- Enabling Syntax Highlighting
 cmd "syntax enable"
 cmd "syntax on"
