@@ -1,22 +1,16 @@
-local lualine_status_ok, lualine = pcall(require, "lualine")
-if not lualine_status_ok then
-  print("lualine.nvim is etiher broken or is not installed.")
-  return
-end
-
 -- -- Colors for the theme.
 local colors = {
-  blue   = '#458588',
-  cyan   = '#689D6A',
-  black  = '#282828',
-  white  = '#EBDBB2',
-  red    = '#CC241D',
-  violet = '#B16286',
-  grey   = '#928374',
-  green  = '#98971A',
+  blue   = '#286983',
+  cyan   = '#56949F',
+  black  = '#575279',
+  white  = '#FFFAF3',
+  red    = '#B4637A',
+  violet = '#907AA9',
+  grey   = '#CECACD',
+  green  = '#D7827E',
 }
 
-local papercolor_theme = {
+local anura_theme = {
   normal = {
     a = { fg = colors.white, bg = colors.blue },
     b = { fg = colors.white, bg = colors.grey },
@@ -37,7 +31,7 @@ local papercolor_theme = {
 
 require('lualine').setup {
     options = {
-        theme = papercolor_theme,
+        theme = anura_theme,
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
@@ -45,10 +39,10 @@ require('lualine').setup {
     },
     sections = {
       lualine_a = {
-        { 'mode', separator = { left = '', right = '' }, right_padding = 1 },
+        { 'mode', separator = { left = '', right = '' }, right_padding = 1 },
       },
       lualine_b = {
-        { 'filename', separator = { left = '', right = '' }, },
+        { 'filename', separator = { left = '', right = '' }, },
       },
       lualine_c = { 'branch' },
       lualine_x = {

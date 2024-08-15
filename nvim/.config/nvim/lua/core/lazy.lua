@@ -20,10 +20,17 @@ local plugins = {
     lazy = false,
     priority = 1000,
   },
+  { "rose-pine/neovim",
+    lazy = false,
+    priority = 1000,
+  },
   -- { "shMorganson/anura-nvim",
   --   lazy = false,
   --   priority = 1000,
   -- },
+  {"mramsden/fluence.nvim",
+    lazy = false
+  },
   { dir = "~/Git Repos/anura-nvim",
     lazy = false,
     priority = 1000,
@@ -33,6 +40,7 @@ local plugins = {
     priority = 1000,
   },
   { "pineapplegiant/spaceduck",                                   -- Catppuccin theme
+    tags = "dev",
     lazy = false,
     priority = 1000,
   },
@@ -116,7 +124,7 @@ local plugins = {
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      -- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
   }

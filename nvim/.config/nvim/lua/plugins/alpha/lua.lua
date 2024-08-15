@@ -8,11 +8,12 @@ if not status_ok then
 end
 
 local function footer()
-  local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+  local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/lazy", "*", 0, 1))
   local datetime = os.date("  %m-%d-%Y   %H:%M:%S")
   local version = vim.version()
   local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
-  return datetime .. "   Plugins " .. plugins_count .. nvim_version_info
+  local neovide_verion = "  " .. vim.print(vim.g.neovide_version)
+  return datetime .. "   Plugins " .. plugins_count .. nvim_version_info .. neovide_verion
 end
 
 -- WIP

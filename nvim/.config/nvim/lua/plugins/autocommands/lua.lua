@@ -33,12 +33,12 @@ autocmd("FileType", {
  desc = "Set vimwiki files to marksdown files.",
 })
 
-autocmd("BufWritePost", {
-  pattern = "lazy.lua",
-  command = "source <afile> | Lazy install",
-  group = reset_group,
-  desc = "Auto sync Lazy when the file is written to."
-})
+-- autocmd("BufWritePost", {
+--   pattern = "lazy.lua",
+--   command = "source <afile> | Lazy install",
+--   group = reset_group,
+--   desc = "Auto sync Lazy when the file is written to."
+-- })
 
 autocmd("BufEnter", {
  command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
@@ -46,11 +46,11 @@ autocmd("BufEnter", {
  desc = "Close Neovim is NvimTree is only one left open."
 })
 
-autocmd("BufWritePre", {
-  command = ":lua vim.lsp.buf.formatting_sync()",
-  group = reset_group,
-  desc = "Format the buffer with LSP/Null-ls"
-})
+-- autocmd("BufWritePre", {
+--   command = ":lua vim.lsp.buf.formatting_sync()",
+--   group = reset_group,
+--   desc = "Format the buffer with LSP/Null-ls"
+-- })
 
 autocmd("WinNew", {
    command = "windo set wrap",

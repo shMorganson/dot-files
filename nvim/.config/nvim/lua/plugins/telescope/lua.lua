@@ -1,8 +1,11 @@
-local telescope_status_ok, telescope = pcall(require, "telescope")
-if not telescope_status_ok then
-  print("telescope.nvim is etiher broken or is not installed.")
-  return
-end
+-- local telescope_status_ok, telescope = pcall(require, "telescope")
+-- if not status_ok then
+--   vim.notify = require("notify")
+--   vim.notify("Telescope plugin is not installed or is broken.", "error", {
+--     title = "Missing or Broken Plugin"
+--   })
+--   return
+-- end
 
 -- Setup Telescope
 require('telescope').setup{
@@ -12,7 +15,7 @@ require('telescope').setup{
     layout_config = { prompt_position = "top" },
     prompt_prefix = " ",
     sorting_strategy = "ascending",
-    -- winblend = 15,
+    winblend = 3,
     dynamic_preview_title = true,
     selection_caret = " ",
     mappings = {
