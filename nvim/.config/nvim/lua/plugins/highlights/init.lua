@@ -5,7 +5,7 @@ local highlight = vim.api.nvim_set_hl
 vim.o.background = "light"
 
 require("rose-pine").setup({
-    variant = "main", -- auto, main, moon, or dawn
+    variant = "auto", -- auto, main, moon, or dawn
     dark_variant = "main", -- main, moon, or dawn
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
@@ -19,7 +19,7 @@ require("rose-pine").setup({
     styles = {
         bold = true,
         italic = true,
-        transparency = false,
+        transparency = true,
     },
 
     groups = {
@@ -56,8 +56,8 @@ require("rose-pine").setup({
     highlight_groups = {
         -- Comment = { fg = "foam" },
         -- VertSplit = { fg = "muted", bg = "muted" },
-      TelescopePromptBorder = { fg = "subtle", bg = "surface" },
-      TelescopePromptNormal = { bg = "surface" },
+       -- TelescopePromptBorder = { fg = "subtle", bg = "NONE" },
+       -- TelescopePromptNormal = { bg = "NONE" },
     },
 
     before_highlight = function(group, highlight, palette)
@@ -110,6 +110,6 @@ require("gruvbox").setup({
   dim_inactive = false,
   transparent_mode = true,
 })
-vim.cmd [[colorscheme anura]]
 
+vim.cmd("colorscheme rose-pine")
 -- EXAMPLE vim.api.nvim_set_hl (0,'NvimTreeRootFolder', {fg='#1B556B'})

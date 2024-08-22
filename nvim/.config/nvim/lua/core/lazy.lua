@@ -114,20 +114,6 @@ local plugins = {
   { "lukas-reineke/headlines.nvim",                     -- Improved Markdown highlighting.  
     dependencies = {"nvim-treesitter/nvim-treesitter"},
   },
-  {
-    "nvim-neorg/neorg",                                 -- Neorg Notes
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-  }
 }
 
 local opts = {

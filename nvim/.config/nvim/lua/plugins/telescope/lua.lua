@@ -15,7 +15,7 @@ require('telescope').setup{
     layout_config = { prompt_position = "top" },
     prompt_prefix = " ",
     sorting_strategy = "ascending",
-    winblend = 3,
+    -- winblend = 10,
     dynamic_preview_title = true,
     selection_caret = " ",
     mappings = {
@@ -55,7 +55,7 @@ require('telescope').setup{
         find_cmd = "rg" -- find command (defaults to `fd`)
     },
     file_browser = {
-      -- theme = "gruvbox",
+      -- theme = "rose-pine",
       dir_icon = "",
       dir_icon_hl = "NvimTreeFolderIcon",
       hidden = true,

@@ -26,8 +26,10 @@ vim.cmd [[
 
 if vim.g.neovide then
 -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
---vim.g.transparency = 0
--- vim.g.neovide_transparency = 1
+
+vim.g.neovide_transparency = 0.6
+vim.g.neovide_show_border = false
+
 vim.g.neovide_window_blurred = false
 
 -- Setting the font.
@@ -36,9 +38,8 @@ vim.o.guifont = "SauceCodePro Nerd Font:h16"
 -- Setting the line spacing.
 vim.opt.linespace = 0
 
-vim.g.neovide_show_border = false
 
---vim.g.neovide_theme = 'auto'
+vim.g.neovide_theme = 'auto'
 -- Floating Blur Amount
 -- vim.g.neovide_floating_blur_amount_x = 1.0
 -- vim.g.neovide_floating_blur_amount_y = 1.0
@@ -65,29 +66,30 @@ vim.g.neovide_show_border = false
 -- Remember Previous Window Size
 vim.g.neovide_remember_window_size = true
 
-RefreshGuiFont = function()
-  vim.opt.guifont = string.format("%s:h%s",vim.g.gui_font_face, vim.g.gui_font_size)
-end
-
-ResizeGuiFont = function(delta)
-  vim.g.gui_font_size = vim.g.gui_font_size + delta
-  RefreshGuiFont()
-end
-
-ResetGuiFont = function ()
-  vim.g.gui_font_size = vim.g.gui_font_default_size
-  RefreshGuiFont()
-end
-
--- Call function on startup to set default value
-ResetGuiFont()
-
 -- Keymaps
-
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set({'n', 'i'}, "<C-+>", function() ResizeGuiFont(1)  end, opts)
-vim.keymap.set({'n', 'i'}, "<C-->", function() ResizeGuiFont(-1) end, opts)
-vim.keymap.set({'n', 'i'}, "<C-BS>", function() ResetGuiFont() end, opts)
+vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
+vim.keymap.set('v', '<D-c>', '"+y') -- Copy
+vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
+vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
+vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
+vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
 
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 end
+
+vim.g.neovide_scale_factor = 1.0
+local change_scale_factor = function(delta)
+ vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+end
+vim.keymap.set("n", "<C-=>", function()
+ change_scale_factor(1.25)
+end)
+vim.keymap.set("n", "<C-->", function()
+ change_scale_factor(1/1.25)
+end)

@@ -12,8 +12,8 @@ local function footer()
   local datetime = os.date("  %m-%d-%Y   %H:%M:%S")
   local version = vim.version()
   local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
-  local neovide_verion = "  " .. vim.print(vim.g.neovide_version)
-  return datetime .. "   Plugins " .. plugins_count .. nvim_version_info .. neovide_verion
+  --local neovide_verion = "  " .. vim.print(vim.g.neovide_version)
+  return datetime .. "   Plugins " .. plugins_count .. nvim_version_info
 end
 
 -- WIP
