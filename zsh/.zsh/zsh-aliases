@@ -8,6 +8,7 @@ alias ld='lazydocker'
 alias ht='sudo htop'
 alias tree='tree -C'
 alias ls='ls -al --color'
+alias utm='utmctl'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -30,7 +31,7 @@ alias neopacker="nvim ~/dot-files/nvim/.config/nvim/lua/core/packer.lua"
 alias work='numowork'
 alias awswhoami='okta aws sts get-caller-identity'
 alias tfinit='_tf_init && okta terraform init -backend=true -backend-config=backend-${AWS_PROFILE}.config -var-file=vars-${AWS_PROFILE}.tfvars'
-alias tfapply='okta terraform apply -var-file=vars-${AWS_PROFILE}.tfvars ${@} ' 
+alias tfapply='okta terraform apply -var-file=vars-${AWS_PROFILE}.tfvars ${@} '
 alias tfplan='okta terraform plan -var-file=vars-${AWS_PROFILE}.tfvars ${@} '
 alias tfi='okta terraform init'
 alias tfa='okta terraform apply'

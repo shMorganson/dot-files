@@ -22,26 +22,24 @@ export DOCKER_HOST=ssh://justin@10.10.87.144
 export AWS_PROFILE=mvc-1-app-2
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --border=none
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+  --color=fg:#717a84 \
+  --color=fg+:#717a84 \
+  --color=bg:#fbfbfb \
+  --color=bg+:#eaeded \
+  --color=hl:#6ab3dc \
+  --color=hl+:#98ddfb \
+  --color=info:#eaaa42 \
+  --color=marker:#9ebb38 \
+  --color=prompt:#eaaa42 \
+  --color=spinner:#78c5aa \
+  --color=pointer:#78c5aa \
+  --color=header:#cae55e \
+  --color=border:#717a84 \
+  --color=label:#aeaeae \
+  --color=query:#d9d9d9 \
+  --border="rounded" \
+  --border-label="" \
+  --preview-window="border-rounded" \
 "
 
 # Terraform Logs
