@@ -40,12 +40,6 @@ autocmd("FileType", {
 --   desc = "Auto sync Lazy when the file is written to."
 -- })
 
-autocmd("BufEnter", {
- command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
- group = reset_group,
- desc = "Close Neovim is NvimTree is only one left open."
-})
-
 -- autocmd("BufWritePre", {
 --   command = ":lua vim.lsp.buf.formatting_sync()",
 --   group = reset_group,
@@ -56,12 +50,6 @@ autocmd("WinNew", {
    command = "windo set wrap",
    group = splitwrap_aumgroup,
    desc = "Set wrap text when in split view.",
-})
-
-autocmd({"BufRead", "BufEnter"}, {
- command = "if winnr('$')  == 1 && bufname() == 'NvimTree_' . tabpagenr() | windo set nowrap | endif",
- group = splitwrap_aumgroup,
- desc = "Don't line wrap NvimTree."
 })
 
 autocmd("WinEnter", {

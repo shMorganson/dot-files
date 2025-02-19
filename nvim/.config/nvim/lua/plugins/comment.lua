@@ -1,13 +1,8 @@
-local comment_status_ok, comment = pcall(require, "Comment")
-if not comment_status_ok then
-  vim.notify = require("notify")
-  vim.notify("Comment plugin is not installed or is broken.", "error", {
-    title = "Missing or Broken Plugin"
-  })
-  return
-end
-
-require('Comment').setup {
+return {
+{
+  'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup {
     padding = true,
 
     ---Whether the cursor should stay at its position
@@ -73,4 +68,7 @@ require('Comment').setup {
     ---Post-hook, called after commenting is done
     ---@type fun(ctx: CommentCtx)
     post_hook = nil,
+}
+  end
+},
 }
