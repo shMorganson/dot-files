@@ -41,4 +41,4 @@ vim.opt.fillchars:append({ eob = " " })
 cmd "syntax enable"
 cmd "syntax on"
 
-
+vim.cmd[[colorscheme tokyonight-night]]

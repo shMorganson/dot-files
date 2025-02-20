@@ -1,37 +1,12 @@
--- -- Colors for the theme.
-local colors = {
-  blue   = '#286983',
-  cyan   = '#56949F',
-  black  = '#575279',
-  white  = '#FFFAF3',
-  red    = '#B4637A',
-  violet = '#907AA9',
-  grey   = '#CECACD',
-  green  = '#D7827E',
-}
-
-local anura_theme = {
-  normal = {
-    a = { fg = colors.white, bg = colors.blue },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.grey, ctermbg = 0 },
-    },
-
-  command = { a = {fg = colors.white, bg = colors.violet} },
-    insert = { a = { fg = colors.white, bg = colors.green} },
-    visual = { a = { fg = colors.white, bg = colors.cyan } },
-    replace = { a = { fg = colors.white, bg = colors.red } },
-
-  inactive = {
-    a = { fg = colors.white, ctermbg = 0 },
-    b = { fg = colors.white, ctermbg = 0 },
-    c = { fg = colors.black, ctermbg = 0 },
-  },
-}
-
-require('lualine').setup {
-    options = {
-        theme = anura_theme,
+return {
+{
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+        require('lualine').setup {
+	        options = {
+        theme = "tokyonight"
+        ,
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
@@ -86,4 +61,40 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
+
+        }
+    end
+},
+
+
+-- -- Colors for the theme.
+--local colors = {
+--  blue   = '#286983',
+--  cyan   = '#56949F',
+--  black  = '#575279',
+--  white  = '#FFFAF3',
+--  red    = '#B4637A',
+--  violet = '#907AA9',
+-- grey   = '#CECACD',
+--  green  = '#D7827E',
+--}
+
+--local anura_theme = {
+--  normal = {
+--    a = { fg = colors.white, bg = colors.blue },
+--    b = { fg = colors.white, bg = colors.grey },
+--    c = { fg = colors.grey, ctermbg = 0 },
+--    },
+
+--  command = { a = {fg = colors.white, bg = colors.violet} },
+--    insert = { a = { fg = colors.white, bg = colors.green} },
+--    visual = { a = { fg = colors.white, bg = colors.cyan } },
+--    replace = { a = { fg = colors.white, bg = colors.red } },
+
+--  inactive = {
+--    a = { fg = colors.white, ctermbg = 0 },
+--    b = { fg = colors.white, ctermbg = 0 },
+--    c = { fg = colors.black, ctermbg = 0 },
+--  },
+--}
 }
