@@ -25,6 +25,16 @@ brew "luarocks"
 brew "make"
 brew "lazydocker"
 
+# Brews Needed for Nova Extensions
+brew actionlint # Actionlint
+brew shellcheck # ShellCheck
+brew shfmt # Shfmt
+brew docker-ls # Docker Suite
+brew docker-compose # Docker Suite
+brew pyright # Pyright
+brew terraform-ls # Terraform
+brew terraform # Terraform
+
 # My 'brew install --cask'
 cask "font-sf-mono-nerd-font"
 cask "font-fira-code-nerd-font"
