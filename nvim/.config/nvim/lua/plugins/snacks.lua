@@ -1,11 +1,5 @@
--- https://github.com/folke/snacks.nvim/blob/main/docs/lazygit.md
--- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
-
--- NOTE: If you experience an issue in which you cannot select a file with the
--- snacks picker when you're in insert mode, only in normal mode, and you use
--- the bullets.vim plugin, that's the cause, go to that file to see how to
--- resolve it
--- https://github.com/folke/snacks.nvim/issues/812
+-- Snacks.nvim is a bunch of QoL plugins for nvim.
+-- https://github.com/folke/snacks.nvim
 
 return {
 {
@@ -23,7 +17,14 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+    picker = { enabled = true,
+      sources = {
+        files = { hidden = true },
+        explorer = {
+          files = { hidden = true },
+        },
+      }
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
