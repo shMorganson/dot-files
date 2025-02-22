@@ -69,6 +69,15 @@ return {
                         }
                     }
                 end,
+                ["snyk_ls"] = function ()
+                  local lspconfig = require("lspconfig")
+                  lspconfig.snyk_ls.setup {
+                    capabilities = capabilities,
+                    settings = {
+                      cliPath = "/opt/homebrew/bin/snyk"
+                    }
+                  }
+                end
             }
         })
 
@@ -103,6 +112,14 @@ return {
                 source = "always",
                 header = "",
                 prefix = "",
+            },
+            signs = {
+              text = {
+                [vim.diagnostic.severity.ERROR] = '',
+                [vim.diagnostic.severity.WARN] = '',
+                [vim.diagnostic.severity.INFO] = '',
+                [vim.diagnostic.severity.HINT] = '',
+              },
             },
         })
     end

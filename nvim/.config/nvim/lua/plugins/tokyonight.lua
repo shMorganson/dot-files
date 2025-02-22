@@ -1,8 +1,10 @@
 return {
   -- add tokyonight
   { "folke/tokyonight.nvim",
- 	lazy = false,
+    lazy = false,
   	priority = 1000,
-  	opts = {},
+  	opts = {
+
+    },
   },
 }
