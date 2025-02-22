@@ -1,0 +1,13 @@
+# Ghostty Config
+
+# Empty values reset the configuration to the default value
+font-family = FiraCode Nerd Font
+font-size = 18
+
+# Theme
+config-file = ~/.config/ghostty/tokyonight/config
+
+# Window
+window-decoration = auto
+window-height = 40
+window-width = 125
