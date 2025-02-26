@@ -1,6 +1,3 @@
--- Snacks.nvim is a bunch of QoL plugins for nvim.
--- https://github.com/folke/snacks.nvim
-
 return {
 {
 "folke/snacks.nvim",
