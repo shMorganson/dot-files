@@ -4,7 +4,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "L3MON4D3/LuaSnip",
-        "saghen/blink.cmp",
+        -- "saghen/blink.cmp",
     },
 
     config = function()
@@ -64,7 +64,8 @@ return {
                   lspconfig.snyk_ls.setup {
                     capabilities = capabilities,
                     settings = {
-                      cliPath = "/opt/homebrew/bin/snyk"
+                      activateSnykCode = "true",
+                      token = "69596d27-af2e-40ea-87ff-ebb75e9e2b35"
                     }
                   }
                 end

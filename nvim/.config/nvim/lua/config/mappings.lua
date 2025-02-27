@@ -14,6 +14,11 @@ keymap("n", "<leader>sc", "<cmd>setlocal spell spelllang=en_us<CR>",
 keymap("n", "<leader>cl", "<cmd>set cursorline<CR>", {noremap = true})
 keymap("n", "<leader>lo", "<cmd>set nocursorline<CR>", {noremap = true})
 
+-- nvim Notes
+keymap("n", "<leader>nw", "<cmd>New Note<CR>", {noremap = true})
+keymap("n", "<leader>nf", "<cmd>Find Note<CR>", {noremap = true})
+keymap("n", "<leader>ng", "<cmd>Get Note<CR>", {noremap = true})
+
 -- jira.nvim Mappings
 -- vim.keymap.set('n', '<leader>jt', require("jira.pickers.snacks").transitions, {}) -- Snacks
 -- vim.keymap.set('n', '<leader>jv', '<cmd>Jira issue view<cr>', {})
